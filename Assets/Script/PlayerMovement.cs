@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-
         if (rightPressed)
         {
 
