@@ -10,7 +10,7 @@ public class AnimationHandling : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     public static void  ChangeAnimationState(string newState)

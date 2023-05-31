@@ -20,14 +20,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
 
     //Animation states
-    const string PLAYER_IDLE = "PlayerIdle", PLAYER_ATTACK = "PlayerAttack", PLAYER_RECOVERY = "PlayerRecovery", PLAYER_COMBAT = "PlayerCombat", PLAYER_HURT = "PlayerHurt", PLAYER_RUNNING = "PlayerRunning", PLAYER_DEATH = "PlayerDeath", PLAYER_JUMP = "PlayerJump";
+    const string PLAYER_IDLE = "PlayerIdle", 
+        PLAYER_ATTACK = "PlayerAttack", 
+        PLAYER_RECOVERY = "PlayerRecovery",
+        PLAYER_COMBAT = "PlayerCombat", 
+        PLAYER_HURT = "PlayerHurt", 
+        PLAYER_RUNNING = "PlayerRunning", 
+        PLAYER_DEATH = "PlayerDeath", 
+        PLAYER_JUMP = "PlayerJump";
 
 
 
     void Start()
     {
         //rb = GetComponent<Rigidbody2D>();
-        //animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -78,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //if player is not grounded animation is set to jump
+            //if player is not 
             AnimationHandling.ChangeAnimationState(PLAYER_JUMP);
         }
         
