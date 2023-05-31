@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    Animator animator;
-    private string currentState; //checks current state of animation
 
     public float speed = 1f; //speed of the player
     public float jumpingPower = 400f; //jump force
@@ -27,9 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
 
     void Start()
-    {   
+    {
         //rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -54,34 +52,39 @@ public class PlayerMovement : MonoBehaviour
         //to check if the player is on the ground to toggle animation
         if (IsGrounded())
         {
+            //on press of right/left button animation will change to running
             if (rightPressed || leftPressed)
             {
-                ChangeAnimationState(PLAYER_RUNNING);
+                AnimationHandling.ChangeAnimationState(PLAYER_RUNNING);
             }
+            //checks weither attack button is pressed
             if (isAttackPressed)
             {
                 isAttackPressed = false;
+                //checks if player is attacking if not the attack animation will be set
                 if (!attacking)
                 {
                     attacking = true;
-                    ChangeAnimationState(PLAYER_ATTACK);
-                    attackDelay = animator.GetCurrentAnimatorStateInfo(0).length;
+                    AnimationHandling.ChangeAnimationState(PLAYER_ATTACK);
+                     attackDelay = AnimationHandling.animator.GetCurrentAnimatorStateInfo(0).length;
                     Invoke("AttackComplete", attackDelay);
                 }
             }
+            //sets the animation to idle if player in not moving and not attacking 
             else if(!attacking && !rightPressed && !leftPressed)
             {
-                 ChangeAnimationState(PLAYER_IDLE);
+                AnimationHandling.ChangeAnimationState(PLAYER_IDLE);
             }
         }
         else
         {
-            ChangeAnimationState(PLAYER_JUMP);
+            //if player is not grounded animation is set to jump
+            AnimationHandling.ChangeAnimationState(PLAYER_JUMP);
         }
         
        
 
-        //movement
+        //movement for computer inputs
         /* 
          transform.Translate(Vector2.right*horizontal*speed*Time.deltaTime);
          if(horizontal != 0)
@@ -121,12 +124,14 @@ public class PlayerMovement : MonoBehaviour
         rightPressed = true;
         leftPressed = false;
     }
+
     //get input from UI button
     public void MoveLeft()
     {
         leftPressed = true;
         rightPressed = false;
     }
+
     //get input from UI button
     public void ButtonUp()
     {
@@ -163,12 +168,5 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    void ChangeAnimationState(string newState)
-    {
-        //This will stop the same animation from interruting itself
-        if (currentState == newState)
-            return;
-        //play the animation
-        animator.Play(newState);
-    }
+ 
 }
