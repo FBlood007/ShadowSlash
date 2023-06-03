@@ -41,14 +41,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
      void FixedUpdate()
-    {
+    {   
+        //moves player to the right when button pressed
         if (rightPressed)
         {
-
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+           transform.Translate(Vector2.right * speed * Time.deltaTime);
            player.transform.localScale = new Vector2(-2.035237f, 1.875094f);
-            
         }
+        //moves player to the left when button pressed
         if (leftPressed)
         {
             transform.Translate(Vector2.right * -1 * speed * Time.deltaTime);
@@ -72,8 +72,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     attacking = true;
                     AnimationHandling.ChangeAnimationState(PLAYER_ATTACK);
-                     attackDelay = AnimationHandling.animator.GetCurrentAnimatorStateInfo(0).length;
-                    Invoke("AttackComplete", attackDelay);
+                    float delay = AnimationHandling.animator.GetCurrentAnimatorStateInfo(0).length;
+                    //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
+                    Invoke("AttackComplete", delay);
                 }
             }
             //sets the animation to idle if player in not moving and not attacking 
@@ -148,11 +149,9 @@ public class PlayerMovement : MonoBehaviour
     //function to trigger jump
     public void Jump()
     {
-       
         if (IsGrounded())
         {
-            rb.AddForce(Vector2.up * jumpingPower);
-            
+            rb.AddForce(Vector2.up * jumpingPower);   
         }
     }
 
