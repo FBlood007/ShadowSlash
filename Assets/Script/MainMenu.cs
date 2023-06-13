@@ -12,12 +12,13 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        mainMenu.SetActive(true);
-        settings.SetActive(false);
-        levels.SetActive(false);
+        //mainMenu.SetActive(true);
+        //settings.SetActive(false);
+        //levels.SetActive(false);
     }
     void Update()
     {
+        //this statements helps when player press back button of mobile
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if (mainMenu.activeInHierarchy)
@@ -33,25 +34,7 @@ public class MainMenu : MonoBehaviour
         }    
     }
 
-    public void Play()
-    {
-        mainMenu.SetActive(false);
-        settings.SetActive(false);
-        levels.SetActive(true);
-       
-    }
-    public void Setting()
-    {
-        mainMenu.SetActive(false);
-        settings.SetActive(true);
-    }
-
-    public void Back()
-    {
-        mainMenu.SetActive(true);
-        settings.SetActive(false);
-        levels.SetActive(false);
-    }
+    //function to handle the level scenes here we take input as a scene name
     public void LevelSelect(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
