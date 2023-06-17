@@ -38,6 +38,11 @@ public class PlayerMovement : MonoBehaviour
         PLAYER_DEATH = "PlayerDeath", 
         PLAYER_JUMP = "PlayerJump";
 
+    //Player Combat
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    private int attackDamage = 100;
 
 
     void Start()
@@ -86,6 +91,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     attacking = true;
                     AnimationHandling.ChangeAnimationState(PLAYER_ATTACK);
+                   
                     float delay = AnimationHandling.animator.GetCurrentAnimatorStateInfo(0).length;
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
                     Invoke("AttackComplete", delay);
@@ -189,8 +195,24 @@ public class PlayerMovement : MonoBehaviour
     public void Attack()
     {
         isAttackPressed = true;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log(enemy.name);
+            Enemy.TakeDamage(attackDamage, enemy.gameObject);
+        }
     }
-    
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position,attackRange);
+    }
+
+
     //disable attack 
     void AttackComplete()
     {
