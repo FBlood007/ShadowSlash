@@ -32,6 +32,10 @@ public class UIManager : MonoBehaviour
 
     private Stack<GameObject> lives = new Stack<GameObject>();
 
+    private void Start()
+    {
+        gemCount = 0;
+    }
     public static void AddGem()
     {
         gemCount++;

@@ -13,6 +13,7 @@ public class CollisionTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("collided");
         collisionHandle.CollisionEnter(gameObject.name, collision.gameObject);
     }
 }

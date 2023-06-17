@@ -43,4 +43,10 @@ public class GameScreenPopUp : MonoBehaviour
     {
         SceneManager.LoadScene("MenuScreens");
     }
+
+    public void GameOver()
+    {
+        settingPopup.SetActive(true);
+    }
+
 }

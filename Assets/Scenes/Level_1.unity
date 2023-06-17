@@ -2776,9 +2776,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2217f7dcccabffd488c0d289b6771691, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPopUp: {fileID: 655161860}
+  spriteRenderers:
+  - {fileID: 1184824771}
   speed: 4
   jumpingPower: 400
-  life: 3
+  immortalityTime: 0
   player: {fileID: 1184824767}
   attackDelay: 0.4
   rb: {fileID: 1184824770}

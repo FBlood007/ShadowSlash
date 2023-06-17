@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-
+    public GameObject gameOverPopUp;
+    [SerializeField]
+    private SpriteRenderer[] spriteRenderers;
     public float speed = 1f; //speed of the player
     public float jumpingPower = 400f; //jump force
     private bool rightPressed = false;
     private bool leftPressed = false;
     private bool isAttackPressed; //bool variable to check if attack key is pressed
     private bool attacking; //bool variable to check if player is attacking or not
-    public static int life = 3;
+    public static int life;
+    public static bool isImmortal;
+    [SerializeField]
+    private float immortalityTime;
 
     public GameObject player;
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
@@ -20,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    
     private PlayerActions actions;
 
     //Animation states
@@ -36,8 +42,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        life = 3;
         //rb = GetComponent<Rigidbody2D>();
         UIManager.Instance.AddLife(life);
+        isImmortal = false;
         //actions = new PlayerActions(this);
     }
     void Update()
@@ -82,6 +90,10 @@ public class PlayerMovement : MonoBehaviour
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
                     Invoke("AttackComplete", delay);
                 }
+            }
+            if(life < 0){
+                AnimationHandling.ChangeAnimationState(PLAYER_DEATH);
+                gameOverPopUp.SetActive(true);
             }
             //sets the animation to idle if player in not moving and not attacking 
             else if(!attacking && !rightPressed && !leftPressed)
@@ -138,6 +150,10 @@ public class PlayerMovement : MonoBehaviour
             return actions;
         }
     }
+   
+
+    public float ImmortalityTime { get => immortalityTime; set => immortalityTime = value; }
+    public SpriteRenderer[] SpriteRenderers { get => spriteRenderers; set => spriteRenderers = value; }
 
     //get input from UI button
     public void MoveRight()
@@ -187,5 +203,4 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-   
 }

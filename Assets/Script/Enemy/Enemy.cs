@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private float timeSinceAttack;
     private bool canAttack = true;
 
+    
     private void Update()
     {
         Attack();
@@ -48,8 +49,8 @@ public class Enemy : MonoBehaviour
     {
          if (gameObject.name == "DamageArea" && collision.tag == "Player")
          {
-             PlayerActions.TakeHit();
-         }
+            PlayerActions.TakeHit();
+          }
 
        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
         {
