@@ -12,12 +12,15 @@ public class PlayerMovement : MonoBehaviour
     private bool leftPressed = false;
     private bool isAttackPressed; //bool variable to check if attack key is pressed
     private bool attacking; //bool variable to check if player is attacking or not
+    public static int life = 3;
 
     public GameObject player;
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+
+    private PlayerActions actions;
 
     //Animation states
     const string PLAYER_IDLE = "PlayerIdle", 
@@ -34,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         //rb = GetComponent<Rigidbody2D>();
+        UIManager.Instance.AddLife(life);
+        //actions = new PlayerActions(this);
     }
     void Update()
     {
@@ -45,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
         //moves player to the right when button pressed
         if (rightPressed)
         {
-           transform.Translate(Vector2.right * speed * Time.deltaTime);
+            
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
            player.transform.localScale = new Vector2(-2.035237f, 1.875094f);
         }
         //moves player to the left when button pressed
@@ -125,6 +131,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public PlayerActions Actions
+    {
+        get
+        {
+            return actions;
+        }
+    }
+
     //get input from UI button
     public void MoveRight()
     {
@@ -173,8 +187,5 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    public void TakeHit()
-    {
-        //UIManager.RemoveLife();
-    }
+   
 }

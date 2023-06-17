@@ -42,19 +42,21 @@ public class Enemy : MonoBehaviour
         attack.GetComponent<Projectile>().Setup(direction);
     }
 
-    /* public void CollisionEnter(string colliderName, GameObject other)
-     {
-         // if (colliderName == "DamageArea" && other.tag == "Player")
-         // {
-         //other.GetComponent<PlayerMovement>().Actions.TakeHit();
-         //}
 
-         if (colliderName == "AttackRange" && other.tag == "Player")
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+         if (gameObject.name == "DamageArea" && collision.tag == "Player")
          {
-             if (target == null)
-             {
-                 this.target = other.transform;
-             }
-        }
-     } */
+             PlayerActions.TakeHit();
+         }
+
+       /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
+        {
+            if (target == null)
+            {
+                this.target = gameObject.transform;
+            }
+        }*/
+    }
 }
