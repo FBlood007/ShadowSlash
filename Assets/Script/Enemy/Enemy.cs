@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHittable
 {
     [SerializeField]
     private GameObject rangeAttack;
@@ -13,8 +13,14 @@ public class Enemy : MonoBehaviour
     private float attackCooldown; 
     private float timeSinceAttack;
     private bool canAttack = true;
+    public int maxHealth = 100;
+    static int currentHealth;
 
-    
+
+    private void Start()
+    {
+        currentHealth = maxHealth;        
+    }
     private void Update()
     {
         Attack();
@@ -60,4 +66,24 @@ public class Enemy : MonoBehaviour
             }
         }*/
     }
+
+    public void TakeHit()
+    {
+        Debug.Log("GOt hit");
+    }
+
+    public static void TakeDamage(int damage, GameObject enemy)
+    {
+        currentHealth -= damage;
+        if(currentHealth <= 0)
+        {
+            Die(enemy);
+        }
+    }
+
+     public static void Die(GameObject enemy)
+    {
+        Destroy(enemy);
+    }
+
 }

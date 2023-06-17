@@ -28,12 +28,18 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-   /* private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+       /* if(collision.tag == targetTag)
+        {
+
+        }*/
+
+
+       /* if (collision.gameObject.tag == "Player")
         {
             UIManager.Instance.RemoveLife();
             //FindObjectOfType<AudioManager>().PlaySound("CoinPickUp");
-        }
-    }*/
+        }*/
+    }
 }

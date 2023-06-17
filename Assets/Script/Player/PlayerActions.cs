@@ -23,7 +23,6 @@ public class PlayerActions : MonoBehaviour
     }
     public static void TakeHit()
     {
-        Debug.Log("IN TaKe hit");
         if (!PlayerMovement.isImmortal)
         {
             if (PlayerMovement.life >= 0)
