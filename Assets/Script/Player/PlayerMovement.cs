@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log(enemy.name);
-            Enemy.TakeDamage(attackDamage, enemy.gameObject);
+            Enemy.TakeDamage(attackDamage,enemy.gameObject);
         }
     }
 
