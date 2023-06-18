@@ -7,11 +7,11 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     private PlayerMovement player;
-    
+
 
     public PlayerActions(PlayerMovement player)
     {
-        this.player = player;   
+        this.player = player;
     }
     public void Start()
     {
@@ -23,8 +23,8 @@ public class PlayerActions : MonoBehaviour
     }
     public static void TakeHit()
     {
-        if (!PlayerMovement.isImmortal)
-        {
+       /* if (!PlayerMovement.isImmortal)
+        {*/
             if (PlayerMovement.life >= 0)
             {
                // player.StartCoroutine(Immortality());
@@ -36,7 +36,7 @@ public class PlayerActions : MonoBehaviour
                 PlayerMovement.life--;
                
             }
-        }
+        //}
     }
     private IEnumerator Blink()
     {

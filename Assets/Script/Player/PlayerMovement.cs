@@ -200,7 +200,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log(enemy.name);
-            Enemy.TakeDamage(attackDamage, enemy.gameObject);
+            Enemy.TakeDamage(attackDamage,enemy.gameObject);
         }
     }
 
@@ -224,5 +224,5 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-
+    
 }

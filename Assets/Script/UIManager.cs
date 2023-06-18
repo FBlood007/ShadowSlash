@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject levelComplete;
     //private variable which refers to itself
     private static UIManager instance;
     public static UIManager Instance
@@ -23,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     public static int gemCount = 0;
     public TextMeshProUGUI gemText;
+    public TextMeshProUGUI levelCompleteGemCount;
 
     [SerializeField]
     private Transform lifeParent;
@@ -43,7 +46,14 @@ public class UIManager : MonoBehaviour
     }
     public void Update()
     {
-        gemText.text =  gemCount.ToString();
+        gemText.text =  gemCount.ToString() + "/7";
+       
+
+        if (SceneManager.GetActiveScene().name == "Level_1" && gemCount == 7)
+        {
+            levelCompleteGemCount.text = gemCount.ToString();
+            levelComplete.SetActive(true);
+        }
     }
 
     public void AddLife(int amount)
@@ -57,5 +67,9 @@ public class UIManager : MonoBehaviour
     public void RemoveLife()
     {
         Destroy(lives.Pop());
+    }
+    public void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
