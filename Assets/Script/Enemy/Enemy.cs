@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour, IHittable
 {
     [SerializeField]
     private GameObject rangeAttack;
+
     [SerializeField]
     private Transform boss;
     private Transform target;
@@ -56,7 +57,7 @@ public class Enemy : MonoBehaviour, IHittable
          if (gameObject.name == "DamageArea" && collision.tag == "Player")
          {
             PlayerActions.TakeHit();
-          }
+        }
 
        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
         {
@@ -67,7 +68,7 @@ public class Enemy : MonoBehaviour, IHittable
         }*/
     }
 
-    public void TakeHit()
+    public void TakeHits()
     {
         Debug.Log("GOt hit");
     }

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameScreenPopUp : MonoBehaviour
 {
+    public GameObject pauseBox;
+    public GameObject exitBox;
     public GameObject settingPopup;
     void Start()
     {
@@ -16,17 +18,14 @@ public class GameScreenPopUp : MonoBehaviour
     {
         
     }
-    public void PauseButton()
+   
+    public void Pause()
     {
-        settingPopup.SetActive(true);
-        //AnimationHandling.ChangeAnimationState("PlayerIdle");
+        Time.timeScale = 0f;
     }
-
-    //game screeeen resume button
-    public void ResumeButton()
+    public void Resume()
     {
-        settingPopup.SetActive(false);
-        //AnimationHandling.ChangeAnimationState("PlayerIdle");
+        Time.timeScale = 1f;
     }
     public void RestartButton()
     {
@@ -41,9 +40,11 @@ public class GameScreenPopUp : MonoBehaviour
     //function is for menu button to navigate player to the main menu
     public void MainMenuButton()
     {
+        
         SceneManager.LoadScene("MenuScreens");
     }
 
+   
     public void GameOver()
     {
         settingPopup.SetActive(true);

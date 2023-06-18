@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyPatroll : MonoBehaviour
 {
+    [SerializeField] private GameObject DamageArea;
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
@@ -15,6 +16,7 @@ public class EnemyPatroll : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        //Debug.Log(gameObject.transform);
         currentPoint = pointA.transform;
         //anim.SetBool("isRunning", true);
     }
@@ -22,6 +24,7 @@ public class EnemyPatroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        DamageArea.transform.position = gameObject.transform.position;
         Vector2 point = currentPoint.position - transform.position;
         if(currentPoint  == pointB.transform)
         {
@@ -34,13 +37,13 @@ public class EnemyPatroll : MonoBehaviour
         
         if(Vector2.Distance(transform.position, currentPoint.position)< 0.5f && currentPoint == pointB.transform)
         {
-            Debug.Log("Point touched 1");
+            //Debug.Log("Point touched 1");
             transform.localScale = new Vector2(1,1);
             currentPoint = pointA.transform;
         }
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
         {
-            Debug.Log("Point touched 2");
+           // Debug.Log("Point touched 2");
             transform.localScale = new Vector2(-1, 1);
             currentPoint= pointB.transform;
         }

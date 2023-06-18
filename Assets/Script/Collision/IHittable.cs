@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IHittable
 {
-    void TakeHit();
+    void TakeHits();
 }
