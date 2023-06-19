@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CollectableItems : MonoBehaviour
@@ -16,7 +15,7 @@ public class CollectableItems : MonoBehaviour
 
     private Transform collectTransform;
     private bool collected = false;
-    private float speed = 5f;
+    private float speed = 5f;//speed of the collectable when it travles to the UI
 
 
     private void Start()
@@ -27,6 +26,8 @@ public class CollectableItems : MonoBehaviour
     {
         Move();
     }
+
+    //this function moves the collectable and then destroys it
     public void Move()
     {
         if (collected)
@@ -39,13 +40,13 @@ public class CollectableItems : MonoBehaviour
         }
     }
 
-   
+   //function is for trigger enter of the collectable
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             collected = true;
-            //FindObjectOfType<AudioManager>().PlaySound("CoinPickUp");
+            //FindObjectOfType<AudioManager>().PlaySound("GemPick");
         }
     }
 

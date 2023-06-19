@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour, IHittable
     [SerializeField]
     private GameObject rangeAttack;
 
+    GameObject playerAction;
+    PlayerActions actions;
+
     [SerializeField]
     private Transform boss;
     private Transform target;
@@ -17,6 +20,12 @@ public class Enemy : MonoBehaviour, IHittable
     public int maxHealth = 100;
     static int currentHealth;
 
+
+    private void Awake()
+    {
+
+        playerAction = GameObject.FindGameObjectWithTag("UiManager");
+    }
 
     private void Start()
     {
@@ -56,7 +65,8 @@ public class Enemy : MonoBehaviour, IHittable
     {
          if (gameObject.name == "DamageArea" && collision.tag == "Player")
          {
-            PlayerActions.TakeHit();
+            actions = playerAction.GetComponent<PlayerActions>();
+            actions.TakeHit();
         }
 
        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")

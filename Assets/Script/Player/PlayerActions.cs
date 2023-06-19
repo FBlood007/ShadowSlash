@@ -1,33 +1,30 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
     private PlayerMovement player;
+    GameObject playerAction;
 
+    private void Awake()
+    {
 
+        playerAction = GameObject.FindGameObjectWithTag("Player");
+        player = playerAction.GetComponent<PlayerMovement>();
+
+    }
     public PlayerActions(PlayerMovement player)
     {
         this.player = player;
     }
-    public void Start()
+    //this function is used to reduce the live when player takes hit
+    public void TakeHit()
     {
-    }
-
-    public void Update()
-    {
-      
-    }
-    public static void TakeHit()
-    {
-       /* if (!PlayerMovement.isImmortal)
-        {*/
+        if (!PlayerMovement.isImmortal)
+        {
             if (PlayerMovement.life >= 0)
             {
-               // player.StartCoroutine(Immortality());
+               player.StartCoroutine(Immortality());
                 AnimationHandling.ChangeAnimationState("PlayerHurt");
                 if (PlayerMovement.life > 0)
                 {
@@ -36,8 +33,10 @@ public class PlayerActions : MonoBehaviour
                 PlayerMovement.life--;
                
             }
-        //}
+            }
     }
+
+    //used to show blink effect when player takes damage 
     private IEnumerator Blink()
     {
         while (PlayerMovement.isImmortal)
@@ -46,14 +45,16 @@ public class PlayerActions : MonoBehaviour
             {
                 player.SpriteRenderers[i].enabled = false;
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
             for (int i = 0; i < player.SpriteRenderers.Length; i++)
             {
                 player.SpriteRenderers[i].enabled = true;
             }
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
+
+    //function is used to make player immortal for some time when he takes damage
     private IEnumerator Immortality()
     {
         PlayerMovement.isImmortal = true;

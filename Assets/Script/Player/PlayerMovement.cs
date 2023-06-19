@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -18,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public static bool isImmortal;
     [SerializeField]
     private float immortalityTime;
+    public int level = 1;
+    public int noOfLife = 3;
 
     public GameObject player;
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
@@ -51,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
         //rb = GetComponent<Rigidbody2D>();
         UIManager.Instance.AddLife(life);
         isImmortal = false;
-        //actions = new PlayerActions(this);
     }
     void Update()
     {
@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
             if(life < 0){
                 AnimationHandling.ChangeAnimationState(PLAYER_DEATH);
                 gameOverPopUp.SetActive(true);
+                Time.timeScale = 0f;
             }
             //sets the animation to idle if player in not moving and not attacking 
             else if(!attacking && !rightPressed && !leftPressed)
