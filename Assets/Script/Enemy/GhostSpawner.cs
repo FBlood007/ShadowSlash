@@ -10,17 +10,6 @@ public class GhostSpawner : MonoBehaviour
     int randomSpawnPoints;
     int randomEnemy;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void SpawnEnemy()
     {
         //get random spawn point
@@ -33,8 +22,6 @@ public class GhostSpawner : MonoBehaviour
             //Spawning
             Instantiate(enemyPrefab[randomEnemy], spawnPoints[i].position, Quaternion.identity);
         }
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

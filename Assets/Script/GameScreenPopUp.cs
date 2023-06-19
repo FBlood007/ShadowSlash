@@ -45,9 +45,6 @@ public class GameScreenPopUp : MonoBehaviour
     }
 
    
-    public void GameOver()
-    {
-        settingPopup.SetActive(true);
-    }
+    
 
 }

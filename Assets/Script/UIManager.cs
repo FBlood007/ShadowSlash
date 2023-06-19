@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     private static UIManager instance;
     public static UIManager Instance
     {
-
         get
         {
             if (instance == null)
@@ -35,9 +34,11 @@ public class UIManager : MonoBehaviour
 
     private Stack<GameObject> lives = new Stack<GameObject>();
 
+    
     private void Start()
     {
         gemCount = 0;
+       
     }
     public static void AddGem()
     {
@@ -47,15 +48,15 @@ public class UIManager : MonoBehaviour
     public void Update()
     {
         gemText.text =  gemCount.ToString() + "/7";
-       
 
         if (SceneManager.GetActiveScene().name == "Level_1" && gemCount == 7)
         {
             levelCompleteGemCount.text = gemCount.ToString();
             levelComplete.SetActive(true);
+            Time.timeScale = 0;
         }
     }
-
+   
     public void AddLife(int amount)
     {
         for(int i = 0; i < amount; i++)
@@ -72,4 +73,6 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+   
 }

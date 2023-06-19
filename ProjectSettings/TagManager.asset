@@ -8,6 +8,7 @@ TagManager:
   - Collect
   - BossAttack
   - DamageArea
+  - UiManager
   layers:
   - Default
   - TransparentFX
@@ -44,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Play
+    uniqueID: 1821753495
+    locked: 0
+  - name: Stars
+    uniqueID: 264819119
     locked: 0

@@ -20,7 +20,6 @@ public class EnemyPatroll : MonoBehaviour
         currentPoint = pointA.transform;
         //anim.SetBool("isRunning", true);
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +33,6 @@ public class EnemyPatroll : MonoBehaviour
         {
             rb.velocity = new Vector2(-speed, 0);
         }
-        
         if(Vector2.Distance(transform.position, currentPoint.position)< 0.5f && currentPoint == pointB.transform)
         {
             //Debug.Log("Point touched 1");
@@ -47,11 +45,8 @@ public class EnemyPatroll : MonoBehaviour
             transform.localScale = new Vector2(-1, 1);
             currentPoint= pointB.transform;
         }
-
     }
-
-
-   
+    //this function shows us circural indicator to see the position of the points
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(pointA.transform.position, 1f);
