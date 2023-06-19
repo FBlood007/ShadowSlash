@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private float immortalityTime;
     public int level = 1;
     public int noOfLife = 3;
+    Animator animator;
 
     public GameObject player;
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
@@ -48,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         life = 3;
         //rb = GetComponent<Rigidbody2D>();
         UIManager.Instance.AddLife(life);
@@ -80,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             //on press of right/left button animation will change to running
             if (rightPressed || leftPressed)
             {
-                AnimationHandling.ChangeAnimationState(PLAYER_RUNNING);
+                FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
             }
             //checks weither attack button is pressed
             if (isAttackPressed)
@@ -90,28 +92,29 @@ public class PlayerMovement : MonoBehaviour
                 if (!attacking)
                 {
                     attacking = true;
-                    AnimationHandling.ChangeAnimationState(PLAYER_ATTACK);
-                   
-                    float delay = AnimationHandling.animator.GetCurrentAnimatorStateInfo(0).length;
+                    FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
+                    FindObjectOfType<AudioManager>().PlaySound("Attack");
+                    float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
                     Invoke("AttackComplete", delay);
                 }
             }
             if(life < 0){
-                AnimationHandling.ChangeAnimationState(PLAYER_DEATH);
+                FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_DEATH);
                 gameOverPopUp.SetActive(true);
                 Time.timeScale = 0f;
             }
             //sets the animation to idle if player in not moving and not attacking 
             else if(!attacking && !rightPressed && !leftPressed)
             {
-                AnimationHandling.ChangeAnimationState(PLAYER_IDLE);
+                FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_IDLE);
             }
         }
         else
         {
             //if player is not 
-            AnimationHandling.ChangeAnimationState(PLAYER_JUMP);
+            FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
         
        

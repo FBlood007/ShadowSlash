@@ -4,14 +4,11 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     private PlayerMovement player;
-    GameObject playerAction;
+ 
 
     private void Awake()
     {
-
-        playerAction = GameObject.FindGameObjectWithTag("Player");
-        player = playerAction.GetComponent<PlayerMovement>();
-
+        player = FindObjectOfType<PlayerMovement>();
     }
     public PlayerActions(PlayerMovement player)
     {
@@ -24,8 +21,9 @@ public class PlayerActions : MonoBehaviour
         {
             if (PlayerMovement.life >= 0)
             {
-               player.StartCoroutine(Immortality());
-                AnimationHandling.ChangeAnimationState("PlayerHurt");
+                FindObjectOfType<AudioManager>().PlaySound("PlayerHurt");
+                player.StartCoroutine(Immortality());
+                FindObjectOfType<AnimationHandling>().ChangeAnimationState("PlayerHurt");
                 if (PlayerMovement.life > 0)
                 {
                     UIManager.Instance.RemoveLife();

@@ -30,6 +30,7 @@ public class GameScreenPopUp : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene("Level_1");
+        Time.timeScale = 1f;
     }
 
     public void Music()

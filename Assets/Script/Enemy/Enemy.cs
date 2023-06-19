@@ -7,8 +7,8 @@ public class Enemy : MonoBehaviour, IHittable
     [SerializeField]
     private GameObject rangeAttack;
 
-    GameObject playerAction;
-    PlayerActions actions;
+    //GameObject playerAction;
+    //PlayerActions actions;
 
     [SerializeField]
     private Transform boss;
@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour, IHittable
     private void Awake()
     {
 
-        playerAction = GameObject.FindGameObjectWithTag("UiManager");
+        //playerAction = GameObject.FindGameObjectWithTag("UiManager");
     }
 
     private void Start()
@@ -65,8 +65,10 @@ public class Enemy : MonoBehaviour, IHittable
     {
          if (gameObject.name == "DamageArea" && collision.tag == "Player")
          {
-            actions = playerAction.GetComponent<PlayerActions>();
-            actions.TakeHit();
+            //actions = playerAction.GetComponent<PlayerActions>();
+            // actions.TakeHit();
+            FindObjectOfType<PlayerActions>().TakeHit();
+
         }
 
        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 91830d801fb950b489371888bdf5fb45
+guid: f65050ec3d654544cb9b69b5941fee64
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,91 +127,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: MiniMonster_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 540
-        width: 384
-        height: 540
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ef7572fe5df2a14e9393f1f4aa62ab4
-      internalID: -1773608019
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniMonster_1
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 540
-        width: 384
-        height: 540
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db17f520fa8bd244db6f0b3f38188561
-      internalID: -1152426844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniMonster_2
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 540
-        width: 384
-        height: 540
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2b6b9496fcb72540990da6354a073ee
-      internalID: -952861694
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MiniMonster_3
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 540
-        width: 384
-        height: 540
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3133ef646c5dcd4c973de494b260ecb
-      internalID: 1143955118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -222,11 +138,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      MiniMonster_0: -1773608019
-      MiniMonster_1: -1152426844
-      MiniMonster_2: -952861694
-      MiniMonster_3: 1143955118
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AnimationHandling : MonoBehaviour
 {
-    public static Animator animator;
-    private static string currentState; //checks current state of animation
+    Animator animator;
+    private  string currentState; //checks current state of animation
 
     // Start is called before the first frame update
     void Start()
@@ -13,7 +13,7 @@ public class AnimationHandling : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public static void  ChangeAnimationState(string newState)
+    public void  ChangeAnimationState(string newState)
     {
         //This will stop the same animation from interruting itself
         if (currentState == newState)
