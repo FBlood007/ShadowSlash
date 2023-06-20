@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5325482293607704833}
   - component: {fileID: 5325482293607704835}
   - component: {fileID: 5325482293607704844}
+  - component: {fileID: -5830893334678663526}
   m_Layer: 7
   m_Name: Ghost
   m_TagString: DamageArea
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5325482293607704838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.155591, y: -1.46, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5325482294882188033}
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 1821753495
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1384911165, guid: 2d40988d2dd916e4b9c80d37a391f442, type: 3}
+  m_Sprite: {fileID: 105176210, guid: 004b5fda8cc082748b8e68311f300a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.74, y: 1.76}
+    oldSize: {x: 1.93, y: 2.47}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,6 +169,27 @@ MonoBehaviour:
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
+--- !u!95 &-5830893334678663526
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5325482293607704838}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c1ce65c9962e7bf449376d594d2f1a98, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5325482294882188032
 GameObject:
   m_ObjectHideFlags: 0
