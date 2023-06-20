@@ -41,7 +41,7 @@ public class GameScreenPopUp : MonoBehaviour
     //function is for menu button to navigate player to the main menu
     public void MainMenuButton()
     {
-        
+        UIManager.gemCount = 0;
         SceneManager.LoadScene("MenuScreens");
     }
 

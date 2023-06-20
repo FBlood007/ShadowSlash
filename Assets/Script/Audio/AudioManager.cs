@@ -8,7 +8,8 @@ public class AudioManager : MonoBehaviour
     public Sounds[] sounds;
 
     void Start()
-    {
+    {   
+        //looping through the sound tracks added to the audiomanager script
         foreach (Sounds s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -25,7 +26,7 @@ public class AudioManager : MonoBehaviour
             PlaySound("MainMenu");
         }
     }
-
+    //fuction is used to play the sound by taking string type parameter
     public void PlaySound(string name)
     {
         foreach (Sounds s in sounds)
