@@ -1,27 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+    void Awake() => Instance = this;
+
     public GameObject gameOverPopUp;
     [SerializeField]
     private SpriteRenderer[] spriteRenderers;
-    public float speed = 1f; //speed of the player
+    [SerializeField] private float speed = 1f; //speed of the player
     public float jumpingPower = 400f; //jump force
     private bool rightPressed = false;
     private bool leftPressed = false;
     private bool isAttackPressed; //bool variable to check if attack key is pressed
     private bool attacking; //bool variable to check if player is attacking or not
-    public static int life;
-    public static bool isImmortal;
+    public int life;
+    public bool isImmortal;
     [SerializeField]
     private float immortalityTime;
     public int level = 1;
     public int noOfLife = 3;
     Animator animator;
 
-    public GameObject player;
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -44,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    private int attackDamage = 100;
+    public int attackDamage = 100;
 
 
     void Start()
@@ -67,13 +70,13 @@ public class PlayerMovement : MonoBehaviour
         {
             
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-           player.transform.localScale = new Vector2(-2.035237f, 1.875094f);
+           transform.localScale = new Vector2(-2.035237f, 1.875094f);
         }
         //moves player to the left when button pressed
         if (leftPressed)
         {
             transform.Translate(Vector2.right * -1 * speed * Time.deltaTime);
-            player.transform.localScale = new Vector2(2.035237f, 1.875094f);
+            transform.localScale = new Vector2(2.035237f, 1.875094f);
         }
 
         //to check if the player is on the ground to toggle animation
@@ -82,7 +85,11 @@ public class PlayerMovement : MonoBehaviour
             //on press of right/left button animation will change to running
             if (rightPressed || leftPressed)
             {
-                FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
+                //Before
+               // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
+
+                //After
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
             }
             //checks weither attack button is pressed
             if (isAttackPressed)
@@ -92,8 +99,13 @@ public class PlayerMovement : MonoBehaviour
                 if (!attacking)
                 {
                     attacking = true;
-                    FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
-                    FindObjectOfType<AudioManager>().PlaySound("Attack");
+
+                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
+                    //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
+
+                    AudioManager.Instance.PlaySound("Attack");
+                    //FindObjectOfType<AudioManager>().PlaySound("Attack");
+
                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
 
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
@@ -101,20 +113,25 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             if(life < 0){
-                FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_DEATH);
+
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
+                //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_DEATH);
+                
                 gameOverPopUp.SetActive(true);
                 Time.timeScale = 0f;
             }
             //sets the animation to idle if player in not moving and not attacking 
             else if(!attacking && !rightPressed && !leftPressed)
             {
-                FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_IDLE);
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
+                //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_IDLE);
             }
         }
         else
         {
             //if player is not 
-            FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
+            AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
+            //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
         
        
@@ -155,12 +172,13 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerActions Actions
     {
+
         get
         {
             return actions;
         }
     }
-   
+
 
     public float ImmortalityTime { get => immortalityTime; set => immortalityTime = value; }
     public SpriteRenderer[] SpriteRenderers { get => spriteRenderers; set => spriteRenderers = value; }

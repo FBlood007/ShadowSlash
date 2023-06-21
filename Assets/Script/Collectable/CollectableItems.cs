@@ -12,18 +12,22 @@ public class CollectableItems : MonoBehaviour
          Destroy(gameObject);
 
      }*/
-
+    public GameObject collectPosition;
     private Transform collectTransform;
     private bool collected = false;
     private float speed = 5f;//speed of the collectable when it travles to the UI
 
 
+  
+
     private void Start()
     {
-        collectTransform = GameObject.Find("CollectTransform").transform;
     }
+
+
     private void Update()
     {
+        collectTransform = collectPosition.transform;
         Move();
     }
 
@@ -32,10 +36,12 @@ public class CollectableItems : MonoBehaviour
     {
         if (collected)
         {
-            transform.position = Vector3.MoveTowards(transform.position,collectTransform.position,Time.fixedDeltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, collectTransform.position, Time.fixedDeltaTime * speed);
         }
         if(transform.position == collectTransform.position) {
-            UIManager.AddGem();
+
+            UIManager.Instance.AddGem();
+            
             Destroy(gameObject);
         }
     }

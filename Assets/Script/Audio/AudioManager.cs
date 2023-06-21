@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sounds[] sounds;
+    public static AudioManager Instance;
+    private void Awake() => Instance = this;
+   
+    [SerializeField]private Sounds[] sounds;
 
     void Start()
     {   
