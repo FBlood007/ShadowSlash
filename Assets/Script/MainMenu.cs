@@ -38,6 +38,7 @@ public class MainMenu : MonoBehaviour
     public void LevelSelect(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+
     }
 
 }

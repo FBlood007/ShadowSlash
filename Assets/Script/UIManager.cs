@@ -7,9 +7,12 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject levelComplete;
+    public static UIManager Instance;
+    private void Awake() => Instance = this;
+
     //private variable which refers to itself
-    private static UIManager instance;
-    public static UIManager Instance
+    //private static UIManager instance;
+   /* public static UIManager Instance
     {
         get
         {
@@ -20,9 +23,9 @@ public class UIManager : MonoBehaviour
 
             return instance;
         }
-    }
+    }*/
 
-    public static int gemCount = 0;
+    public int gemCount = 0;
     public TextMeshProUGUI gemText;
     public TextMeshProUGUI levelCompleteGemCount;
 
@@ -34,20 +37,23 @@ public class UIManager : MonoBehaviour
 
     private Stack<GameObject> lives = new Stack<GameObject>();
 
-    
+  
     private void Start()
     {
+        
         gemCount = 0;
-       
+        
     }
-    public static void AddGem()
+    public void AddGem()
     {
         gemCount++;
 
     }
     public void Update()
     {
+        Time.timeScale = 1;
         gemText.text =  gemCount.ToString() + "/7";
+
 
         if (SceneManager.GetActiveScene().name == "Level_1" && gemCount == 7)
         {
@@ -71,7 +77,7 @@ public class UIManager : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
    

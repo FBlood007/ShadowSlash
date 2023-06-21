@@ -2,13 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IHittable
+public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private GameObject rangeAttack;
-
-    GameObject playerAction;
-    PlayerActions actions;
 
     [SerializeField]
     private Transform boss;
@@ -24,7 +21,7 @@ public class Enemy : MonoBehaviour, IHittable
     private void Awake()
     {
 
-        playerAction = GameObject.FindGameObjectWithTag("UiManager");
+        
     }
 
     private void Start()
@@ -63,10 +60,16 @@ public class Enemy : MonoBehaviour, IHittable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-         if (gameObject.name == "DamageArea" && collision.tag == "Player")
+        //was using before
+        /* if (gameObject.name == "DamageArea" && collision.tag == "Player")
          {
-            actions = playerAction.GetComponent<PlayerActions>();
-            actions.TakeHit();
+            FindObjectOfType<PlayerActions>().TakeHit();
+         }*/
+
+        //updated statement to detect the collision and give damage to player
+         if(collision.gameObject.TryGetComponent(out PlayerActions player))
+        {
+           player.TakeHit();
         }
 
        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
@@ -78,10 +81,7 @@ public class Enemy : MonoBehaviour, IHittable
         }*/
     }
 
-    public void TakeHits()
-    {
-        Debug.Log("GOt hit");
-    }
+   
 
     public static void TakeDamage(int damage, GameObject enemy)
     {

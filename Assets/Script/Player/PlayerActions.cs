@@ -3,34 +3,33 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
-    private PlayerMovement player;
-    GameObject playerAction;
+   PlayerMovement player;
 
-    private void Awake()
+    /*public PlayerActions(PlayerMovement player)
     {
 
-        playerAction = GameObject.FindGameObjectWithTag("Player");
-        player = playerAction.GetComponent<PlayerMovement>();
-
-    }
-    public PlayerActions(PlayerMovement player)
-    {
         this.player = player;
-    }
+    }*/
     //this function is used to reduce the live when player takes hit
+    private void Start()
+    {
+        player = PlayerMovement.Instance;
+    }
     public void TakeHit()
     {
-        if (!PlayerMovement.isImmortal)
+      
+        if (!player.isImmortal)
         {
-            if (PlayerMovement.life >= 0)
+            if (player.life >= 0)
             {
-               player.StartCoroutine(Immortality());
-                AnimationHandling.ChangeAnimationState("PlayerHurt");
-                if (PlayerMovement.life > 0)
+                AudioManager.Instance.PlaySound("PlayerHurt");
+                player.StartCoroutine(Immortality());
+                AnimationHandling.Instance.ChangeAnimationState("PlayerHurt");
+                if (player.life > 0)
                 {
                     UIManager.Instance.RemoveLife();
                 }
-                PlayerMovement.life--;
+                player.life--;
                
             }
             }
@@ -39,7 +38,7 @@ public class PlayerActions : MonoBehaviour
     //used to show blink effect when player takes damage 
     private IEnumerator Blink()
     {
-        while (PlayerMovement.isImmortal)
+        while (player.isImmortal)
         {
             for(int i = 0; i < player.SpriteRenderers.Length; i++)
             {
@@ -57,10 +56,10 @@ public class PlayerActions : MonoBehaviour
     //function is used to make player immortal for some time when he takes damage
     private IEnumerator Immortality()
     {
-        PlayerMovement.isImmortal = true;
+        player.isImmortal = true;
         player.StartCoroutine(Blink());
         yield return new WaitForSeconds(player.ImmortalityTime);
-        PlayerMovement.isImmortal = false;
+        player.isImmortal = false;
     }
 
 

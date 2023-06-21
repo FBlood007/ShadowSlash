@@ -30,6 +30,7 @@ public class GameScreenPopUp : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene("Level_1");
+        Time.timeScale = 1f;
     }
 
     public void Music()
@@ -40,7 +41,7 @@ public class GameScreenPopUp : MonoBehaviour
     //function is for menu button to navigate player to the main menu
     public void MainMenuButton()
     {
-        
+        //UIManager._gemCount = 0;
         SceneManager.LoadScene("MenuScreens");
     }
 
