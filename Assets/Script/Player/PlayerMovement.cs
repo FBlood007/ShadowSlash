@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -62,6 +63,13 @@ public class PlayerMovement : MonoBehaviour
         //rb = GetComponent<Rigidbody2D>();
         UIManager.Instance.AddLife(life);
         isImmortal = false;
+        if (SceneManager.GetActiveScene().name == "Level_1")
+        {
+            
+            AudioManager.Instance.PauseSound("MainMenu");
+            AudioManager.Instance.PlaySound("Level1");
+        }
+
     }
     void Update()
     {

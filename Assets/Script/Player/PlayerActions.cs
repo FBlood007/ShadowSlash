@@ -11,9 +11,9 @@ public class PlayerActions : MonoBehaviour
         this.player = player;
     }*/
     //this function is used to reduce the live when player takes hit
-    private void Start()
+    private void Awake()
     {
-        player = PlayerMovement.Instance;
+           player = PlayerMovement.Instance;   
     }
     public void TakeHit()
     {

@@ -21,7 +21,6 @@ public class GameScreenPopUp : MonoBehaviour
    
     public void Pause()
     {
-        Debug.Log("zzzz");
         Time.timeScale = 0f;
     }
     public void Resume()
