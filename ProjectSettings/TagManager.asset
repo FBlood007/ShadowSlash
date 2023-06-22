@@ -49,6 +49,3 @@ TagManager:
   - name: Play
     uniqueID: 1821753495
     locked: 0
-  - name: Stars
-    uniqueID: 264819119
-    locked: 0

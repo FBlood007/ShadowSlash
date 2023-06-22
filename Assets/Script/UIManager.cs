@@ -40,7 +40,7 @@ public class UIManager : MonoBehaviour
   
     private void Start()
     {
-        
+        Time.timeScale = 1f;
         gemCount = 0;
         
     }
@@ -51,7 +51,7 @@ public class UIManager : MonoBehaviour
     }
     public void Update()
     {
-        Time.timeScale = 1;
+        
         gemText.text =  gemCount.ToString() + "/7";
 
 
