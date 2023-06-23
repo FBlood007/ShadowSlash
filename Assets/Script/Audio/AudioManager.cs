@@ -31,7 +31,11 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.volume = s.volume;
         }
-        
+        if (SceneManager.GetActiveScene().name == "MenuScreens")
+        {
+            AudioManager.Instance.PauseSound("Level1");
+            AudioManager.Instance.PlaySound("MainMenu");
+        }
     }
 
     //fuction is used to play the sound by taking string type parameter

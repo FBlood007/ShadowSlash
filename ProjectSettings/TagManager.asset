@@ -43,6 +43,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Sky
+    uniqueID: 1231019519
+    locked: 0
+  - name: Moon
+    uniqueID: 3991903357
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

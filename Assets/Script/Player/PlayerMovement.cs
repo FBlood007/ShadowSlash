@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerMovement : MonoBehaviour
 {
 
-
+    [SerializeField] ParticleSystem slash = null;
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PlaySound("Level1");
         }
-
+        slash.Stop();
     }
     void Update()
     {
@@ -115,9 +115,11 @@ public class PlayerMovement : MonoBehaviour
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
                     //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
+                    slash.Play();
+                 
+
                     AudioManager.Instance.PlaySound("Attack");
                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
-
                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
 
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed

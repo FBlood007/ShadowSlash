@@ -17,8 +17,8 @@ public class MainMenu : MonoBehaviour
         //levels.SetActive(false);
         if (SceneManager.GetActiveScene().name == "MenuScreens")
         {
-            AudioManager.Instance.PauseSound("Level1");
-            AudioManager.Instance.PlaySound("MainMenu");
+            //AudioManager.Instance.PauseSound("Level1");
+            //AudioManager.Instance.PlaySound("MainMenu");
         }
     }
     void Update()
