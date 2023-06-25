@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: 4a7c6dab195233545a0a4fd6b5d23ab2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: scene 1 layers 2_7
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 896
+        width: 1046
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7054433c1957a4aa42f06c7370b68b
+      internalID: -575092171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene 1 layers 2_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 689
+        width: 1215
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93f7f7e664f33fe438161587e13338b3
+      internalID: -563421718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene 1 layers 2_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 455
+        width: 1328
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be0623b6759285c4e8f2c73a8d12e44a
+      internalID: -549888890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene 1 layers 2_46
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 240
+        width: 815
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d1f8b118661554fb984a9f15869e63
+      internalID: 1011013211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene 1 layers 2_54
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 228
+        width: 1048
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02316fa5530bb3640b76ff1cfb14a488
+      internalID: -1813360622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scene 1 layers 2_60
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 54
+        width: 1141
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44da515ed28ce5240944f41e7417c5cc
+      internalID: -785641898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      scene 1 layers 2_0: -814991889
+      scene 1 layers 2_1: 847216980
+      scene 1 layers 2_10: -1108334775
+      scene 1 layers 2_11: 1597464431
+      scene 1 layers 2_12: -203315957
+      scene 1 layers 2_13: -1871662361
+      scene 1 layers 2_14: 1181502556
+      scene 1 layers 2_15: 1402653395
+      scene 1 layers 2_16: -2126644411
+      scene 1 layers 2_17: -2089346093
+      scene 1 layers 2_18: -183114494
+      scene 1 layers 2_19: -771021117
+      scene 1 layers 2_2: 1901742867
+      scene 1 layers 2_20: -2018623408
+      scene 1 layers 2_21: -563421718
+      scene 1 layers 2_22: 36797197
+      scene 1 layers 2_23: -448009246
+      scene 1 layers 2_24: 1832355728
+      scene 1 layers 2_25: 42227411
+      scene 1 layers 2_26: 163765897
+      scene 1 layers 2_27: -2124802775
+      scene 1 layers 2_28: -1040025248
+      scene 1 layers 2_29: -1973356349
+      scene 1 layers 2_3: -364848796
+      scene 1 layers 2_30: 944277155
+      scene 1 layers 2_31: -863119124
+      scene 1 layers 2_32: 700294382
+      scene 1 layers 2_33: -1488634149
+      scene 1 layers 2_34: -549888890
+      scene 1 layers 2_35: 650231850
+      scene 1 layers 2_36: 2095945859
+      scene 1 layers 2_37: 353405491
+      scene 1 layers 2_38: -512358774
+      scene 1 layers 2_39: -2103886946
+      scene 1 layers 2_4: 461050426
+      scene 1 layers 2_40: 1375783608
+      scene 1 layers 2_41: 1862960883
+      scene 1 layers 2_42: 169350757
+      scene 1 layers 2_43: -147703754
+      scene 1 layers 2_44: 1401743192
+      scene 1 layers 2_45: -74031730
+      scene 1 layers 2_46: 1011013211
+      scene 1 layers 2_47: -1519704704
+      scene 1 layers 2_48: -616033329
+      scene 1 layers 2_49: -1425253762
+      scene 1 layers 2_5: -665196077
+      scene 1 layers 2_50: -745396459
+      scene 1 layers 2_51: -1152339257
+      scene 1 layers 2_52: -235637879
+      scene 1 layers 2_53: 1114946758
+      scene 1 layers 2_54: -1813360622
+      scene 1 layers 2_55: -1954499156
+      scene 1 layers 2_56: 792435589
+      scene 1 layers 2_57: -1354879586
+      scene 1 layers 2_58: -1392573616
+      scene 1 layers 2_59: 37384868
+      scene 1 layers 2_6: 1313306679
+      scene 1 layers 2_60: -785641898
+      scene 1 layers 2_61: 1362133236
+      scene 1 layers 2_62: 506172961
+      scene 1 layers 2_63: -172590147
+      scene 1 layers 2_64: 468117898
+      scene 1 layers 2_65: 1565775437
+      scene 1 layers 2_66: -2017047998
+      scene 1 layers 2_67: -1671069032
+      scene 1 layers 2_68: -1513931673
+      scene 1 layers 2_7: -575092171
+      scene 1 layers 2_8: -270789812
+      scene 1 layers 2_9: -1129720444
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -17,15 +17,16 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     static int currentHealth;
 
-
+    public AudioClip clip;
     private void Awake()
     {
 
-        
+
     }
 
     private void Start()
     {
+
         currentHealth = maxHealth;        
     }
     private void Update()
@@ -66,11 +67,14 @@ public class Enemy : MonoBehaviour
             FindObjectOfType<PlayerActions>().TakeHit();
          }*/
 
+
+
         //updated statement to detect the collision and give damage to player
          if(collision.gameObject.TryGetComponent(out PlayerActions player))
         {
            player.TakeHit();
         }
+
 
        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
         {

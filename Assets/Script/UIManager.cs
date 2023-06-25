@@ -8,22 +8,15 @@ public class UIManager : MonoBehaviour
 {
     public GameObject levelComplete;
     public static UIManager Instance;
-    private void Awake() => Instance = this;
+    //private void Awake() => Instance = this;
 
-    //private variable which refers to itself
-    //private static UIManager instance;
-   /* public static UIManager Instance
+     private void Awake()
     {
-        get
+        if(Instance == null)
         {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<UIManager>();
-            }
-
-            return instance;
+            Instance = this;
         }
-    }*/
+    }
 
     public int gemCount = 0;
     public TextMeshProUGUI gemText;
@@ -40,7 +33,7 @@ public class UIManager : MonoBehaviour
   
     private void Start()
     {
-        
+        Time.timeScale = 1f;
         gemCount = 0;
         
     }
@@ -51,7 +44,7 @@ public class UIManager : MonoBehaviour
     }
     public void Update()
     {
-        Time.timeScale = 1;
+        
         gemText.text =  gemCount.ToString() + "/7";
 
 

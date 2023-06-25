@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public GameObject projectileAttack;
+    [SerializeField] ParticleSystem slash = null;
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
@@ -25,11 +27,14 @@ public class PlayerMovement : MonoBehaviour
     public int noOfLife = 3;
     Animator animator;
 
+    private float horizontal = 0f;
+
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+  
     
     private PlayerActions actions;
 
@@ -48,6 +53,8 @@ public class PlayerMovement : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 100;
+    public Transform rangeAttack;
+
 
 
     void Start()
@@ -57,20 +64,26 @@ public class PlayerMovement : MonoBehaviour
         //rb = GetComponent<Rigidbody2D>();
         UIManager.Instance.AddLife(life);
         isImmortal = false;
+        if (SceneManager.GetActiveScene().name == "Level_1")
+        {
+            
+            AudioManager.Instance.PauseSound("MainMenu");
+            AudioManager.Instance.PlaySound("Level1");
+        }
+        slash.Stop();
     }
     void Update()
     {
-        //float horizontal = Input.GetAxisRaw("Horizontal");
+        horizontal = Input.GetAxisRaw("Horizontal");
     }
 
      void FixedUpdate()
-    {   
+    {
         //moves player to the right when button pressed
         if (rightPressed)
         {
-            
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-           transform.localScale = new Vector2(-2.035237f, 1.875094f);
+            transform.localScale = new Vector2(-2.035237f, 1.875094f);
         }
         //moves player to the left when button pressed
         if (leftPressed)
@@ -86,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
             if (rightPressed || leftPressed)
             {
                 //Before
-               // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
+                // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
 
                 //After
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
@@ -103,25 +116,28 @@ public class PlayerMovement : MonoBehaviour
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
                     //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
+                    slash.Play();
+                    Instantiate(projectileAttack, rangeAttack.position, rangeAttack.rotation); 
+
                     AudioManager.Instance.PlaySound("Attack");
                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
-
                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
 
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
                     Invoke("AttackComplete", delay);
                 }
             }
-            if(life < 0){
+            if (life < 0)
+            {
 
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
                 //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_DEATH);
-                
+
                 gameOverPopUp.SetActive(true);
                 Time.timeScale = 0f;
             }
             //sets the animation to idle if player in not moving and not attacking 
-            else if(!attacking && !rightPressed && !leftPressed)
+            else if (!attacking && !rightPressed && !leftPressed)
             {
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
                 //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_IDLE);
@@ -129,44 +145,77 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            //if player is not 
             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
             //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
-        
-       
+
+
 
         //movement for computer inputs
-        /* 
-         transform.Translate(Vector2.right*horizontal*speed*Time.deltaTime);
-         if(horizontal != 0)
+        /* transform.Translate(Vector2.right * horizontal * speed * Time.deltaTime);
+
+         if (IsGrounded())
          {
-             if(horizontal < 0)
+             if(horizontal != 0)
              {
-             player.transform.localScale = new Vector2(-2.035237f, 1.875094f);
+                 if (horizontal < 0)
+                 {
+                     transform.localScale = new Vector2(2.035237f, 1.875094f);
+                 }
+                 if (horizontal > 0)
+                 {
+
+                     transform.localScale = new Vector2(-2.035237f, 1.875094f);
+                 }
+                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
              }
-             if(horizontal > 0)
+             if (isAttackPressed)
              {
-                player.transform.localScale = new Vector2(2.035237f, 1.875094f);
+                 isAttackPressed = false;
+                 //checks if player is attacking if not the attack animation will be set
+                 if (!attacking)
+                 {
+                     attacking = true;
+
+                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
+
+                     AudioManager.Instance.PlaySound("Attack");
+                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
+
+                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+
+                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
+                     Invoke("AttackComplete", delay);
+                 }
              }
-             //we can set running animation to True over here
+             else if(horizontal == 0 && !attacking)
+             {
+                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
+             }
          }
-         else if(horizontal == 0 || IsGrounded() == false)
+         else
          {
-             //set running animation to false 
-             //set jump animation to true
+             if (horizontal < 0)
+                 transform.localScale = new Vector2(2.035237f, 1.875094f);
+
+             if (horizontal > 0)
+                 transform.localScale = new Vector2(-2.035237f, 1.875094f);
+             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
          }
 
-
-         if (Input.GetButtonDown("Jump") && IsGrounded())
+         if (Input.GetButton("Jump"))
          {
-             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+             if (IsGrounded())
+             {
+                 rb.AddForce(Vector2.up * 100f);
+             }
          }
-
-         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+         if (Input.GetButton("Fire1"))
          {
-             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+             Attack();
+
          }*/
+
 
     }
 
@@ -221,7 +270,6 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log(enemy.name);
             Enemy.TakeDamage(attackDamage,enemy.gameObject);
         }
     }
