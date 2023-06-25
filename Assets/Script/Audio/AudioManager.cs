@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         foreach (Sounds s in sounds)
         {
             if (s.name == name)
-                s.source.PlayDelayed(0.1f);
+                s.source.Play();
         }
     }
     public void PauseSound(string name) {

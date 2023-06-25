@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    //Player Projectiles
 
     [SerializeField] private float speed;
 
-    private Vector2 direction;
+    //private Vector2 direction;
 
-    [SerializeField] private string targetTag;
+    //[SerializeField] private string targetTag;
  
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction *  speed * Time.deltaTime);
+        //transform.Translate(direction *  speed * Time.deltaTime);
     }
 
     public void Setup(Vector2 direction)
     {
-        this.direction = direction; 
+        //this.direction = direction; 
     }
 
     public void OnBecameInvisible()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

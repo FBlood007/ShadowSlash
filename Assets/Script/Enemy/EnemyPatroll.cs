@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPatroll : MonoBehaviour
 {
-    [SerializeField] private GameObject DamageArea;
+    [SerializeField] private GameObject enemy;
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
@@ -23,7 +23,7 @@ public class EnemyPatroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DamageArea.transform.position = gameObject.transform.position;
+        enemy.transform.position = gameObject.transform.position;
         Vector2 point = currentPoint.position - transform.position;
         if(currentPoint  == pointB.transform)
         {

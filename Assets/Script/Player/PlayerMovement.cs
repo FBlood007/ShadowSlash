@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    public GameObject projectileAttack;
     [SerializeField] ParticleSystem slash = null;
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
@@ -53,8 +53,9 @@ public class PlayerMovement : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 100;
+    public Transform rangeAttack;
 
-    
+
 
     void Start()
     {
@@ -116,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
                     //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
                     slash.Play();
-                 
+                    Instantiate(projectileAttack, rangeAttack.position, rangeAttack.rotation); 
 
                     AudioManager.Instance.PlaySound("Attack");
                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
