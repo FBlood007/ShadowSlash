@@ -15,7 +15,7 @@ public class CollectableItems : MonoBehaviour
     public GameObject collectPosition;
     private Transform collectTransform;
     private bool collected = false;
-    private float speed = 5f;//speed of the collectable when it travles to the UI
+    private float speed = 20f;//speed of the collectable when it travles to the UI
 
 
   
@@ -36,7 +36,7 @@ public class CollectableItems : MonoBehaviour
     {
         if (collected)
         {
-            transform.position = Vector3.MoveTowards(transform.position, collectTransform.position, Time.fixedDeltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position, collectTransform.position, Time.deltaTime * speed);
         }
         if(transform.position == collectTransform.position) {
 

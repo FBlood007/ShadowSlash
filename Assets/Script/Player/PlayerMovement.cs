@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpingPower = 400f; //jump force
     private bool rightPressed = false;
     private bool leftPressed = false;
+    private bool jumping = false;
     private bool isAttackPressed; //bool variable to check if attack key is pressed
     private bool attacking; //bool variable to check if player is attacking or not
     public int life;
@@ -91,7 +92,10 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * -1 * speed * Time.deltaTime);
             transform.localScale = new Vector2(2.035237f, 1.875094f);
         }
-
+        if (jumping)
+        {
+            Jump();
+        }
         //to check if the player is on the ground to toggle animation
         if (IsGrounded())
         {
@@ -117,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
                     //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
                     slash.Play();
-                    Instantiate(projectileAttack, rangeAttack.position, rangeAttack.rotation); 
+                    //Instantiate(projectileAttack, rangeAttack.position, rangeAttack .rotation); 
 
                     AudioManager.Instance.PlaySound("Attack");
                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
@@ -145,6 +149,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Jumping();
             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
             //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
@@ -253,13 +258,24 @@ public class PlayerMovement : MonoBehaviour
         leftPressed = false;
     }
 
+
+    public void Jumping()
+    {
+        jumping = true;
+        
+    }
+
     //function to trigger jump
     public void Jump()
     {
         if (IsGrounded())
         {
-            rb.AddForce(Vector2.up * jumpingPower);   
+           // rb.AddForce(Vector2.up * jumpingPower);
+            rb.AddForce(new Vector2(0,7.5f), ForceMode2D.Impulse);
+
         }
+        
+            jumping = false;
     }
 
     //checks if attack key is pressed
