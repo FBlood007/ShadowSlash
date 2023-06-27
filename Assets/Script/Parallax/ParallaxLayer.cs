@@ -4,8 +4,12 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ParallaxLayer : MonoBehaviour
 {
-    public float parallaxFactor;
 
+    //it takes float value to denote the distance of layer from player/camera
+    //ie. if parallaxFactor is 1 then the layer will move with the player layer will be far and if its 0.1 it will be close to player
+    public float parallaxFactor;
+    
+    //Function calculates the position of the layer with respect to factor
     public void Move(float delta)
     {
         Vector3 newPos = transform.localPosition;

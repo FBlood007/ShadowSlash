@@ -5,34 +5,34 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject projectileAttack;
-    [SerializeField] ParticleSystem slash = null;
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-    public GameObject gameOverPopUp;
+    public GameObject projectileAttack;
+    public GameObject gameOverPopUp;//gameover popup object
     [SerializeField]
     private SpriteRenderer[] spriteRenderers;
     [SerializeField] private float speed = 1f; //speed of the player
     public float jumpingPower = 400f; //jump force
     private bool rightPressed = false;
     private bool leftPressed = false;
+    private bool jumping = false;
     private bool isAttackPressed; //bool variable to check if attack key is pressed
     private bool attacking; //bool variable to check if player is attacking or not
-    public int life;
-    public bool isImmortal;
+    public int life;//player remaining lives
+    public bool isImmortal;//bool to check if player is immortal
     [SerializeField]
     private float immortalityTime;
-    public int level = 1;
-    public int noOfLife = 3;
+    public int level = 1;//level no
+    public int noOfLife = 3;//total no of life 
     Animator animator;
 
     private float horizontal = 0f;
 
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;//transform to check ground
+    [SerializeField] private LayerMask groundLayer;//ground layer 
 
   
     
@@ -62,15 +62,15 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         life = 3;
         //rb = GetComponent<Rigidbody2D>();
-        UIManager.Instance.AddLife(life);
+        UIManager.Instance.AddLife(life);//Calls method from UImanager to add life to player at the start of game
         isImmortal = false;
+
         if (SceneManager.GetActiveScene().name == "Level_1")
         {
-            
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PlaySound("Level1");
         }
-        slash.Stop();
+        
     }
     void Update()
     {
@@ -91,7 +91,10 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(Vector2.right * -1 * speed * Time.deltaTime);
             transform.localScale = new Vector2(2.035237f, 1.875094f);
         }
-
+        if (jumping)
+        {
+            Jump();
+        }
         //to check if the player is on the ground to toggle animation
         if (IsGrounded())
         {
@@ -116,8 +119,8 @@ public class PlayerMovement : MonoBehaviour
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
                     //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
-                    slash.Play();
-                    Instantiate(projectileAttack, rangeAttack.position, rangeAttack.rotation); 
+                   
+                    //Instantiate(projectileAttack, rangeAttack.position, rangeAttack .rotation); 
 
                     AudioManager.Instance.PlaySound("Attack");
                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
@@ -145,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            Jumping();
             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
             //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
@@ -253,13 +257,24 @@ public class PlayerMovement : MonoBehaviour
         leftPressed = false;
     }
 
+    //get input from UI button
+    public void Jumping()
+    {
+        jumping = true;
+        
+    }
+
     //function to trigger jump
     public void Jump()
     {
         if (IsGrounded())
         {
-            rb.AddForce(Vector2.up * jumpingPower);   
+           // rb.AddForce(Vector2.up * jumpingPower);
+            rb.AddForce(new Vector2(0,7.5f), ForceMode2D.Impulse);
+
         }
+        
+            jumping = false;
     }
 
     //checks if attack key is pressed

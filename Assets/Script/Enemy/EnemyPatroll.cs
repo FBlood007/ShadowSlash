@@ -5,26 +5,25 @@ using UnityEngine;
 public class EnemyPatroll : MonoBehaviour
 {
     [SerializeField] private GameObject enemy;
+    //gameobject to get the position of enemy patrolling  
     public GameObject pointA;
     public GameObject pointB;
     private Rigidbody2D rb;
-    private Animator anim;
     private Transform currentPoint;
     public float speed;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        //Debug.Log(gameObject.transform);
         currentPoint = pointA.transform;
-        //anim.SetBool("isRunning", true);
     }
     // Update is called once per frame
     void Update()
     {
         enemy.transform.position = gameObject.transform.position;
         Vector2 point = currentPoint.position - transform.position;
+
+        //checks if the the current point of enemy is located at point a or b
         if(currentPoint  == pointB.transform)
         {
             rb.velocity = new Vector2(speed, 0);

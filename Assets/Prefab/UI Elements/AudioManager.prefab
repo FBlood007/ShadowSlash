@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2806129742956042821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.65621, y: 3.6937866, z: -0.08048839}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47,26 +47,26 @@ MonoBehaviour:
   sounds:
   - name: Level1
     clip: {fileID: 8300000, guid: f57a3c6dfa24c7643bc192cf3910f7a0, type: 3}
-    volume: 0.07
+    volume: 0.6
     loop: 1
     source: {fileID: 0}
   - name: MainMenu
     clip: {fileID: 8300000, guid: bc60a44c67cbe054db2e77312506f951, type: 3}
-    volume: 0.07
+    volume: 0.6
     loop: 1
     source: {fileID: 0}
   - name: PlayerHurt
     clip: {fileID: 8300000, guid: 149b4c0788252334e8b49f69cc77fdb7, type: 3}
-    volume: 0.1
+    volume: 0.8
     loop: 0
     source: {fileID: 0}
   - name: Attack
     clip: {fileID: 8300000, guid: 58e0b33569ca01844b7c61aa79259a46, type: 3}
-    volume: 0.1
+    volume: 0.9
     loop: 0
     source: {fileID: 0}
   - name: Button
     clip: {fileID: 8300000, guid: 25c938dfac42ce94c837e297f697101c, type: 3}
-    volume: 0.4
+    volume: 0.8
     loop: 0
     source: {fileID: 0}

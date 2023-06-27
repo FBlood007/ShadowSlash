@@ -5,8 +5,8 @@ using UnityEngine;
 public class GhostSpawner : MonoBehaviour
 {
 
-    public Transform[] spawnPoints;
-    public GameObject[] enemyPrefab;
+    public Transform[] spawnPoints;//array of spawn points
+    public GameObject[] enemyPrefab;//array of different enemy prefab
     int randomSpawnPoints;
     int randomEnemy;
 

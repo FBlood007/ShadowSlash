@@ -4,6 +4,9 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class ParallaxCamera : MonoBehaviour
 {
+    //This script is attatched to the main camera
+
+
     public delegate void ParallaxCameraDelegate(float deltaMovement);
     public ParallaxCameraDelegate onCameraTranslate;
 
