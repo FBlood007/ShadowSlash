@@ -1,17 +1,21 @@
 using System.Collections;
 using UnityEngine;
 
-public class PlayerActions : MonoBehaviour
-{
+public class PlayerActions : MonoBehaviour { 
+
    PlayerMovement player;
 
-    /*public PlayerActions(PlayerMovement player)
+   /* public PlayerActions(PlayerMovement player)
     {
 
         this.player = player;
-    }*/
+    }
+   */
+
+
+
     //this function is used to reduce the live when player takes hit
-    private void Awake()
+     void Awake()
     {
            player = PlayerMovement.Instance;   
     }
@@ -64,6 +68,4 @@ public class PlayerActions : MonoBehaviour
         player.isImmortal = false;
     }
 
-
-  
 }
