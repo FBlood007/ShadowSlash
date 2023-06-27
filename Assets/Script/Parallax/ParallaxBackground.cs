@@ -18,6 +18,7 @@ public class ParallaxBackground : MonoBehaviour
         SetLayers();
     }
 
+    //Sets the layers in the list
     void SetLayers()
     {
         parallaxLayers.Clear();
@@ -33,7 +34,7 @@ public class ParallaxBackground : MonoBehaviour
             }
         }
     }
-
+    //function to move the layers
     void Move(float delta)
     {
         foreach (ParallaxLayer layer in parallaxLayers)

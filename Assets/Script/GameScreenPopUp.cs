@@ -5,28 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameScreenPopUp : MonoBehaviour
 {
-    public GameObject pauseBox;
-    public GameObject exitBox;
-    public GameObject settingPopup;
+    public GameObject pauseBox;//pause popup gameobject
+    public GameObject exitBox;//exit popup gameobject
+    public GameObject settingPopup;//setting popup gameobject
     void Start()
     {
         settingPopup.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-   
+    //function to lock the time frame when game is paused
     public void Pause()
     {
         Time.timeScale = 0f;
     }
+    //function to resume the time frame when game is resumed
     public void Resume()
     {
         Time.timeScale = 1f;
     }
+
+    //reload the scene when restarted
     public void RestartButton()
     {
         SceneManager.LoadScene("Level_1");

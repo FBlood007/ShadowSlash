@@ -5,24 +5,11 @@ using UnityEngine;
 public class CollectableItems : MonoBehaviour
 {
 
-    /* public void Collect()
-     {
-
-         UIManager.Instance.AddGem();
-         Destroy(gameObject);
-
-     }*/
-    public GameObject collectPosition;
+    
+    public GameObject collectPosition;//gameobject with position where the collectable will travel
     private Transform collectTransform;
     private bool collected = false;
-    private float speed = 20f;//speed of the collectable when it travles to the UI
-
-
-  
-
-    private void Start()
-    {
-    }
+    private float speed = 20f;//speed of the collectable when it travles to the U
 
 
     private void Update()

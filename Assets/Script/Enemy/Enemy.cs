@@ -5,34 +5,30 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private GameObject rangeAttack;
+    private GameObject rangeAttack;//Attack range of the enemy
 
     [SerializeField]
     private Transform boss;
     private Transform target;
     [SerializeField]
-    private float attackCooldown; 
+    private float attackCooldown;//cooldown for attacks
     private float timeSinceAttack;
     private bool canAttack = true;
     public int maxHealth = 100;
     static int currentHealth;
 
     public AudioClip clip;
-    private void Awake()
-    {
-
-
-    }
-
+    
     private void Start()
     {
-
         currentHealth = maxHealth;        
     }
     private void Update()
     {
         Attack();
     }
+
+    //Boss enemy attack function
     public void Attack()
     {
         if(!canAttack)
@@ -84,8 +80,7 @@ public class Enemy : MonoBehaviour
         }*/
     }
 
-   
-
+    //function in which damage taken by player is calculated
     public static void TakeDamage(int damage, GameObject enemy)
     {
         currentHealth -= damage;
@@ -95,6 +90,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    //function to destory enemy object
      public static void Die(GameObject enemy)
     {
         Destroy(enemy);

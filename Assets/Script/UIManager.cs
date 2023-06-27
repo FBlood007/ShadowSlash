@@ -18,9 +18,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public int OrbCount = 0;
-    public TextMeshProUGUI OrbText;
-    public TextMeshProUGUI levelCompleteOrbCount;
+    public int OrbCount = 0;//variable to keep the count of the orb
+    public TextMeshProUGUI OrbText;//text of orb
+    public TextMeshProUGUI levelCompleteOrbCount;//Count to show orb when level completed
 
     [SerializeField]
     private Transform lifeParent;
@@ -45,8 +45,7 @@ public class UIManager : MonoBehaviour
     public void Update()
     {
         
-        OrbText.text =  OrbCount.ToString() + "/7";
-
+        OrbText.text =  OrbCount.ToString() + "/7";//sets the no. of orb collected in the TMP
 
         if (SceneManager.GetActiveScene().name == "Level_1" && OrbCount == 7)
         {
@@ -56,6 +55,7 @@ public class UIManager : MonoBehaviour
         }
     }
    
+    //function to add life in the UI
     public void AddLife(int amount)
     {
         for(int i = 0; i < amount; i++)
@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //function to remove life image when player takes damage
     public void RemoveLife()
     {
         Destroy(lives.Pop());

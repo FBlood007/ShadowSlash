@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public GameObject projectileAttack;
-    [SerializeField] ParticleSystem slash = null;
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-    public GameObject gameOverPopUp;
+    public GameObject projectileAttack;
+    public GameObject gameOverPopUp;//gameover popup object
     [SerializeField]
     private SpriteRenderer[] spriteRenderers;
     [SerializeField] private float speed = 1f; //speed of the player
@@ -20,20 +19,20 @@ public class PlayerMovement : MonoBehaviour
     private bool jumping = false;
     private bool isAttackPressed; //bool variable to check if attack key is pressed
     private bool attacking; //bool variable to check if player is attacking or not
-    public int life;
-    public bool isImmortal;
+    public int life;//player remaining lives
+    public bool isImmortal;//bool to check if player is immortal
     [SerializeField]
     private float immortalityTime;
-    public int level = 1;
-    public int noOfLife = 3;
+    public int level = 1;//level no
+    public int noOfLife = 3;//total no of life 
     Animator animator;
 
     private float horizontal = 0f;
 
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;//transform to check ground
+    [SerializeField] private LayerMask groundLayer;//ground layer 
 
   
     
@@ -63,15 +62,15 @@ public class PlayerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         life = 3;
         //rb = GetComponent<Rigidbody2D>();
-        UIManager.Instance.AddLife(life);
+        UIManager.Instance.AddLife(life);//Calls method from UImanager to add life to player at the start of game
         isImmortal = false;
+
         if (SceneManager.GetActiveScene().name == "Level_1")
         {
-            
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PlaySound("Level1");
         }
-        slash.Stop();
+        
     }
     void Update()
     {
@@ -120,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
                     //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
-                    slash.Play();
+                   
                     //Instantiate(projectileAttack, rangeAttack.position, rangeAttack .rotation); 
 
                     AudioManager.Instance.PlaySound("Attack");
@@ -258,7 +257,7 @@ public class PlayerMovement : MonoBehaviour
         leftPressed = false;
     }
 
-
+    //get input from UI button
     public void Jumping()
     {
         jumping = true;

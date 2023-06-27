@@ -15,6 +15,8 @@ public class PlayerActions : MonoBehaviour
     {
            player = PlayerMovement.Instance;   
     }
+
+    //function is used to check if the player is hit and to remove the life
     public void TakeHit()
     {
       

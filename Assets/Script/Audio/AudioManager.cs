@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
-    [SerializeField]private Sounds[] sounds;
+    public static AudioManager Instance;//Instance of Audio Manager
+    [SerializeField]private Sounds[] sounds;//Array of sounds used in the game
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.volume = s.volume;
         }
+        //Checks the scene and plays audio according it
         if (SceneManager.GetActiveScene().name == "MenuScreens")
         {
             AudioManager.Instance.PauseSound("Level1");
@@ -47,6 +48,8 @@ public class AudioManager : MonoBehaviour
                 s.source.Play();
         }
     }
+
+    //function to pause the audio
     public void PauseSound(string name) {
         foreach (Sounds s in sounds)
         {
@@ -54,6 +57,8 @@ public class AudioManager : MonoBehaviour
                 s.source.Pause();
         }
     }
+
+    //functuin for button sound
     public void ButtonSound()
     {
         PlaySound("Button");
