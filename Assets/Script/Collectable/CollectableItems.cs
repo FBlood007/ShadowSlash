@@ -40,7 +40,7 @@ public class CollectableItems : MonoBehaviour
         }
         if(transform.position == collectTransform.position) {
 
-            UIManager.Instance.AddGem();
+            UIManager.Instance.AddOrb();
             
             Destroy(gameObject);
         }

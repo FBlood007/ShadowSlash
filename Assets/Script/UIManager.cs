@@ -18,9 +18,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public int gemCount = 0;
-    public TextMeshProUGUI gemText;
-    public TextMeshProUGUI levelCompleteGemCount;
+    public int OrbCount = 0;
+    public TextMeshProUGUI OrbText;
+    public TextMeshProUGUI levelCompleteOrbCount;
 
     [SerializeField]
     private Transform lifeParent;
@@ -34,23 +34,23 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        gemCount = 0;
+        OrbCount = 0;
         
     }
-    public void AddGem()
+    public void AddOrb()
     {
-        gemCount++;
+        OrbCount++;
 
     }
     public void Update()
     {
         
-        gemText.text =  gemCount.ToString() + "/7";
+        OrbText.text =  OrbCount.ToString() + "/7";
 
 
-        if (SceneManager.GetActiveScene().name == "Level_1" && gemCount == 7)
+        if (SceneManager.GetActiveScene().name == "Level_1" && OrbCount == 7)
         {
-            levelCompleteGemCount.text = gemCount.ToString();
+            levelCompleteOrbCount.text = OrbCount.ToString();
             levelComplete.SetActive(true);
             Time.timeScale = 0;
         }

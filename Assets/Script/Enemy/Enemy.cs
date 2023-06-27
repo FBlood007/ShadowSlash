@@ -57,8 +57,7 @@ public class Enemy : MonoBehaviour
         attack.GetComponent<Projectile>().Setup(direction);
     }
 
-
-
+  
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //was using before
