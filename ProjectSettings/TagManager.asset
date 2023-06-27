@@ -10,6 +10,7 @@ TagManager:
   - DamageArea
   - UiManager
   - Monster
+  - RangeAttack
   layers:
   - Default
   - TransparentFX

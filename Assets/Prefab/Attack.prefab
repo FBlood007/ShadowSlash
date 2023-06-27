@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -3635014834109528429}
   m_Layer: 0
   m_Name: Attack
-  m_TagString: Untagged
+  m_TagString: RangeAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55eeefbd05eb20a4eafbd7f96640983d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 251538917617302890, guid: 87a37a65951657146be76012087c26a8, type: 3}
   speed: 10
   targetTag: 
 --- !u!68 &7702784816868463080

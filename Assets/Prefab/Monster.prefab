@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35926186a361784cac00e0caa45f51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 0}
   rangeAttack: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0

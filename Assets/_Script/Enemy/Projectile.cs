@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
- 
+   
     [SerializeField] private float speed;
 
     private Vector2 direction;
@@ -30,8 +30,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
+        
         if (collision.tag == "DamageArea" )
         {
+        
            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
