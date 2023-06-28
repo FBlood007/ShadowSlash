@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
@@ -78,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
     
-    
     }
 
      void FixedUpdate()
@@ -132,7 +132,7 @@ public class PlayerMovement : MonoBehaviour
 
                   
                     GameObject slashAttack =  Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
-
+                    Destroy(slashAttack,1f);
 
                     Vector3 direction = new Vector3(attackPoint.localScale.x, 0);
                     slashAttack.GetComponent<Projectile>().Setup(direction);

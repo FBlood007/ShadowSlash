@@ -34,7 +34,6 @@ public class Projectile : MonoBehaviour
         
         if (collision.tag == "DamageArea" )
         {
-        
            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
