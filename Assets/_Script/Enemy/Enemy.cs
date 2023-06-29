@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject rangeAttack;//Attack range of the enemy
+
+    [SerializeField] private ParticleSystem deathParticles;
+    [SerializeField] private GameObject rangeAttack;//Attack range of the enemy
 
     [SerializeField]
     private Transform boss;
@@ -50,7 +51,7 @@ public class Enemy : MonoBehaviour
         GameObject attack = Instantiate(rangeAttack, boss.position, Quaternion.identity);
         Vector3 direction = new Vector3(transform.localScale.x,0);
 
-        attack.GetComponent<Projectile>().Setup(direction);
+        //attack.GetComponent<Projectile>().Setup(direction);
     }
 
   
@@ -70,14 +71,21 @@ public class Enemy : MonoBehaviour
            player.TakeHit();
         }
 
-
-       /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
+        if (gameObject.tag == "DamageArea" && collision.gameObject.tag == "RangeAttack")
         {
-            if (target == null)
-            {
-                this.target = gameObject.transform;
-            }
-        }*/
+            deathParticles.transform.position = gameObject.transform.position;
+            deathParticles.Play();
+          
+        }
+
+
+        /* if (gameObject.name == "AttackRange" && collision.tag == "Player")
+         {
+             if (target == null)
+             {
+                 this.target = gameObject.transform;
+             }
+         }*/
     }
 
     //function in which damage taken by player is calculated

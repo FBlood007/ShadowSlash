@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8ceb6a0e492198428e6a4290136154e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageArea: {fileID: 0}
+  enemy: {fileID: 0}
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   speed: 2
@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35926186a361784cac00e0caa45f51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 0}
   rangeAttack: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0

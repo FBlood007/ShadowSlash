@@ -375,7 +375,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1695297140}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ButtonSound
         m_Mode: 1
@@ -540,6 +540,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2806129742956042821, guid: 1ed01a5045b32b74a83c9e2e86b5d728, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806129742956042826, guid: 1ed01a5045b32b74a83c9e2e86b5d728, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806129742956042826, guid: 1ed01a5045b32b74a83c9e2e86b5d728, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 2806129742956042827, guid: 1ed01a5045b32b74a83c9e2e86b5d728, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -622,7 +634,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.25055718, y: 0.55877644}
   m_AnchorMax: {x: 0.43161356, y: 0.79600006}
-  m_AnchoredPosition: {x: -0.4244995, y: -0.53839874}
+  m_AnchoredPosition: {x: -0.4244995, y: -0.5383911}
   m_SizeDelta: {x: -0.84900093, y: 0.24580002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &383197286
@@ -987,7 +999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6273461, y: 0.53272223}
   m_AnchorMax: {x: 0.8193461, y: 0.757}
-  m_AnchoredPosition: {x: -1.5, y: 0.07810211}
+  m_AnchoredPosition: {x: -1.5, y: 0.07809448}
   m_SizeDelta: {x: -1.199997, y: 0.7919998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034729946
@@ -1179,7 +1191,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1695297140}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ButtonSound
         m_Mode: 1
@@ -1265,7 +1277,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.18167306, y: 0.5368889}
   m_AnchorMax: {x: 0.372, y: 0.757}
-  m_AnchoredPosition: {x: -0.5, y: -0.9218979}
+  m_AnchoredPosition: {x: -0.5, y: -0.9219055}
   m_SizeDelta: {x: 0.43910217, y: 3.5086994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1301126252
@@ -1489,7 +1501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.20746876, y: 0.13916668}
   m_AnchorMax: {x: 0.7908751, y: 0.87200004}
-  m_AnchoredPosition: {x: 9.240601, y: -17.040009}
+  m_AnchoredPosition: {x: 9.240601, y: -17.04004}
   m_SizeDelta: {x: 18.481, y: 28.651}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1666441282
@@ -1528,7 +1540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.558, y: 0.2654048}
   m_AnchorMax: {x: 0.7378374, y: 0.5}
-  m_AnchoredPosition: {x: -0.46900177, y: -0.19000244}
+  m_AnchoredPosition: {x: -0.46899414, y: -0.19000244}
   m_SizeDelta: {x: 0.29699707, y: 0.5250015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666441284
@@ -1613,6 +1625,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666441282}
   m_CullTransparentMesh: 1
+--- !u!114 &1695297140 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2806129742956042826, guid: 1ed01a5045b32b74a83c9e2e86b5d728, type: 3}
+  m_PrefabInstance: {fileID: 363652965}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b18040f49884246419408d539bc5af14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765136076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,7 +1719,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1695297140}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
         m_MethodName: ButtonSound
         m_Mode: 1
@@ -2204,7 +2227,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.404, y: 0.53272223}
   m_AnchorMax: {x: 0.5932186, y: 0.757}
-  m_AnchoredPosition: {x: 0.7369995, y: -0.9218979}
+  m_AnchoredPosition: {x: 0.7369995, y: -0.9219055}
   m_SizeDelta: {x: 1.5110016, y: 2.7919998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1941479051
@@ -2250,7 +2273,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1941479052}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1469300176}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: LevelSelect
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level_2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1941479052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2665,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.4186539, y: 0}
   m_AnchorMax: {x: 0.5932186, y: 0.2231905}
-  m_AnchoredPosition: {x: 0.5089989, y: 0.43600464}
+  m_AnchoredPosition: {x: 0.5090027, y: 0.43597412}
   m_SizeDelta: {x: 1.9662018, y: 1.7900009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3837585386887225031

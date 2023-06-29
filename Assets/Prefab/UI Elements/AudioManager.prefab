@@ -47,12 +47,12 @@ MonoBehaviour:
   sounds:
   - name: Level1
     clip: {fileID: 8300000, guid: f57a3c6dfa24c7643bc192cf3910f7a0, type: 3}
-    volume: 0.6
+    volume: 0.4
     loop: 1
     source: {fileID: 0}
   - name: MainMenu
     clip: {fileID: 8300000, guid: bc60a44c67cbe054db2e77312506f951, type: 3}
-    volume: 0.6
+    volume: 0.4
     loop: 1
     source: {fileID: 0}
   - name: PlayerHurt

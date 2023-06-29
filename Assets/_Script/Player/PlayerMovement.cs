@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class PlayerMovement : MonoBehaviour
 {
+
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-    public GameObject projectileAttack;
+
+    [SerializeField]private GameObject AttakProjectilePrefab;
+    List<GameObject> SlashList = new List<GameObject>();
+
     public GameObject gameOverPopUp;//gameover popup object
     [SerializeField]
     private SpriteRenderer[] spriteRenderers;
@@ -26,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     public int level = 1;//level no
     public int noOfLife = 3;//total no of life 
     Animator animator;
-
+    
     private float horizontal = 0f;
 
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
@@ -34,9 +41,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;//transform to check ground
     [SerializeField] private LayerMask groundLayer;//ground layer 
 
-  
-    
-    private PlayerActions actions;
+
 
     //Animation states
     const string PLAYER_IDLE = "PlayerIdle", 
@@ -54,8 +59,9 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage = 100;
     public Transform rangeAttack;
+    private int AttackAngle;
 
-
+  
 
     void Start()
     {
@@ -69,27 +75,34 @@ public class PlayerMovement : MonoBehaviour
         {
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PlaySound("Level1");
-        }
-        
+        }   
     }
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+    
     }
 
      void FixedUpdate()
     {
+        //actions.Move(transform);
+
         //moves player to the right when button pressed
         if (rightPressed)
         {
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.localScale = new Vector2(-2.035237f, 1.875094f);
+            transform.localScale = new Vector2(2.035237f, 1.875094f);
+            rangeAttack.localScale = new Vector2(1, 1);
+            AttackAngle = 0;
+          
         }
         //moves player to the left when button pressed
         if (leftPressed)
         {
-            transform.Translate(Vector2.right * -1 * speed * Time.deltaTime);
-            transform.localScale = new Vector2(2.035237f, 1.875094f);
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.localScale = new Vector2(-2.035237f, 1.875094f);
+            rangeAttack.localScale = new Vector2(-1, 1);
+            AttackAngle = 180;
         }
         if (jumping)
         {
@@ -117,13 +130,23 @@ public class PlayerMovement : MonoBehaviour
                     attacking = true;
 
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
-                    //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
-                   
-                    //Instantiate(projectileAttack, rangeAttack.position, rangeAttack .rotation); 
+                    //OBJECT POOLING
+                    if(SlashList.Count > 3)
+                    {
+                        SlashList[ReturnSlashFromPool()].transform.position = rangeAttack.position;
+                        Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                        SlashList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                    }
+                    else
+                    {
+                        GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));                     
+                        Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                        slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                        SlashList.Add(slashAttack);
+                    }
 
-                    AudioManager.Instance.PlaySound("Attack");
-                    //FindObjectOfType<AudioManager>().PlaySound("Attack");
+                     AudioManager.Instance.PlaySound("Attack");
                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
 
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
@@ -134,7 +157,6 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
-                //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_DEATH);
 
                 gameOverPopUp.SetActive(true);
                 Time.timeScale = 0f;
@@ -143,14 +165,12 @@ public class PlayerMovement : MonoBehaviour
             else if (!attacking && !rightPressed && !leftPressed)
             {
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
-                //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_IDLE);
             }
         }
         else
         {
             Jumping();
             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
-            //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
 
 
@@ -220,21 +240,24 @@ public class PlayerMovement : MonoBehaviour
 
          }*/
 
-
     }
 
-    public PlayerActions Actions
+    //function to get the index of the inactive Slash object from hierarchy
+    private int ReturnSlashFromPool()
     {
-
-        get
+        for (int i = 0; i < SlashList.Count; i++)
         {
-            return actions;
+            if (!SlashList[i].activeInHierarchy)
+            {
+                return i;
+            }
         }
+        return 0;
     }
-
 
     public float ImmortalityTime { get => immortalityTime; set => immortalityTime = value; }
     public SpriteRenderer[] SpriteRenderers { get => spriteRenderers; set => spriteRenderers = value; }
+    //public PlayerComponents Components { get => components;}
 
     //get input from UI button
     public void MoveRight()
@@ -310,4 +333,6 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
     
+
+
 }

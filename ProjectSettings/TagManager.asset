@@ -9,6 +9,8 @@ TagManager:
   - BossAttack
   - DamageArea
   - UiManager
+  - Monster
+  - RangeAttack
   layers:
   - Default
   - TransparentFX
