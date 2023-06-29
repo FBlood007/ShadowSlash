@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
         GameObject attack = Instantiate(rangeAttack, boss.position, Quaternion.identity);
         Vector3 direction = new Vector3(transform.localScale.x,0);
 
-        attack.GetComponent<Projectile>().Setup(direction);
+        //attack.GetComponent<Projectile>().Setup(direction);
     }
 
   

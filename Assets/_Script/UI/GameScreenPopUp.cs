@@ -27,7 +27,7 @@ public class GameScreenPopUp : MonoBehaviour
     //reload the scene when restarted
     public void RestartButton()
     {
-        SceneManager.LoadScene("Level_1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
 

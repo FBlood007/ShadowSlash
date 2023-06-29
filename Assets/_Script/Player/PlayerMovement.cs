@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-    private PlayerActions actions;
 
     [SerializeField]private GameObject AttakProjectilePrefab;
+    List<GameObject> SlashList = new List<GameObject>();
 
     public GameObject gameOverPopUp;//gameover popup object
     [SerializeField]
@@ -59,7 +60,8 @@ public class PlayerMovement : MonoBehaviour
     public int attackDamage = 100;
     public Transform rangeAttack;
     private int AttackAngle;
-   
+
+  
 
     void Start()
     {
@@ -128,17 +130,23 @@ public class PlayerMovement : MonoBehaviour
                     attacking = true;
 
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
-                    //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_ATTACK);
 
-                  
-                    GameObject slashAttack =  Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
-                    Destroy(slashAttack,1f);
+                    //OBJECT POOLING
+                    if(SlashList.Count > 3)
+                    {
+                        SlashList[ReturnSlashFromPool()].transform.position = rangeAttack.position;
+                        Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                        SlashList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                    }
+                    else
+                    {
+                        GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));                     
+                        Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                        slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                        SlashList.Add(slashAttack);
+                    }
 
-                    Vector3 direction = new Vector3(attackPoint.localScale.x, 0);
-                    slashAttack.GetComponent<Projectile>().Setup(direction);
-
-                    AudioManager.Instance.PlaySound("Attack");
-                    //FindObjectOfType<AudioManager>().PlaySound("Attack");
+                     AudioManager.Instance.PlaySound("Attack");
                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
 
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
@@ -149,7 +157,6 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
-                //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_DEATH);
 
                 gameOverPopUp.SetActive(true);
                 Time.timeScale = 0f;
@@ -158,14 +165,12 @@ public class PlayerMovement : MonoBehaviour
             else if (!attacking && !rightPressed && !leftPressed)
             {
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
-                //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_IDLE);
             }
         }
         else
         {
             Jumping();
             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
-            //FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_JUMP);
         }
 
 
@@ -235,18 +240,20 @@ public class PlayerMovement : MonoBehaviour
 
          }*/
 
-
     }
 
-    public PlayerActions Actions
+    //function to get the index of the inactive Slash object from hierarchy
+    private int ReturnSlashFromPool()
     {
-
-        get
+        for (int i = 0; i < SlashList.Count; i++)
         {
-            return actions;
+            if (!SlashList[i].activeInHierarchy)
+            {
+                return i;
+            }
         }
+        return 0;
     }
-
 
     public float ImmortalityTime { get => immortalityTime; set => immortalityTime = value; }
     public SpriteRenderer[] SpriteRenderers { get => spriteRenderers; set => spriteRenderers = value; }

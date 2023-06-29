@@ -4,45 +4,55 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-   
+
+    private Vector2 AttackDirection;
     [SerializeField] private float speed;
+    private bool hit;
+    private float lifetime;
 
-    private Vector2 direction;
+    private EdgeCollider2D edgeCollider;
 
-    [SerializeField] private string targetTag;  
- 
-
-    // Update is called once per frame
-    void FixedUpdate()
+    private void Awake()
     {
-        transform.Translate(direction *  speed * Time.deltaTime);
+       
+        edgeCollider = GetComponent<EdgeCollider2D>();
     }
-
-    public void Setup(Vector2 direction)
+  
+    void Update()
     {
-        this.direction = direction; 
+        if (hit) return;
+        transform.Translate(AttackDirection* speed * Time.deltaTime);
+
+        lifetime += Time.fixedDeltaTime;
+        if (lifetime > 2) gameObject.SetActive(false);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "DamageArea")
+        {
+            hit = true;
+            edgeCollider.enabled = false;
+            Destroy(collision.gameObject);
+            gameObject.SetActive(false);
+        }
+    }
+    public void SetDirection( Vector2 AttackDirection, int angle)
+    {
+        this.AttackDirection = AttackDirection;
+        lifetime = 0;
+        gameObject.SetActive(true);
+        hit = false;
+        edgeCollider.enabled = true;
+        transform.rotation = Quaternion.Euler(Vector3.forward*angle);
+    }
+    private void Deactivate()
+    {
+        gameObject.SetActive(false);
     }
 
     public void OnBecameInvisible()
     {
-        //Destroy(gameObject);
-    }
+        gameObject.SetActive(false);
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        
-        if (collision.tag == "DamageArea" )
-        {
-           Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-
-
-        /* if (collision.gameObject.tag == "Player")
-         {
-             UIManager.Instance.RemoveLife();
-             //FindObjectOfType<AudioManager>().PlaySound("CoinPickUp");
-         }*/
     }
 }
