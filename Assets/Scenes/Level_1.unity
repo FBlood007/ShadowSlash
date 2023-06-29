@@ -975,7 +975,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -1451,7 +1451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -1905,7 +1905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495773835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.605469, y: 0.7313125, z: -5}
+  m_LocalPosition: {x: -1.6643751, y: 0.7313125, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -2514,7 +2514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -2726,7 +2726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -3243,7 +3243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -3488,7 +3488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
@@ -3788,7 +3788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5262083424962529220, guid: f27c52b593be25e4ab0e4d15279d68b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.605469
+      value: -1.6643751
       objectReference: {fileID: 0}
     - target: {fileID: 5262083424962529220, guid: f27c52b593be25e4ab0e4d15279d68b8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3981,6 +3981,10 @@ PrefabInstance:
       propertyPath: OrbText
       value: 
       objectReference: {fileID: 992933626}
+    - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
+      propertyPath: Objective
+      value: 
+      objectReference: {fileID: 9031069607994208068}
     - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
       propertyPath: lifeParent
       value: 
@@ -4225,3 +4229,14 @@ PrefabInstance:
       objectReference: {fileID: 1184824768}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+--- !u!114 &9031069607994208068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9031069607418189293, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+  m_PrefabInstance: {fileID: 9031069607994208067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

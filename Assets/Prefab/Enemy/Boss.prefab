@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35926186a361784cac00e0caa45f51d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 0}
   rangeAttack: {fileID: 891779255193446460, guid: 47be0c15b20b05b4e80e6bbd92b0ccc6, type: 3}
   boss: {fileID: 5992447931579331717}
   attackCooldown: 3

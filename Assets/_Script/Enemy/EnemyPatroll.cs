@@ -26,11 +26,11 @@ public class EnemyPatroll : MonoBehaviour
         //checks if the the current point of enemy is located at point a or b
         if(currentPoint  == pointB.transform)
         {
-            rb.velocity = new Vector2(speed, 0);
+            rb.velocity = new Vector2(speed, transform.position.y);
         }
         else
         {
-            rb.velocity = new Vector2(-speed, 0);
+            rb.velocity = new Vector2(-speed, transform.position.y);
         }
         if(Vector2.Distance(transform.position, currentPoint.position)< 0.5f && currentPoint == pointB.transform)
         {

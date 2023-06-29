@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 891779255193446458}
   - component: {fileID: 891779255193446461}
   - component: {fileID: 8334854813486268384}
-  - component: {fileID: -8649588990868280311}
+  - component: {fileID: 7276514767544372731}
   m_Layer: 0
   m_Name: BossAttack
   m_TagString: BossAttack
@@ -72,11 +72,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1821753495
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b890eb01dff35e247bd87b70b8a927c6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,9 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  targetTag: Player
---- !u!61 &-8649588990868280311
-BoxCollider2D:
+--- !u!68 &7276514767544372731
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -114,15 +113,22 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.34, y: 4.67}
-    newSize: {x: 5.34, y: 4.67}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.34, y: 4.67}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.5585456, y: 0.16913432}
+  - {x: -1.1339756, y: 1.0364835}
+  - {x: -0.85686225, y: 1.2975731}
+  - {x: -0.32946882, y: 1.5817065}
+  - {x: 0.7770027, y: 1.2618382}
+  - {x: 1.1403419, y: 0.80204225}
+  - {x: 1.2626252, y: -0.042577676}
+  - {x: 1.1139704, y: -0.6116419}
+  - {x: 0.31147665, y: -1.2813964}
+  - {x: -0.44428504, y: -1.2891226}
+  - {x: -1.1250098, y: -0.9048276}
+  - {x: -1.4898366, y: -0.28388062}
+  - {x: -1.5341958, y: 0.21745841}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

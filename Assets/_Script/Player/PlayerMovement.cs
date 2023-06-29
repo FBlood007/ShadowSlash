@@ -169,8 +169,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Jumping();
             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
+            if (jumping)
+            {
+            Jumping();
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
+
+            }
         }
 
 
@@ -294,9 +299,8 @@ public class PlayerMovement : MonoBehaviour
         {
            // rb.AddForce(Vector2.up * jumpingPower);
             rb.AddForce(new Vector2(0,7.5f), ForceMode2D.Impulse);
-
+            
         }
-        
             jumping = false;
     }
 

@@ -22,19 +22,35 @@ public class Projectile : MonoBehaviour
     {
         if (hit) return;
         transform.Translate(AttackDirection* speed * Time.deltaTime);
-
+        
         lifetime += Time.fixedDeltaTime;
-        if (lifetime > 2) gameObject.SetActive(false);
+        if(gameObject.tag == "BossAttack")
+        {
+        if (lifetime > 5) gameObject.SetActive(false);
+        }
+        else
+        {
+            if (lifetime > 3) gameObject.SetActive(false);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "DamageArea")
+        if (collision.tag == "Monster" && gameObject.tag != "BossAttack")
         {
             hit = true;
             edgeCollider.enabled = false;
             Destroy(collision.gameObject);
             gameObject.SetActive(false);
         }
+        if (collision.gameObject.TryGetComponent(out PlayerActions player) && gameObject.tag == "BossAttack")
+        {
+            hit = true;
+            edgeCollider.enabled = false;
+            player.TakeHit();
+            gameObject.SetActive(false);
+        }
+
+        
     }
     public void SetDirection( Vector2 AttackDirection, int angle)
     {
