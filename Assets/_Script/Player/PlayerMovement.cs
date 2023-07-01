@@ -75,7 +75,14 @@ public class PlayerMovement : MonoBehaviour
         {
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PlaySound("Level1");
-        }   
+        }
+        if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            AudioManager.Instance.PauseSound("MainMenu");
+            AudioManager.Instance.PauseSound("Level1");
+            AudioManager.Instance.PlaySound("Level2");
+
+        }
     }
     void Update()
     {

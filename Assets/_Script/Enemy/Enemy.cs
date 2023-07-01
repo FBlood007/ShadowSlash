@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     //[SerializeField] private GameObject rangeAttack;//Attack range of the enemy
 
     [SerializeField] private GameObject AttakProjectilePrefab;
-    List<GameObject> EnemyAttackList = new List<GameObject>();
+    [SerializeField]List<GameObject> EnemyAttackList = new List<GameObject>();
 
     [SerializeField]
     private Transform boss;
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float attackCooldown;//cooldown for attacks
     //private float timeSinceAttack;
-    //private bool canAttack = true;
+    private bool canAttack = true;
     public int maxHealth = 100;
     static int currentHealth;
    
@@ -38,7 +38,7 @@ public class Enemy : MonoBehaviour
     //Boss enemy attack function
     public void Attack()
     {
-        AnimationHandling.Instance.ChangeAnimationState("TreeMonsterAttack");
+        //AnimationHandling.Instance.ChangeAnimationState("TreeMonsterAttack");
 
        /* if(!canAttack)
             timeSinceAttack += Time.deltaTime;
@@ -56,25 +56,27 @@ public class Enemy : MonoBehaviour
     public void Shoot()
     {
         //instantiates range attack in the game
-      
 
+       
 
         //OBJECT POOLING
-        if (EnemyAttackList.Count > 4 )
-        {
-            EnemyAttackList[ReturnSlashFromPool()].transform.position = boss.position;
-            Vector3 Slashdirection = new Vector3(-boss.localScale.x, 0);
-            EnemyAttackList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, 0);
-        }
-        else
-        {
-            if(EnemyAttackList.Count < 5 ) {
-            GameObject attack = Instantiate(AttakProjectilePrefab, boss.position, Quaternion.identity);
-            Vector3 direction = new Vector3(-boss.localScale.x, 0);
-            attack.GetComponent<Projectile>().SetDirection(direction, 0);
-            EnemyAttackList.Add(attack);
+        if(canAttack) { 
+            if (EnemyAttackList.Count < 6 )
+            {
+                GameObject attack = Instantiate(AttakProjectilePrefab, boss.position, Quaternion.identity);
+                Vector3 direction = new Vector3(-boss.localScale.x, 0);
+                attack.GetComponent<Projectile>().SetDirection(direction, 0);
+                EnemyAttackList.Add(attack);
+              
             }
-        }
+            else
+            {
+                EnemyAttackList[ReturnSlashFromPool()].transform.position = boss.position;
+                Vector3 Slashdirection = new Vector3(-boss.localScale.x, 0);
+                EnemyAttackList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, 0);
+            }
+          }
+        StartCoroutine(AttackDelay());
     }
 
   
@@ -135,5 +137,10 @@ public class Enemy : MonoBehaviour
         return 0;
     }
 
-
+    private IEnumerator AttackDelay()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(2);
+        canAttack = true;
+    }
 }

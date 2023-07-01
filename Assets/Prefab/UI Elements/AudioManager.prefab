@@ -70,3 +70,8 @@ MonoBehaviour:
     volume: 0.8
     loop: 0
     source: {fileID: 0}
+  - name: Level2
+    clip: {fileID: 8300000, guid: e78541654d099564d854489068132643, type: 3}
+    volume: 0.4
+    loop: 1
+    source: {fileID: 0}

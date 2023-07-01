@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
             levelComplete.SetActive(true);
             Time.timeScale = 0;
         }
-        if (SceneManager.GetActiveScene().name == "Level_2" && ObjectiveCount == 1)
+        if (SceneManager.GetActiveScene().name == "Level_2" && ObjectiveCount == 4)
         {
             levelCompleteOrbCount.text = ObjectiveCount.ToString();
             levelComplete.SetActive(true);
