@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bg
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+    - {fileID: 2800000, guid: d1db8dac97e156b4fa2614a1617b610a, type: 3}
+    - {fileID: 2800000, guid: cf9a8f19addf36143b8b97a376db102e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 432222968, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: 2079729361, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: -241064684, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: 250949936, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: 861374430, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: -123022828, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: 1069204353, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: -989220870, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: 297947677, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: 827076669, guid: eeff5fe5650c4e74bb96950d0d40a5ef, type: 3}
+  - {fileID: -612697173, guid: cf9a8f19addf36143b8b97a376db102e, type: 3}
+  - {fileID: 2034428907, guid: cf9a8f19addf36143b8b97a376db102e, type: 3}
+  - {fileID: -1729466168, guid: cf9a8f19addf36143b8b97a376db102e, type: 3}
+  - {fileID: -80920293, guid: cf9a8f19addf36143b8b97a376db102e, type: 3}
+  - {fileID: -725928089, guid: d1db8dac97e156b4fa2614a1617b610a, type: 3}
+  - {fileID: -2020505306, guid: d1db8dac97e156b4fa2614a1617b610a, type: 3}
+  - {fileID: 9998899, guid: d1db8dac97e156b4fa2614a1617b610a, type: 3}
+  - {fileID: -597729655, guid: d1db8dac97e156b4fa2614a1617b610a, type: 3}
+  - {fileID: -339581809, guid: d1db8dac97e156b4fa2614a1617b610a, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Scene2Sprite1_2
+  - Scene2Sprite1_7
+  - Scene2Sprite1_5
+  - Scene2Sprite1_75
+  - Scene2Sprite1_48
+  - Scene2Sprite1_68
+  - Scene2Sprite1_11
+  - Scene2Sprite1_10
+  - Scene2Sprite1_12
+  - Scene2Sprite1_31
+  - Scene2Sprite3_0
+  - Scene2Sprite3_1
+  - Scene2Sprite3_2
+  - Scene2Sprite3_3
+  - Scene2Sprite2_4
+  - Scene2Sprite2_1
+  - Scene2Sprite2_0
+  - Scene2Sprite2_3
+  - Scene2Sprite2_2
+  m_RenderDataMap: {}
+  m_Tag: Bg
+  m_IsVariant: 0

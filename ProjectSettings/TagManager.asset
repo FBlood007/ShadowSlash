@@ -57,6 +57,9 @@ TagManager:
   - name: Mountains
     uniqueID: 2946504403
     locked: 0
+  - name: Trees
+    uniqueID: 216234113
+    locked: 0
   - name: Play
     uniqueID: 1821753495
     locked: 0

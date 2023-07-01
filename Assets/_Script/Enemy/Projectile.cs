@@ -18,22 +18,25 @@ public class Projectile : MonoBehaviour
         edgeCollider = GetComponent<EdgeCollider2D>();
     }
 
-    void Update()
+
+
+    void FixedUpdate()
     {
         if (hit) return;
         if (gameObject.tag == "BossAttack"){
-            speed = 3f;   
+            speed = 2f;   
          }
         transform.Translate(AttackDirection* speed * Time.deltaTime);
         
         lifetime += Time.fixedDeltaTime;
         if(gameObject.tag == "BossAttack")
         {
-        if (lifetime > 4) gameObject.SetActive(false);
+        if (lifetime > 5f) 
+            gameObject.SetActive(false);
         }
         else
         {
-            if (lifetime > 3) gameObject.SetActive(false);
+            if (lifetime > 3f) gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
