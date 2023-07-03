@@ -54,9 +54,7 @@ public class Projectile : MonoBehaviour
             edgeCollider.enabled = false;
             player.TakeHit();
             gameObject.SetActive(false);
-        }
-
-        
+        }    
     }
     public void SetDirection( Vector2 AttackDirection, int angle)
     {
@@ -75,6 +73,6 @@ public class Projectile : MonoBehaviour
     public void OnBecameInvisible()
     {
         gameObject.SetActive(false);
-
     }
+
 }

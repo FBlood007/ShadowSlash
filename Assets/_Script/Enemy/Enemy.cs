@@ -53,16 +53,17 @@ public class Enemy : MonoBehaviour
             //Note : trigger attack animation here
         }*/
     }
+
+ 
+    //function of enemy range attack 
     public void Shoot()
     {
-        //instantiates range attack in the game
-
        
-
         //OBJECT POOLING
         if(canAttack) { 
             if (EnemyAttackList.Count < 6 )
             {
+                //instantiates range attack in the game
                 GameObject attack = Instantiate(AttakProjectilePrefab, boss.position, Quaternion.identity);
                 Vector3 direction = new Vector3(-boss.localScale.x, 0);
                 attack.GetComponent<Projectile>().SetDirection(direction, 0);
@@ -90,8 +91,9 @@ public class Enemy : MonoBehaviour
 
         if (gameObject.tag == "Monster" && collision.gameObject.tag == "RangeAttack")
         {
-            Vector3 pos = collision.transform.position;
-            deathParticles.transform.position = new Vector3(pos.x + 2.905f,pos.y,pos.z);
+            deathParticles.transform.position = boss.transform.position;
+           //Vector3 pos = collision.transform.position;
+           // deathParticles.transform.position = new Vector3(pos.x + 2.905f,pos.y,pos.z);
             deathParticles.Play();
             if(SceneManager.GetActiveScene().name == "Level_2")
             {
@@ -99,13 +101,13 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        if (gameObject.name == "AttackRange" && collision.tag == "Player")
+      /*  if (gameObject.name == "AttackRange" && collision.tag == "Player")
         {
             if (target == null)
             {
                 this.target = gameObject.transform;
             }
-        }
+        }*/
     }
 
     //function in which damage taken by player is calculated
@@ -137,6 +139,7 @@ public class Enemy : MonoBehaviour
         return 0;
     }
 
+    //function to delay the enemy attacks
     private IEnumerator AttackDelay()
     {
         canAttack = false;

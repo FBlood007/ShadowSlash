@@ -1774,7 +1774,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1821753495
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 105176210, guid: 004b5fda8cc082748b8e68311f300a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1851,7 +1851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495773835}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6643751, y: 0.7313125, z: -5}
+  m_LocalPosition: {x: -1.6068547, y: 0.7313125, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2569,7 +2569,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1821753495
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 105176210, guid: 004b5fda8cc082748b8e68311f300a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2782,7 +2782,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1821753495
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 105176210, guid: 004b5fda8cc082748b8e68311f300a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3546,7 +3546,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1821753495
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 105176210, guid: 004b5fda8cc082748b8e68311f300a44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3739,7 +3739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5262083424962529220, guid: f27c52b593be25e4ab0e4d15279d68b8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.6643751
+      value: -1.6068547
       objectReference: {fileID: 0}
     - target: {fileID: 5262083424962529220, guid: f27c52b593be25e4ab0e4d15279d68b8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3915,7 +3915,9 @@ PrefabInstance:
       propertyPath: parallaxCamera
       value: 
       objectReference: {fileID: 519420036}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6055716177855751588, guid: cf355796c8542cf449a07bfd08a1754b, type: 3}
+    - {fileID: 6055716177855751587, guid: cf355796c8542cf449a07bfd08a1754b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cf355796c8542cf449a07bfd08a1754b, type: 3}
 --- !u!1001 &7206696520238368322
 PrefabInstance:

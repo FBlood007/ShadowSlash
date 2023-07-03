@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     }
 
     public int ObjectiveCount = 0;//variable to keep the count of the objective
-    public TextMeshProUGUI OrbText;//text of orb
+    public TextMeshProUGUI ObjectiveText;//text of orb
     public TextMeshProUGUI levelCompleteOrbCount;//Count to show orb when level completed
     public TextMeshProUGUI Objective;
    
@@ -57,11 +57,11 @@ public class UIManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "Level_1")
         {
-            OrbText.text = ObjectiveCount.ToString() + "/7";
+            ObjectiveText.text = ObjectiveCount.ToString() + "/7";
         }
         else
         {
-            OrbText.text = ObjectiveCount.ToString() + "/4";
+            ObjectiveText.text = ObjectiveCount.ToString() + "/4";
         }
          
         if (SceneManager.GetActiveScene().name == "Level_1" && ObjectiveCount == 7)
