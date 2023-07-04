@@ -2450,7 +2450,7 @@ GameObject:
   - component: {fileID: 9031069607309138360}
   - component: {fileID: 9031069607309138361}
   m_Layer: 5
-  m_Name: OrbCount
+  m_Name: ObjectiveCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4603,7 +4603,7 @@ GameObject:
   - component: {fileID: 9031069608945727213}
   - component: {fileID: 9031069608945727214}
   m_Layer: 5
-  m_Name: OrbText
+  m_Name: ObjectiveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

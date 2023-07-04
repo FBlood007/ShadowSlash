@@ -27,16 +27,16 @@ public class Projectile : MonoBehaviour
             speed = 2f;   
          }
         transform.Translate(AttackDirection* speed * Time.deltaTime);
-        
         lifetime += Time.fixedDeltaTime;
+
         if(gameObject.tag == "BossAttack")
         {
-        if (lifetime > 5f) 
+         if (lifetime > 5f) 
             gameObject.SetActive(false);
         }
         else
         {
-            if (lifetime > 3f) gameObject.SetActive(false);
+            if (lifetime > 1.5f) gameObject.SetActive(false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

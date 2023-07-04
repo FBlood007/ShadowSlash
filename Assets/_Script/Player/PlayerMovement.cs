@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer[] spriteRenderers;
     [SerializeField] private float speed = 1f; //speed of the player
     public float jumpingPower = 400f; //jump force
+    public float jumpForce;
     private bool rightPressed = false;
     private bool leftPressed = false;
     private bool jumping = false;
@@ -67,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         life = 3;
-        //rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         UIManager.Instance.AddLife(life);//Calls method from UImanager to add life to player at the start of game
         isImmortal = false;
 
@@ -180,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
             if (jumping)
             {
             Jumping();
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
+            //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
 
             }
         }
@@ -304,9 +305,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-           // rb.AddForce(Vector2.up * jumpingPower);
-            rb.AddForce(new Vector2(0,7.5f), ForceMode2D.Impulse);
-            
+            // rb.AddForce(Vector2.up * jumpingPower);
+            //rb.AddForce(new Vector2(0,7.5f), ForceMode2D.Impulse);
+            rb.velocity = Vector2.up * jumpForce;
         }
             jumping = false;
     }

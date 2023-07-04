@@ -91,9 +91,17 @@ public class Enemy : MonoBehaviour
 
         if (gameObject.tag == "Monster" && collision.gameObject.tag == "RangeAttack")
         {
+            if(SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                Vector3 pos = collision.transform.position;
+                deathParticles.transform.position = new Vector3(pos.x + 2.905f,pos.y,pos.z);
+            }
+            else
+            {
             deathParticles.transform.position = boss.transform.position;
-           //Vector3 pos = collision.transform.position;
-           // deathParticles.transform.position = new Vector3(pos.x + 2.905f,pos.y,pos.z);
+
+            }
+        
             deathParticles.Play();
             if(SceneManager.GetActiveScene().name == "Level_2")
             {
