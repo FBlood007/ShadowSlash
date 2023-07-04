@@ -62,10 +62,24 @@ public class PlayerMovement : MonoBehaviour
     public Transform rangeAttack;
     private int AttackAngle;
 
-  
+    //player Sprite
+    public CharacterDatabase characterDB;
+    public SpriteRenderer characterSprite;
+    private int selectedOption = 0;
 
     void Start()
     {
+        if (!PlayerPrefs.HasKey("SelectedOption"))
+        {
+            selectedOption = 0;
+        }
+        else
+        {
+            Load();
+        }
+        UpdateCharacter(selectedOption);
+
+
         animator = GetComponent<Animator>();
         life = 3;
         rb = GetComponent<Rigidbody2D>();
@@ -344,7 +358,18 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
-    
 
+
+    private void UpdateCharacter(int selectedOption)
+    {
+        Character character = characterDB.GetCharacter(selectedOption);
+        characterSprite.sprite = character.characterSprite;
+        characterSprite.material = character.swordMaterial;
+    }
+
+    private void Load()
+    {
+        selectedOption = PlayerPrefs.GetInt("SelectedOption");
+    }
 
 }

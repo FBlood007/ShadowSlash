@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -15,9 +16,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        
+       
         numberOfOrbs = PlayerPrefs.GetInt("NumberOfOrbs",0);
-        if (Instance != null && Instance != this)
+       /* if (Instance != null && Instance != this)
         {
             Destroy(this);
         }
@@ -25,18 +26,26 @@ public class PlayerManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-        }
+        }*/
 
     }
 
     private void Start()
     {
+        if (!PlayerPrefs.HasKey("SelectedOption"))
+        {
+            selectedOption = 0;
+        }
+        else
+        {
+            Load();
+        }
         UpdateCharacter(selectedOption);
     }
 
     private void Update()
     {
-        Debug.Log(numberOfOrbs);
+        
 
     }
 
@@ -70,7 +79,17 @@ public class PlayerManager : MonoBehaviour
     {
         Character character = characterDB.GetCharacter(selectedOption);
         characterSprite.sprite = character.characterSprite;
+        characterSprite.material = character.swordMaterial;
+    }
 
+
+    private void Load()
+    {
+        selectedOption = PlayerPrefs.GetInt("SelectedOption");
+    }
+    public void Save()
+    {
+        PlayerPrefs.SetInt("SelectedOption",selectedOption);
     }
 
 }

@@ -1673,6 +1673,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8872732108329492707, guid: c16230dd29ffb1441bacebc5fc889ec4, type: 3}
+      propertyPath: characterDB
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b7fbacabe257924dbbeee16a2b2577d, type: 2}
+    - target: {fileID: 8872732108329492707, guid: c16230dd29ffb1441bacebc5fc889ec4, type: 3}
+      propertyPath: characterSprite
+      value: 
+      objectReference: {fileID: 434021499}
     - target: {fileID: 8872732108329492711, guid: c16230dd29ffb1441bacebc5fc889ec4, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1719,6 +1727,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c16230dd29ffb1441bacebc5fc889ec4, type: 3}
+--- !u!212 &434021499 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8872732108329492704, guid: c16230dd29ffb1441bacebc5fc889ec4, type: 3}
+  m_PrefabInstance: {fileID: 434021498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456495765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2306,7 +2319,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 2974c39ac893e8544b2220785854ebe6, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 745c1515f2707e24fafdf8c204d43315, type: 2}
 --- !u!4 &609703269
 Transform:
   m_ObjectHideFlags: 0

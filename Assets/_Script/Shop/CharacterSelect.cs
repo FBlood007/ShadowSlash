@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour
 {
-    public GameObject[] skins;
+   /* public GameObject[] skins;
     public int selectedCharacter;
 
     private void Awake()
@@ -17,6 +17,6 @@ public class CharacterSelect : MonoBehaviour
         }
         skins[selectedCharacter].SetActive(true);    
     }
-
+*/
 
 }
