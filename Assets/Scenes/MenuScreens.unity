@@ -981,7 +981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1034729945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1446,7 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 305024200}
   settings: {fileID: 1786417932}
-  levels: {fileID: 0}
+  levels: {fileID: 1468860463}
 --- !u!4 &1469300177
 Transform:
   m_ObjectHideFlags: 0

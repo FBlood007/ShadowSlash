@@ -27,7 +27,7 @@ public class CollectableItems : MonoBehaviour
         }
         if(transform.position == collectTransform.position) {
 
-            UIManager.Instance.AddOrb();
+            UIManager.Instance.AddObjectiveCount();
             
             Destroy(gameObject);
         }

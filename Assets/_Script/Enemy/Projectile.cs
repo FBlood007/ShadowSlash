@@ -17,24 +17,44 @@ public class Projectile : MonoBehaviour
        
         edgeCollider = GetComponent<EdgeCollider2D>();
     }
-  
-    void Update()
+
+
+
+    void FixedUpdate()
     {
         if (hit) return;
+        if (gameObject.tag == "BossAttack"){
+            speed = 2f;   
+         }
         transform.Translate(AttackDirection* speed * Time.deltaTime);
-
         lifetime += Time.fixedDeltaTime;
-        if (lifetime > 2) gameObject.SetActive(false);
+
+        if(gameObject.tag == "BossAttack")
+        {
+         if (lifetime > 5f) 
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            if (lifetime > 1.5f) gameObject.SetActive(false);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "DamageArea")
+        if (collision.tag == "Monster" && gameObject.tag != "BossAttack")
         {
             hit = true;
             edgeCollider.enabled = false;
             Destroy(collision.gameObject);
             gameObject.SetActive(false);
         }
+        if (collision.gameObject.TryGetComponent(out PlayerActions player) && gameObject.tag == "BossAttack")
+        {
+            hit = true;
+            edgeCollider.enabled = false;
+            player.TakeHit();
+            gameObject.SetActive(false);
+        }    
     }
     public void SetDirection( Vector2 AttackDirection, int angle)
     {
@@ -53,6 +73,6 @@ public class Projectile : MonoBehaviour
     public void OnBecameInvisible()
     {
         gameObject.SetActive(false);
-
     }
+
 }

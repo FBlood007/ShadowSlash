@@ -34,8 +34,10 @@ public class AudioManager : MonoBehaviour
         //Checks the scene and plays audio according it
         if (SceneManager.GetActiveScene().name == "MenuScreens")
         {
-            AudioManager.Instance.PauseSound("Level1");
-            AudioManager.Instance.PlaySound("MainMenu");
+            PauseSound("Level1");
+            PauseSound("Level2");
+            PlaySound("MainMenu");
+            
         }
     }
 

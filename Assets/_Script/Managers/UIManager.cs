@@ -18,9 +18,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public int OrbCount = 0;//variable to keep the count of the orb
-    public TextMeshProUGUI OrbText;//text of orb
+    public int ObjectiveCount = 0;//variable to keep the count of the objective
+    public TextMeshProUGUI ObjectiveCountText;//text of orb
     public TextMeshProUGUI levelCompleteOrbCount;//Count to show orb when level completed
+    public TextMeshProUGUI Objective;
+   
+
 
     [SerializeField]
     private Transform lifeParent;
@@ -34,22 +37,42 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1f;
-        OrbCount = 0;
-        
+        ObjectiveCount = 0;
+        if(SceneManager.GetActiveScene().name == "Level_1")
+        {
+            Objective.text = "Collect all Orbs";
+        }
+        if (SceneManager.GetActiveScene().name == "Level_2")
+        {
+            Objective.text = "Kill all Monsters";
+        }
+
     }
-    public void AddOrb()
+    public void AddObjectiveCount()
     {
-        OrbCount++;
+        ObjectiveCount++;
 
     }
     public void Update()
     {
-        
-        OrbText.text =  OrbCount.ToString() + "/7";//sets the no. of orb collected in the TMP
-
-        if (SceneManager.GetActiveScene().name == "Level_1" && OrbCount == 7)
+        if(SceneManager.GetActiveScene().name == "Level_1")
         {
-            levelCompleteOrbCount.text = OrbCount.ToString();
+            ObjectiveCountText.text = ObjectiveCount.ToString() + "/7";
+        }
+        else
+        {
+            ObjectiveCountText.text = ObjectiveCount.ToString() + "/4";
+        }
+         
+        if (SceneManager.GetActiveScene().name == "Level_1" && ObjectiveCount == 7)
+        {
+            levelCompleteOrbCount.text = ObjectiveCount.ToString();
+            levelComplete.SetActive(true);
+            Time.timeScale = 0;
+        }
+        if (SceneManager.GetActiveScene().name == "Level_2" && ObjectiveCount == 4)
+        {
+            levelCompleteOrbCount.text = ObjectiveCount.ToString();
             levelComplete.SetActive(true);
             Time.timeScale = 0;
         }

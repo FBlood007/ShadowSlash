@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1828829191801367226}
   m_Layer: 7
   m_Name: Monster
-  m_TagString: DamageArea
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   rangeAttack: {fileID: 0}
+  AttakProjectilePrefab: {fileID: 0}
   boss: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
