@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private GameObject AttakProjectilePrefab;
     List<GameObject> SlashList = new List<GameObject>();
 
-    public GameObject gameOverPopUp;//gameover popup object
+    //public GameObject gameOverPopUp;//gameover popup object
     [SerializeField]
     private SpriteRenderer[] spriteRenderers;
     [SerializeField] private float speed = 1f; //speed of the player
@@ -166,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
 
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
 
-                gameOverPopUp.SetActive(true);
+                //gameOverPopUp.SetActive(true);
                 Time.timeScale = 0f;
             }
             //sets the animation to idle if player in not moving and not attacking 

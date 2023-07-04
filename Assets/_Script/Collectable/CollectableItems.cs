@@ -11,6 +11,13 @@ public class CollectableItems : MonoBehaviour
     private bool collected = false;
     private float speed = 20f;//speed of the collectable when it travles to the U
 
+    private void Awake()
+    {
+        if (PlayerPrefs.GetString(gameObject.name) == "true")
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     private void Update()
     {
@@ -26,9 +33,11 @@ public class CollectableItems : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, collectTransform.position, Time.deltaTime * speed);
         }
         if(transform.position == collectTransform.position) {
-
+            PlayerManager.numberOfOrbs++;
+            PlayerPrefs.SetInt("NumberOfOrbs",PlayerManager.numberOfOrbs);
+            PlayerPrefs.SetString(gameObject.name,"true");
             UIManager.Instance.AddObjectiveCount();
-            
+          
             Destroy(gameObject);
         }
     }

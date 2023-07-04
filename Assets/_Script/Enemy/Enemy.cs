@@ -101,12 +101,12 @@ public class Enemy : MonoBehaviour
             deathParticles.transform.position = boss.transform.position;
 
             }
-        
             deathParticles.Play();
-            if(SceneManager.GetActiveScene().name == "Level_2")
+            UIManager.Instance.AddObjectiveCount();
+            /*if(SceneManager.GetActiveScene().name == "Level_2")
             {
                 UIManager.Instance.AddObjectiveCount();
-            }
+            }*/
         }
 
       /*  if (gameObject.name == "AttackRange" && collision.tag == "Player")
