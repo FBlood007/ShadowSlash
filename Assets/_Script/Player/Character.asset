@@ -18,8 +18,13 @@ MonoBehaviour:
     isUnlocked: 1
     characterSprite: {fileID: 686788834, guid: 8abd3a13c8e23df49a8b1630e6c920c3, type: 3}
     swordMaterial: {fileID: 2100000, guid: 70c4508136426a44bbaaa79174e79899, type: 2}
-  - name: ShadowNinja
+  - name: ShadowNinja2
     price: 50
     isUnlocked: 0
     characterSprite: {fileID: 686788834, guid: 8abd3a13c8e23df49a8b1630e6c920c3, type: 3}
     swordMaterial: {fileID: 2100000, guid: 300a98983e9388743a5f562e9a130dd6, type: 2}
+  - name: ShadowNinja3
+    price: 50
+    isUnlocked: 0
+    characterSprite: {fileID: 686788834, guid: 8abd3a13c8e23df49a8b1630e6c920c3, type: 3}
+    swordMaterial: {fileID: 2100000, guid: 83ff0c0fdd450cf48993679512963cf3, type: 2}
