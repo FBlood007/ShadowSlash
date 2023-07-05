@@ -73,6 +73,7 @@ public class PlayerManager : MonoBehaviour
         {
             selectedOption = characterDB.CharacterCount - 1;    
         }
+        UpdateCharacter(selectedOption);
     }
 
     private void UpdateCharacter(int selectedOption)

@@ -36,7 +36,7 @@ public class CollectableItems : MonoBehaviour
             PlayerManager.numberOfOrbs++;
             PlayerPrefs.SetInt("NumberOfOrbs",PlayerManager.numberOfOrbs);
             PlayerPrefs.SetString(gameObject.name,"true");
-            UIManager.Instance.AddObjectiveCount();
+            UIManager.Instance.NoOfOrbCollectedPerLevel();
           
             Destroy(gameObject);
         }

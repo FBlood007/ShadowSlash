@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -23,8 +22,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI ObjectiveCountText;//text of orb
     public TextMeshProUGUI levelCompleteOrbCount;//Count to show orb when level completed
     public TextMeshProUGUI Objective;
-   
-
+    public int orbCollectedInLevel = 0;
 
     [SerializeField]
     private Transform lifeParent;
@@ -53,8 +51,15 @@ public class UIManager : MonoBehaviour
     public void AddObjectiveCount()
     {
         ObjectiveCount++;
-
+        //Debug.Log("Enemy killed "+ ObjectiveCount);
     }
+
+    public void NoOfOrbCollectedPerLevel()
+    {
+        orbCollectedInLevel++;
+    }
+
+
     public void Update()
     {
         if(SceneManager.GetActiveScene().name == "Level_1")
@@ -69,15 +74,18 @@ public class UIManager : MonoBehaviour
          
         if (SceneManager.GetActiveScene().name == "Level_1" && ObjectiveCount == 5)
         {
-            levelCompleteOrbCount.text = ObjectiveCount.ToString();
+            Debug.Log(orbCollectedInLevel + "Level Completed with this much of orbs");
+            levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
             Time.timeScale = 0;
+            //orbCollectedInLevel = 0;
         }
         if (SceneManager.GetActiveScene().name == "Level_2" && ObjectiveCount == 4)
         {
-            levelCompleteOrbCount.text = ObjectiveCount.ToString();
+            levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
             Time.timeScale = 0;
+            //orbCollectedInLevel = 0;
         }
         if(PlayerMovement.Instance.life == 0)
         {
