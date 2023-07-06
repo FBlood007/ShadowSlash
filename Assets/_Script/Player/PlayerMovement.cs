@@ -319,8 +319,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            // rb.AddForce(Vector2.up * jumpingPower);
-            //rb.AddForce(new Vector2(0,7.5f), ForceMode2D.Impulse);
+            //rb.AddForce(Vector2.up * jumpingPower);
             rb.velocity = Vector2.up * jumpForce;
         }
             jumping = false;
