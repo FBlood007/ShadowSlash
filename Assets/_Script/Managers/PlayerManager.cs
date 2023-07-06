@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static PlayerManager Instance;//Instance of Player Manager
+    //public static PlayerManager Instance;//Instance of Player Manager
     public static int numberOfOrbs;
 
     public CharacterDatabase characterDB;
@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        AnimationHandling.Instance.ChangeAnimationState("PlayerIdle");
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;

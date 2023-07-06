@@ -10,6 +10,7 @@ public class ToastMessage : MonoBehaviour
     //function to set toast message active
     public void OnSelect()
     {
+        //Debug.Log("Selected");
         toastMessage.SetActive(true);
         StartCoroutine(Timeout());
        

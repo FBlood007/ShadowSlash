@@ -46,7 +46,17 @@ public class GameScreenPopUp : MonoBehaviour
         SceneManager.LoadScene("MenuScreens");
     }
 
-   
-    
+    public void MuteAudio(bool mute)
+    {
+        if (mute)
+        {
+            AudioListener.volume = 0;
+        }
+        else
+        {
+            AudioListener.volume = 1;
+        }
+    }
+
 
 }

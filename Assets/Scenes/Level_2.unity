@@ -6456,6 +6456,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.760025
       objectReference: {fileID: 0}
+    - target: {fileID: 9031069608415666823, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9031069608444885816, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
       propertyPath: m_text
       value: Kills X
