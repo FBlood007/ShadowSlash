@@ -40,6 +40,9 @@ public class GameScreenPopUp : MonoBehaviour
     public void MainMenuButton()
     {
         //UIManager._gemCount = 0;
+        if(Time.timeScale != 1f) {
+            Time.timeScale = 1f;
+        }
         AudioManager.Instance.PauseSound("Level2");
         AudioManager.Instance.PauseSound("Level1");
         AudioManager.Instance.PlaySound("MainMenu");

@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
+//Animator animator;
 
     private void Awake()
     {
@@ -32,7 +33,9 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
+        //animator = GetComponent<Animator>();
         AnimationHandling.Instance.ChangeAnimationState("PlayerIdle");
+        //animator.Play("PLayerIdle");
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;
@@ -58,6 +61,7 @@ public class PlayerManager : MonoBehaviour
 
     public void NextOption()
     {
+        Debug.Log(Time.timeScale);
         selectedOption++;
         if(selectedOption >= characterDB.CharacterCount)
         {
