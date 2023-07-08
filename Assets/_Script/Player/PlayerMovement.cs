@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-
+   
     [SerializeField]private GameObject AttakProjectilePrefab;
     List<GameObject> SlashList = new List<GameObject>();
 
@@ -66,6 +66,9 @@ public class PlayerMovement : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
+    private Color selectedAttackColor;
+
+    
 
     void Start()
     {
@@ -164,6 +167,8 @@ public class PlayerMovement : MonoBehaviour
                         else
                         {
                             GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
+                            Renderer rend = slashAttack.GetComponent<Renderer>();
+                            rend.material.color = selectedAttackColor;
                             Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
                             slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
                             SlashList.Add(slashAttack);
@@ -388,6 +393,7 @@ public class PlayerMovement : MonoBehaviour
         Character character = characterDB.GetCharacter(selectedOption);
         characterSprite.sprite = character.characterSprite;
         characterSprite.material = character.swordMaterial;
+        selectedAttackColor = character.attackColor;
     }
 
     private void Load()

@@ -15,14 +15,6 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         TotalOrbCount.text = PlayerPrefs.GetInt("NumberOfOrbs", 0).ToString();
-        //mainMenu.SetActive(true);
-        //settings.SetActive(false);
-        //levels.SetActive(false);
-        if (SceneManager.GetActiveScene().name == "MenuScreens")
-        {
-            //AudioManager.Instance.PauseSound("Level1");
-            //AudioManager.Instance.PlaySound("MainMenu");
-        }
     }
     void Update()
     {
@@ -31,6 +23,7 @@ public class MainMenu : MonoBehaviour
         {
             if (mainMenu.activeInHierarchy)
             {
+                PlayerPrefs.Save();
                 Application.Quit();
             }
             if(settings.activeInHierarchy || levels.activeInHierarchy)

@@ -10,5 +10,6 @@ public class Character
     public bool isUnlocked;
     public Sprite characterSprite;
     public Material swordMaterial;
+    public Color attackColor;
 
 }
