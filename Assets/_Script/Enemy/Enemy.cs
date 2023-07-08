@@ -11,10 +11,12 @@ public class Enemy : MonoBehaviour
     //[SerializeField] private GameObject rangeAttack;//Attack range of the enemy
 
     [SerializeField] private GameObject AttakProjectilePrefab;
+    [SerializeField] private GameObject CollectablePrefab;
+
     [SerializeField]List<GameObject> EnemyAttackList = new List<GameObject>();
 
     [SerializeField]
-    private Transform boss;
+    private Transform currentPosition;
     private Transform target;
     [SerializeField]
     private float attackCooldown;//cooldown for attacks
@@ -22,8 +24,9 @@ public class Enemy : MonoBehaviour
     private bool canAttack = true;
     public int maxHealth = 100;
     static int currentHealth;
-   
     public AudioClip clip;
+
+
     
     private void Start()
     {
@@ -64,22 +67,23 @@ public class Enemy : MonoBehaviour
             if (EnemyAttackList.Count < 6 )
             {
                 //instantiates range attack in the game
-                GameObject attack = Instantiate(AttakProjectilePrefab, boss.position, Quaternion.identity);
-                Vector3 direction = new Vector3(-boss.localScale.x, 0);
+                GameObject attack = Instantiate(AttakProjectilePrefab, currentPosition.position, Quaternion.identity);
+                Vector3 direction = new Vector3(-currentPosition.localScale.x, 0);
                 attack.GetComponent<Projectile>().SetDirection(direction, 0);
                 EnemyAttackList.Add(attack);
               
             }
             else
             {
-                EnemyAttackList[ReturnSlashFromPool()].transform.position = boss.position;
-                Vector3 Slashdirection = new Vector3(-boss.localScale.x, 0);
+                EnemyAttackList[ReturnSlashFromPool()].transform.position = currentPosition.position;
+                Vector3 Slashdirection = new Vector3(-currentPosition.localScale.x, 0);
                 EnemyAttackList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, 0);
             }
           }
         StartCoroutine(AttackDelay());
     }
 
+   
   
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -91,14 +95,17 @@ public class Enemy : MonoBehaviour
 
         if (gameObject.tag == "Monster" && collision.gameObject.tag == "RangeAttack")
         {
-            if(SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3)
+            PlayerManager.numberOfOrbs++;
+            PlayerPrefs.SetInt("NumberOfOrbs", PlayerManager.numberOfOrbs);
+            UIManager.Instance.NoOfOrbCollectedPerLevel();
+            if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3)
             {
                 Vector3 pos = collision.transform.position;
                 deathParticles.transform.position = new Vector3(pos.x + 2.905f,pos.y,pos.z);
             }
             else
             {
-            deathParticles.transform.position = boss.transform.position;
+            deathParticles.transform.position = currentPosition.transform.position;
 
             }
             deathParticles.Play();

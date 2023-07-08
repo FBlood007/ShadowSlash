@@ -32,9 +32,16 @@ public class UIManager : MonoBehaviour
 
     private Stack<GameObject> lives = new Stack<GameObject>();
 
-  
+    public GameObject RightButton;
+    public GameObject LeftButton;
+    public GameObject JumpButton;
+    public GameObject AttackButton;
+    public GameObject Controls;
+
+
     private void Start()
     {
+        SystemCheck();
         Time.timeScale = 1f;
         ObjectiveCount = 0;
         if(SceneManager.GetActiveScene().name == "Level_1")
@@ -62,19 +69,20 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        if(SceneManager.GetActiveScene().name == "Level_1")
+        if (SceneManager.GetActiveScene().name == "Level_1")
         {
             //ObjectiveCountText.text = ObjectiveCount.ToString() + "/7";
             ObjectiveCountText.text = PlayerManager.numberOfOrbs.ToString();
         }
         else
         {
-            ObjectiveCountText.text = ObjectiveCount.ToString() + "/4";
+            ObjectiveCountText.text = PlayerManager.numberOfOrbs.ToString();
+            //ObjectiveCountText.text = ObjectiveCount.ToString() + "/4";
         }
          
         if (SceneManager.GetActiveScene().name == "Level_1" && ObjectiveCount == 5)
         {
-            Debug.Log(orbCollectedInLevel + "Level Completed with this much of orbs");
+            //Debug.Log(orbCollectedInLevel + "Level Completed with this much of orbs");
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
             Time.timeScale = 0;
@@ -113,5 +121,18 @@ public class UIManager : MonoBehaviour
     }
 
     
+    public void SystemCheck()
+    {
+        if(UnityEngine.Device.SystemInfo.deviceType == DeviceType.Desktop)
+        {
+           RightButton.SetActive(false);
+           LeftButton.SetActive(false);
+           JumpButton.SetActive(false);
+           AttackButton.SetActive(false);
+           Controls.SetActive(true);
+        }
+
+    }
+
 
 }

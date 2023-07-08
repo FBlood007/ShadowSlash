@@ -234,6 +234,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &153946363 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031069609191802525, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+  m_PrefabInstance: {fileID: 9031069607994208067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &212677461
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,8 +936,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 0}
@@ -983,6 +989,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1486707, y: 1.7351499}
   m_EdgeRadius: 0
+--- !u!1 &826133686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031069607993531185, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+  m_PrefabInstance: {fileID: 9031069607994208067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835845097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,8 +1419,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 0}
@@ -1544,9 +1556,21 @@ PrefabInstance:
       value: Monster (1)
       objectReference: {fileID: 0}
     - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1322034037}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 2012223827}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: collectPosition
+      value: 
+      objectReference: {fileID: 742515375}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: currentPosition
+      value: 
+      objectReference: {fileID: 1322034037}
     - target: {fileID: 9192452655060082476, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: m_Size.x
       value: 1.5796304
@@ -1561,6 +1585,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 9192452653785337120, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
   m_PrefabInstance: {fileID: 1322034036}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1325647615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031069607292025736, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+  m_PrefabInstance: {fileID: 9031069607994208067}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367000288
 GameObject:
@@ -1693,8 +1722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 8300000, guid: 02007875f7549a442b2b4ad292819717, type: 3}
@@ -1986,9 +2016,21 @@ PrefabInstance:
       value: Monster (2)
       objectReference: {fileID: 0}
     - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1533229219}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 2012223827}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: collectPosition
+      value: 
+      objectReference: {fileID: 742515375}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: currentPosition
+      value: 
+      objectReference: {fileID: 1533229219}
     - target: {fileID: 9192452655060082476, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: m_Size.x
       value: 1.4803481
@@ -2336,8 +2378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 0}
@@ -2488,8 +2531,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 8300000, guid: 02007875f7549a442b2b4ad292819717, type: 3}
@@ -2639,6 +2683,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1772013385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8754182000457744620, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+  m_PrefabInstance: {fileID: 9031069607994208067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1775621735 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9031069607689012244, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+  m_PrefabInstance: {fileID: 9031069607994208067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1803625388 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 628847941058439431, guid: cc21d82fe1152a7499dcca811f2adcc4, type: 3}
@@ -2701,8 +2755,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 8300000, guid: 02007875f7549a442b2b4ad292819717, type: 3}
@@ -2978,9 +3033,21 @@ PrefabInstance:
       value: Monster (3)
       objectReference: {fileID: 0}
     - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 1930139345}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 2012223827}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: collectPosition
+      value: 
+      objectReference: {fileID: 742515375}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: currentPosition
+      value: 
+      objectReference: {fileID: 1930139345}
     - target: {fileID: 9192452655060082476, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: m_Size.x
       value: 1.551261
@@ -3219,8 +3286,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 0}
@@ -3465,8 +3533,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 8300000, guid: 02007875f7549a442b2b4ad292819717, type: 3}
@@ -3599,8 +3668,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 2012223827}
   AttakProjectilePrefab: {fileID: 0}
+  CollectablePrefab: {fileID: 0}
   EnemyAttackList: []
-  boss: {fileID: 0}
+  currentPosition: {fileID: 450719638855947801}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 8300000, guid: 02007875f7549a442b2b4ad292819717, type: 3}
@@ -3828,9 +3898,21 @@ PrefabInstance:
       value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 4536041436673718764}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 2012223827}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: collectPosition
+      value: 
+      objectReference: {fileID: 742515375}
+    - target: {fileID: 9192452653785337132, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
+      propertyPath: currentPosition
+      value: 
+      objectReference: {fileID: 4536041436673718764}
     - target: {fileID: 9192452655060082476, guid: 518c59bbb18a96949b488c134ec074bd, type: 3}
       propertyPath: m_Size.x
       value: 1.5087142
@@ -4079,6 +4161,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 992933626}
     - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
+      propertyPath: Controls
+      value: 
+      objectReference: {fileID: 1772013385}
+    - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
       propertyPath: GameOver
       value: 
       objectReference: {fileID: 1148287868}
@@ -4087,9 +4173,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 632224430}
     - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
+      propertyPath: JumpButton
+      value: 
+      objectReference: {fileID: 153946363}
+    - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
+      propertyPath: LeftButton
+      value: 
+      objectReference: {fileID: 1775621735}
+    - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
       propertyPath: lifeParent
       value: 
       objectReference: {fileID: 1661792016}
+    - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
+      propertyPath: RightButton
+      value: 
+      objectReference: {fileID: 826133686}
+    - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
+      propertyPath: AttackButton
+      value: 
+      objectReference: {fileID: 1325647615}
     - target: {fileID: 7206696519435970021, guid: d3719abe888d1a94bac727e7b6771789, type: 3}
       propertyPath: ObjectiveText
       value: 
@@ -4294,9 +4396,57 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2139637223949218233, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.5491333
+      objectReference: {fileID: 0}
+    - target: {fileID: 2139637223949218233, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -65.71094
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348888674951764753, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1373397927}
+    - target: {fileID: 4348888674951764753, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4348888674951764753, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677155294644352037, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.10751343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132299042241960605, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.49404907
+      objectReference: {fileID: 0}
+    - target: {fileID: 6132299042241960605, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.3007965
+      objectReference: {fileID: 0}
     - target: {fileID: 6192297514777976602, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6553268339544255208, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807557294524908742, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1373397927}
+    - target: {fileID: 8807557294524908742, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807557294524908742, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9031069607292025741, guid: d20324846ecc8204bbf0a75bfcf8ed81, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

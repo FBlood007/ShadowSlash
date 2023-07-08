@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1821753495
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1967530551, guid: f7af8785e4b08454eb19c13e22c4736e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -165,9 +165,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 0}
-  rangeAttack: {fileID: 0}
   AttakProjectilePrefab: {fileID: 0}
-  boss: {fileID: 0}
+  CollectablePrefab: {fileID: 628847941058439424, guid: cc21d82fe1152a7499dcca811f2adcc4, type: 3}
+  EnemyAttackList: []
+  currentPosition: {fileID: 0}
   attackCooldown: 0
   maxHealth: 100
   clip: {fileID: 8300000, guid: 02007875f7549a442b2b4ad292819717, type: 3}

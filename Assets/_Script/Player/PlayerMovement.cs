@@ -107,42 +107,128 @@ public class PlayerMovement : MonoBehaviour
 
      void FixedUpdate()
     {
-        //actions.Move(transform);
 
-        //moves player to the right when button pressed
-        if (rightPressed)
-        {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            transform.localScale = new Vector2(2.035237f, 1.875094f);
-            rangeAttack.localScale = new Vector2(1, 1);
-            AttackAngle = 0;
-          
+        if(UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld) { 
+
+             //moves player to the right when button pressed
+            if (rightPressed)
+            {
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                transform.localScale = new Vector2(2.035237f, 1.875094f);
+                rangeAttack.localScale = new Vector2(1, 1);
+                AttackAngle = 0;
+
+            }
+            //moves player to the left when button pressed
+            if (leftPressed)
+            {
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                transform.localScale = new Vector2(-2.035237f, 1.875094f);
+                rangeAttack.localScale = new Vector2(-1, 1);
+                AttackAngle = 180;
+            }
+            if (jumping)
+            {
+                Jump();
+            }
+            //to check if the player is on the ground to toggle animation
+            if (IsGrounded())
+            {
+                //on press of right/left button animation will change to running
+                if (rightPressed || leftPressed)
+                {
+                    //Before
+                    // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
+
+                    //After
+                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
+                }
+                //checks weither attack button is pressed
+                if (isAttackPressed)
+                {
+                    isAttackPressed = false;
+                    //checks if player is attacking if not the attack animation will be set
+                    if (!attacking)
+                    {
+                        attacking = true;
+
+                        AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
+
+                        //OBJECT POOLING
+                        if (SlashList.Count > 3)
+                        {
+                            SlashList[ReturnSlashFromPool()].transform.position = rangeAttack.position;
+                            Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                            SlashList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                        }
+                        else
+                        {
+                            GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
+                            Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                            slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                            SlashList.Add(slashAttack);
+                        }
+
+                        AudioManager.Instance.PlaySound("Attack");
+                        float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+
+                        //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
+                        Invoke("AttackComplete", delay);
+                    }
+                }
+                if (life < 0)
+                {
+
+                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
+
+                    //gameOverPopUp.SetActive(true);
+                    Time.timeScale = 0f;
+                }
+                //sets the animation to idle if player in not moving and not attacking 
+                else if (!attacking && !rightPressed && !leftPressed)
+                {
+                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
+                }
+            }
+            else
+            {
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
+                if (jumping)
+                {
+                    Jumping();
+                    //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
+
+                }
         }
-        //moves player to the left when button pressed
-        if (leftPressed)
-        {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-            transform.localScale = new Vector2(-2.035237f, 1.875094f);
-            rangeAttack.localScale = new Vector2(-1, 1);
-            AttackAngle = 180;
+
         }
-        if (jumping)
+        else if(UnityEngine.Device.SystemInfo.deviceType == DeviceType.Desktop)
         {
-            Jump();
-        }
-        //to check if the player is on the ground to toggle animation
+        //movement for computer inputs
+
+        transform.Translate(Vector2.right * horizontal * speed * Time.deltaTime);
+
         if (IsGrounded())
         {
-            //on press of right/left button animation will change to running
-            if (rightPressed || leftPressed)
+            if (horizontal != 0)
             {
-                //Before
-                // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
+                if (horizontal < 0)
+                {
+                    //transform.Translate(Vector2.left * speed * Time.deltaTime);
+                    transform.localScale = new Vector2(-2.035237f, 1.875094f);
+                    rangeAttack.localScale = new Vector2(-1, 1);
+                    AttackAngle = 180;
+                }
+                if (horizontal > 0)
+                {
 
-                //After
+                    //transform.Translate(Vector2.right * speed * Time.deltaTime);
+                    transform.localScale = new Vector2(2.035237f, 1.875094f);
+                    rangeAttack.localScale = new Vector2(1, 1);
+                    AttackAngle = 0;
+                }
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
             }
-            //checks weither attack button is pressed
             if (isAttackPressed)
             {
                 isAttackPressed = false;
@@ -151,10 +237,8 @@ public class PlayerMovement : MonoBehaviour
                 {
                     attacking = true;
 
-                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
-
                     //OBJECT POOLING
-                    if(SlashList.Count > 3)
+                    if (SlashList.Count > 3)
                     {
                         SlashList[ReturnSlashFromPool()].transform.position = rangeAttack.position;
                         Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
@@ -162,111 +246,50 @@ public class PlayerMovement : MonoBehaviour
                     }
                     else
                     {
-                        GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));                     
+                        GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
                         Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
                         slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
                         SlashList.Add(slashAttack);
                     }
+                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
 
-                     AudioManager.Instance.PlaySound("Attack");
+                    AudioManager.Instance.PlaySound("Attack");
+                    //FindObjectOfType<AudioManager>().PlaySound("Attack");
+
                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
 
                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
                     Invoke("AttackComplete", delay);
                 }
             }
-            if (life < 0)
-            {
-
-                AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
-
-                //gameOverPopUp.SetActive(true);
-                Time.timeScale = 0f;
-            }
-            //sets the animation to idle if player in not moving and not attacking 
-            else if (!attacking && !rightPressed && !leftPressed)
+            else if (horizontal == 0 && !attacking)
             {
                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
             }
         }
         else
         {
-            AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
-            if (jumping)
-            {
-            Jumping();
-            //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
+            if (horizontal < 0)
+                transform.localScale = new Vector2(-2.035237f, 1.875094f);
 
-            }
+            if (horizontal > 0)
+                transform.localScale = new Vector2(2.035237f, 1.875094f);
+            AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
         }
 
+        if (Input.GetButton("Jump"))
+        {
+            if (IsGrounded())
+            {
+                rb.velocity = Vector2.up * jumpForce;
+            }
+        }
+        if (Input.GetButton("Fire1"))
+        {
+            Attack();
+        }
 
-
-        //movement for computer inputs
-        /* transform.Translate(Vector2.right * horizontal * speed * Time.deltaTime);
-
-         if (IsGrounded())
-         {
-             if(horizontal != 0)
-             {
-                 if (horizontal < 0)
-                 {
-                     transform.localScale = new Vector2(2.035237f, 1.875094f);
-                 }
-                 if (horizontal > 0)
-                 {
-
-                     transform.localScale = new Vector2(-2.035237f, 1.875094f);
-                 }
-                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
-             }
-             if (isAttackPressed)
-             {
-                 isAttackPressed = false;
-                 //checks if player is attacking if not the attack animation will be set
-                 if (!attacking)
-                 {
-                     attacking = true;
-
-                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
-
-                     AudioManager.Instance.PlaySound("Attack");
-                     //FindObjectOfType<AudioManager>().PlaySound("Attack");
-
-                     float delay = animator.GetCurrentAnimatorStateInfo(0).length;
-
-                     //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
-                     Invoke("AttackComplete", delay);
-                 }
-             }
-             else if(horizontal == 0 && !attacking)
-             {
-                 AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
-             }
-         }
-         else
-         {
-             if (horizontal < 0)
-                 transform.localScale = new Vector2(2.035237f, 1.875094f);
-
-             if (horizontal > 0)
-                 transform.localScale = new Vector2(-2.035237f, 1.875094f);
-             AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
-         }
-
-         if (Input.GetButton("Jump"))
-         {
-             if (IsGrounded())
-             {
-                 rb.AddForce(Vector2.up * 100f);
-             }
-         }
-         if (Input.GetButton("Fire1"))
-         {
-             Attack();
-
-         }*/
-
+        }
     }
 
     //function to get the index of the inactive Slash object from hierarchy
@@ -316,7 +339,7 @@ public class PlayerMovement : MonoBehaviour
 
     //function to trigger jump
     public void Jump()
-    {
+    {   
         if (IsGrounded())
         {
             //rb.AddForce(Vector2.up * jumpingPower);
