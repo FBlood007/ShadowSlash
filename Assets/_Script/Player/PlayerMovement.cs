@@ -357,6 +357,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Enemy.TakeDamage(attackDamage,enemy.gameObject);
+            UIManager.Instance.AddObjectiveCount();
         }
     }
 
