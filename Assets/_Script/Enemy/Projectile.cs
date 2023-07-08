@@ -9,7 +9,6 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     private bool hit;
     private float lifetime;
-
     private EdgeCollider2D edgeCollider;
 
     private void Awake()
@@ -17,9 +16,6 @@ public class Projectile : MonoBehaviour
        
         edgeCollider = GetComponent<EdgeCollider2D>();
     }
-
-
-
     void FixedUpdate()
     {
         if (hit) return;
@@ -41,6 +37,7 @@ public class Projectile : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //checks if the attack is not collided with monster tag enemy
         if (collision.tag == "Monster" && gameObject.tag != "BossAttack")
         {
             hit = true;
@@ -48,6 +45,7 @@ public class Projectile : MonoBehaviour
             Destroy(collision.gameObject);
             gameObject.SetActive(false);
         }
+        //checks if the attack object tag is BossAttack or not
         if (collision.gameObject.TryGetComponent(out PlayerActions player) && gameObject.tag == "BossAttack")
         {
             hit = true;
@@ -56,6 +54,8 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
         }    
     }
+
+    //function is used to set the direction of the range attack
     public void SetDirection( Vector2 AttackDirection, int angle)
     {
         this.AttackDirection = AttackDirection;
@@ -70,6 +70,7 @@ public class Projectile : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    //deactivates the gameobject when it goes out of camera view
     public void OnBecameInvisible()
     {
         gameObject.SetActive(false);
