@@ -21,12 +21,14 @@ public class MainMenu : MonoBehaviour
         //this statements helps when player press back button of mobile
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            //checks if mainmenu is active in the hierarchy or not
             if (mainMenu.activeInHierarchy)
             {
                 PlayerPrefs.Save();
                 Application.Quit();
             }
-            if(settings.activeInHierarchy || levels.activeInHierarchy)
+            //checks if setting or level screen is active in the hierarchy or not
+            if (settings.activeInHierarchy || levels.activeInHierarchy)
             {
                 mainMenu.SetActive(true);
                 settings.SetActive(false);

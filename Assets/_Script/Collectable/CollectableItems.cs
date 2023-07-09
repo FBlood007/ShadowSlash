@@ -27,9 +27,10 @@ public class CollectableItems : MonoBehaviour
 
     //this function moves the collectable and then destroys it
     public void Move()
-    {
+    {   
         if (collected)
         {
+            //Moves the collectable to specific position
             transform.position = Vector3.MoveTowards(transform.position, collectTransform.position, Time.deltaTime * speed);
         }
         if(transform.position == collectTransform.position) {
