@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: bf1117c252319714f998e1ba5faa18cc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: scne 1 in layer c_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 895
+        width: 1049
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12b23bf3d55b1ee42bf820c173044267
+      internalID: -2089226707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scne 1 in layer c_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 689
+        width: 1215
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d511f27d741a544bc0f6897fb90a84
+      internalID: -1805277501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scne 1 in layer c_27
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 457
+        width: 1323
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698c7c5e90825a64db8c09955809a698
+      internalID: 1152449051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scne 1 in layer c_39
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 247
+        width: 813
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014871cd266a63a4aaa6eeaa747e19c8
+      internalID: 1737065319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scne 1 in layer c_47
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 247
+        width: 1042
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125bacf05df02c947a3f23b585a08d64
+      internalID: 588171243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scne 1 in layer c_54
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 58
+        width: 1141
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 417bf85e7faff02429b73b1bd437da81
+      internalID: -777064116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      scne 1 in layer c_0: -2089226707
+      scne 1 in layer c_1: 337351538
+      scne 1 in layer c_10: 1770187894
+      scne 1 in layer c_11: 240701544
+      scne 1 in layer c_12: -2012921522
+      scne 1 in layer c_13: 576495646
+      scne 1 in layer c_14: -1805277501
+      scne 1 in layer c_15: -1145417326
+      scne 1 in layer c_16: 2090315068
+      scne 1 in layer c_17: 209031621
+      scne 1 in layer c_18: 341720811
+      scne 1 in layer c_19: -564346718
+      scne 1 in layer c_2: -2106394761
+      scne 1 in layer c_20: -240747187
+      scne 1 in layer c_21: 444415824
+      scne 1 in layer c_22: 967916169
+      scne 1 in layer c_23: 1915739541
+      scne 1 in layer c_24: -1131795943
+      scne 1 in layer c_25: -707982465
+      scne 1 in layer c_26: 631975867
+      scne 1 in layer c_27: 1152449051
+      scne 1 in layer c_28: 2087033852
+      scne 1 in layer c_29: 1555986334
+      scne 1 in layer c_3: -285216757
+      scne 1 in layer c_30: 1297657713
+      scne 1 in layer c_31: -1797183778
+      scne 1 in layer c_32: 569428774
+      scne 1 in layer c_33: 30949745
+      scne 1 in layer c_34: 93035097
+      scne 1 in layer c_35: -232659115
+      scne 1 in layer c_36: 209568556
+      scne 1 in layer c_37: 95567842
+      scne 1 in layer c_38: 726922785
+      scne 1 in layer c_39: 1737065319
+      scne 1 in layer c_4: -1779735402
+      scne 1 in layer c_40: 1193160024
+      scne 1 in layer c_41: 2054956327
+      scne 1 in layer c_42: -580193259
+      scne 1 in layer c_43: -163941486
+      scne 1 in layer c_44: 2031193115
+      scne 1 in layer c_45: 337415130
+      scne 1 in layer c_46: -1975718099
+      scne 1 in layer c_47: 588171243
+      scne 1 in layer c_48: 1678948699
+      scne 1 in layer c_49: 1373567615
+      scne 1 in layer c_5: -279543501
+      scne 1 in layer c_50: -1961950998
+      scne 1 in layer c_51: -1991040462
+      scne 1 in layer c_52: 1161220698
+      scne 1 in layer c_53: 446141938
+      scne 1 in layer c_54: -777064116
+      scne 1 in layer c_55: 399841630
+      scne 1 in layer c_56: -527832014
+      scne 1 in layer c_57: -198135056
+      scne 1 in layer c_58: -1303469433
+      scne 1 in layer c_59: 1329826384
+      scne 1 in layer c_6: 573429793
+      scne 1 in layer c_60: -1003168360
+      scne 1 in layer c_61: -138645173
+      scne 1 in layer c_7: -1334682842
+      scne 1 in layer c_8: 1530218557
+      scne 1 in layer c_9: -1585773778
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
