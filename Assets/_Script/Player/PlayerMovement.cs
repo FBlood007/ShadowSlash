@@ -99,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
             AudioManager.Instance.PlaySound("Level2");
 
         }
+        
     }
     void Update()
     {
