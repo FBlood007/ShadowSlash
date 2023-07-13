@@ -34,16 +34,16 @@ public class MainMenu : MonoBehaviour
                 settings.SetActive(false);
                 levels.SetActive(false);
             }
-        }    
+        }
     }
 
 
 
     //function to handle the level scenes here we take input as a scene name
-    public void LevelSelect(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
+    public void LevelSelect(int levelid)
 
+    {
+        SceneManager.LoadScene(levelid);
     }
 
     public void MuteAudio(bool mute)
