@@ -15,40 +15,35 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         TotalOrbCount.text = PlayerPrefs.GetInt("NumberOfOrbs", 0).ToString();
-        //mainMenu.SetActive(true);
-        //settings.SetActive(false);
-        //levels.SetActive(false);
-        if (SceneManager.GetActiveScene().name == "MenuScreens")
-        {
-            //AudioManager.Instance.PauseSound("Level1");
-            //AudioManager.Instance.PlaySound("MainMenu");
-        }
     }
     void Update()
     {
         //this statements helps when player press back button of mobile
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            //checks if mainmenu is active in the hierarchy or not
             if (mainMenu.activeInHierarchy)
             {
+                PlayerPrefs.Save();
                 Application.Quit();
             }
-            if(settings.activeInHierarchy || levels.activeInHierarchy)
+            //checks if setting or level screen is active in the hierarchy or not
+            if (settings.activeInHierarchy || levels.activeInHierarchy)
             {
                 mainMenu.SetActive(true);
                 settings.SetActive(false);
                 levels.SetActive(false);
             }
-        }    
+        }
     }
 
 
 
     //function to handle the level scenes here we take input as a scene name
-    public void LevelSelect(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
+    public void LevelSelect(int levelid)
 
+    {
+        SceneManager.LoadScene(levelid);
     }
 
     public void MuteAudio(bool mute)

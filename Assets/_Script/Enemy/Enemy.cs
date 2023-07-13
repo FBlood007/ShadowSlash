@@ -108,6 +108,7 @@ public class Enemy : MonoBehaviour
             deathParticles.transform.position = currentPosition.transform.position;
 
             }
+           
             deathParticles.Play();
             UIManager.Instance.AddObjectiveCount();
             /*if(SceneManager.GetActiveScene().name == "Level_2")

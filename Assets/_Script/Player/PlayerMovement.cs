@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-
+   
     [SerializeField]private GameObject AttakProjectilePrefab;
     List<GameObject> SlashList = new List<GameObject>();
 
@@ -66,6 +64,9 @@ public class PlayerMovement : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
+    private Color selectedAttackColor;
+
+    
 
     void Start()
     {
@@ -164,6 +165,8 @@ public class PlayerMovement : MonoBehaviour
                         else
                         {
                             GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
+                            Renderer rend = slashAttack.GetComponent<Renderer>();
+                            rend.material.color = selectedAttackColor;
                             Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
                             slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
                             SlashList.Add(slashAttack);
@@ -312,6 +315,7 @@ public class PlayerMovement : MonoBehaviour
     //get input from UI button
     public void MoveRight()
     {
+     
         rightPressed = true;
         leftPressed = false;
     }
@@ -357,6 +361,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Enemy.TakeDamage(attackDamage,enemy.gameObject);
+            UIManager.Instance.AddObjectiveCount();
         }
     }
 
@@ -387,6 +392,7 @@ public class PlayerMovement : MonoBehaviour
         Character character = characterDB.GetCharacter(selectedOption);
         characterSprite.sprite = character.characterSprite;
         characterSprite.material = character.swordMaterial;
+        selectedAttackColor = character.attackColor;
     }
 
     private void Load()
@@ -394,4 +400,130 @@ public class PlayerMovement : MonoBehaviour
         selectedOption = PlayerPrefs.GetInt("SelectedOption");
     }
 
+    private void WebGlControl()
+    {
+        transform.Translate(Vector2.right * horizontal * speed * Time.deltaTime);
+        //moves player to the right when button pressed
+        if (rightPressed || horizontal != 0)
+        {
+
+            if (horizontal > 0)
+            {
+                speed = 2f;
+                transform.localScale = new Vector2(2.035237f, 1.875094f);
+                rangeAttack.localScale = new Vector2(1, 1);
+                AttackAngle = 0;
+            }
+            if (horizontal < 0)
+            {
+                speed = 4f;
+                transform.localScale = new Vector2(-2.035237f, 1.875094f);
+                rangeAttack.localScale = new Vector2(-1, 1);
+                AttackAngle = 180;
+            }
+            else
+            {
+                //speed = 4f;
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                transform.localScale = new Vector2(2.035237f, 1.875094f);
+                rangeAttack.localScale = new Vector2(1, 1);
+                AttackAngle = 0;
+            }
+
+
+        }
+        //moves player to the left when button pressed
+        if (leftPressed && horizontal == 0)
+        {
+            speed = 4f;
+            transform.Translate(Vector2.left * speed * Time.deltaTime);
+            transform.localScale = new Vector2(-2.035237f, 1.875094f);
+            rangeAttack.localScale = new Vector2(-1, 1);
+            AttackAngle = 180;
+        }
+        if (jumping || Input.GetButton("Jump"))
+        {
+            Jump();
+        }
+        //to check if the player is on the ground to toggle animation
+        if (IsGrounded())
+        {
+            //on press of right/left button animation will change to running
+            if (rightPressed || leftPressed || horizontal != 0)
+            {
+                //Before
+                // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
+
+                //After
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_RUNNING);
+            }
+            //checks weither attack button is pressed
+            if (isAttackPressed)
+            {
+                isAttackPressed = false;
+                //checks if player is attacking if not the attack animation will be set
+                if (!attacking)
+                {
+                    attacking = true;
+
+                    AnimationHandling.Instance.ChangeAnimationState(PLAYER_ATTACK);
+
+                    //OBJECT POOLING
+                    if (SlashList.Count > 3)
+                    {
+                        SlashList[ReturnSlashFromPool()].transform.position = rangeAttack.position;
+                        Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                        SlashList[ReturnSlashFromPool()].GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                    }
+                    else
+                    {
+                        GameObject slashAttack = Instantiate(AttakProjectilePrefab, rangeAttack.position, Quaternion.Euler(Vector3.forward * AttackAngle));
+                        Renderer rend = slashAttack.GetComponent<Renderer>();
+                        rend.material.color = selectedAttackColor;
+                        Vector3 Slashdirection = new Vector3(attackPoint.localScale.x, 0);
+                        slashAttack.GetComponent<Projectile>().SetDirection(Slashdirection, AttackAngle);
+                        SlashList.Add(slashAttack);
+                    }
+
+                    AudioManager.Instance.PlaySound("Attack");
+                    float delay = animator.GetCurrentAnimatorStateInfo(0).length;
+
+                    //calls the method after certain delay - it calls AttackComplete() after attack animation is completed
+                    Invoke("AttackComplete", delay);
+                }
+            }
+            if (life < 0)
+            {
+
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);
+
+                //gameOverPopUp.SetActive(true);
+                Time.timeScale = 0f;
+            }
+            //sets the animation to idle if player in not moving and not attacking 
+            else if (!attacking && !rightPressed && !leftPressed && horizontal == 0)
+            {
+                AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
+            }
+        }
+        else
+        {
+            AnimationHandling.Instance.ChangeAnimationState(PLAYER_JUMP);
+            if (horizontal < 0)
+                transform.localScale = new Vector2(-2.035237f, 1.875094f);
+
+            if (horizontal > 0)
+                transform.localScale = new Vector2(2.035237f, 1.875094f);
+            if (jumping)
+            {
+                Jumping();
+                //rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 2);
+
+            }
+        }
+
+    }
+
 }
+
+

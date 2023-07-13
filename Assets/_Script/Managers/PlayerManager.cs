@@ -17,7 +17,6 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-       
         numberOfOrbs = PlayerPrefs.GetInt("NumberOfOrbs",0);
        /* if (Instance != null && Instance != this)
         {
@@ -33,9 +32,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        //animator = GetComponent<Animator>();
         AnimationHandling.Instance.ChangeAnimationState("PlayerIdle");
-        //animator.Play("PLayerIdle");
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;
@@ -47,11 +44,6 @@ public class PlayerManager : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
-    private void Update()
-    {
-        
-
-    }
 
     public void ResetGame()
     {
@@ -61,7 +53,7 @@ public class PlayerManager : MonoBehaviour
 
     public void NextOption()
     {
-        Debug.Log(Time.timeScale);
+        //Debug.Log(Time.timeScale);
         selectedOption++;
         if(selectedOption >= characterDB.CharacterCount)
         {
@@ -81,6 +73,7 @@ public class PlayerManager : MonoBehaviour
         UpdateCharacter(selectedOption);
     }
 
+    //function updates the sprite and material of the character
     private void UpdateCharacter(int selectedOption)
     {
         Character character = characterDB.GetCharacter(selectedOption);
@@ -88,11 +81,13 @@ public class PlayerManager : MonoBehaviour
         characterSprite.material = character.swordMaterial;
     }
 
-
+    //gets the index of the selected option of character
     private void Load()
     {
         selectedOption = PlayerPrefs.GetInt("SelectedOption");
     }
+
+    //saves the last selected option
     public void Save()
     {
         PlayerPrefs.SetInt("SelectedOption",selectedOption);
