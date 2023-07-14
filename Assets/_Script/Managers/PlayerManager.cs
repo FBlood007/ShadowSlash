@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,7 +14,12 @@ public class PlayerManager : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
-//Animator animator;
+    private int SkinCost;
+    public TextMeshProUGUI orbCost;
+    public GameObject lockedButton;
+    public GameObject selectButton;
+    public GameObject CostBoard;
+    //Animator animator;
 
     private void Awake()
     {
@@ -32,7 +38,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        AnimationHandling.Instance.ChangeAnimationState("PlayerIdle");
+        //AnimationHandling.Instance.ChangeAnimationState("PlayerIdle");
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;
@@ -79,6 +85,21 @@ public class PlayerManager : MonoBehaviour
         Character character = characterDB.GetCharacter(selectedOption);
         characterSprite.sprite = character.characterSprite;
         characterSprite.material = character.swordMaterial;
+        orbCost.text = character.price.ToString();
+        SkinCost = character.price;
+        if (character.isUnlocked)
+        {
+            CostBoard.SetActive(false);
+            selectButton.SetActive(true);
+            lockedButton.SetActive(false);
+
+        }
+        else
+        {
+            CostBoard.SetActive(true);
+            selectButton.SetActive(false);
+            lockedButton.SetActive(true);
+        }
     }
 
     //gets the index of the selected option of character
@@ -93,4 +114,19 @@ public class PlayerManager : MonoBehaviour
         PlayerPrefs.SetInt("SelectedOption",selectedOption);
     }
 
+    public void SkinUnlock()
+    {
+        if(SkinCost > numberOfOrbs)
+        {
+            Debug.Log("U dont have sufficient orbs");
+        }
+        else
+        {
+            CostBoard.SetActive(false);
+            selectButton.SetActive(true);
+            lockedButton.SetActive(false);
+            
+        }
+    }
+    
 }

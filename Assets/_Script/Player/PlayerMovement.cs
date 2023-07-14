@@ -364,6 +364,7 @@ public class PlayerMovement : MonoBehaviour
             Enemy.TakeDamage(attackDamage,enemy.gameObject);
             UIManager.Instance.AddObjectiveCount();
         }
+
     }
 
     private void OnDrawGizmosSelected()
