@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement Instance;
     void Awake() => Instance = this;
 
-   
     [SerializeField]private GameObject AttakProjectilePrefab;
     List<GameObject> SlashList = new List<GameObject>();
 
@@ -361,8 +360,15 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
+            if(enemy.tag == "Spider")
+            {
+                SpiderDeath.Instance.TakeDamage(0f,enemy.gameObject);
+            }
+            else
+            {
             Enemy.TakeDamage(attackDamage,enemy.gameObject);
             UIManager.Instance.AddObjectiveCount();
+            }
         }
 
     }

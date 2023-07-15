@@ -12,14 +12,16 @@ public class MainMenu : MonoBehaviour
     public GameObject levels;
     public TextMeshProUGUI TotalOrbCount;
 
+
     void Start()
     {
-        TotalOrbCount.text = PlayerPrefs.GetInt("NumberOfOrbs", 0).ToString();
+        //TotalOrbCount.text = PlayerPrefs.GetInt("NumberOfOrbs", 0).ToString();
     }
     void Update()
     {
+       // TotalOrbCount.text = PlayerPrefs.GetInt("NumberOfOrbs").ToString();
         //this statements helps when player press back button of mobile
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             //checks if mainmenu is active in the hierarchy or not
             if (mainMenu.activeInHierarchy)

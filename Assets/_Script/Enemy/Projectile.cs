@@ -35,9 +35,11 @@ public class Projectile : MonoBehaviour
             if (lifetime > 1.5f) gameObject.SetActive(false);
         }
     }
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //checks if the attack is not collided with monster tag enemy
+        //checks if the attack is collided with monster tag enemy
         if (collision.tag == "Monster" && gameObject.tag != "BossAttack")
         {
             hit = true;
@@ -45,6 +47,17 @@ public class Projectile : MonoBehaviour
             Destroy(collision.gameObject);
             gameObject.SetActive(false);
         }
+
+        if (collision.tag == "Spider" && gameObject.tag != "BossAttack")
+        {
+            //Debug.Log("got hit");
+            hit = true;
+            edgeCollider.enabled = false;
+            //Destroy(collision.gameObject);
+            SpiderDeath.Instance.TakeDamage(100f,collision.gameObject);
+            gameObject.SetActive(false);
+        }
+
         //checks if the attack object tag is BossAttack or not
         if (collision.gameObject.TryGetComponent(out PlayerActions player) && gameObject.tag == "BossAttack")
         {

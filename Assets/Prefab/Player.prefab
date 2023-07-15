@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872732107326848571}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ground Check
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872732107416097499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8872732107728559626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangeAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8872732108329492710}
   - component: {fileID: 8872732108329492709}
   - component: {fileID: 8872732108329492708}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -246,7 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttakProjectilePrefab: {fileID: 6092456224792261916, guid: 010b38ac0c9cba14d88e74522fb24d91, type: 3}
-  gameOverPopUp: {fileID: 0}
   spriteRenderers:
   - {fileID: 8872732108329492704}
   speed: 4
@@ -270,6 +269,8 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage: 100
   rangeAttack: {fileID: 8872732107728559626}
+  characterDB: {fileID: 0}
+  characterSprite: {fileID: 0}
 --- !u!95 &8872732108329492710
 Animator:
   serializedVersion: 5

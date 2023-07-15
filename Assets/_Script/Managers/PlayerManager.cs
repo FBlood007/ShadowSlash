@@ -16,6 +16,8 @@ public class PlayerManager : MonoBehaviour
     private int selectedOption = 0;
     private int SkinCost;
     public TextMeshProUGUI orbCost;
+    public TextMeshProUGUI TotalOrbCount;
+    public TextMeshProUGUI PopupText;
     public GameObject lockedButton;
     public GameObject selectButton;
     public GameObject CostBoard;
@@ -24,15 +26,16 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         numberOfOrbs = PlayerPrefs.GetInt("NumberOfOrbs",0);
-       /* if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }*/
+        TotalOrbCount.text = numberOfOrbs.ToString();
+        /* if (Instance != null && Instance != this)
+         {
+             Destroy(this);
+         }
+         else
+         {
+             Instance = this;
+             DontDestroyOnLoad(gameObject);
+         }*/
 
     }
 
@@ -42,6 +45,8 @@ public class PlayerManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;
+            characterDB.SetSkinLockForFirstLoad();
+
         }
         else
         {
@@ -49,7 +54,7 @@ public class PlayerManager : MonoBehaviour
         }
         UpdateCharacter(selectedOption);
     }
-
+   
 
     public void ResetGame()
     {
@@ -111,6 +116,7 @@ public class PlayerManager : MonoBehaviour
     //saves the last selected option
     public void Save()
     {
+        PopupText.text = "Selected";
         PlayerPrefs.SetInt("SelectedOption",selectedOption);
     }
 
@@ -119,9 +125,15 @@ public class PlayerManager : MonoBehaviour
         if(SkinCost > numberOfOrbs)
         {
             Debug.Log("U dont have sufficient orbs");
+            PopupText.text = "Insufficient Orbs";
         }
         else
         {
+            PopupText.text = "Obtained new skin";
+            PlayerPrefs.SetInt("NumberOfOrbs", numberOfOrbs-SkinCost);
+            numberOfOrbs -= SkinCost;
+            TotalOrbCount.text = numberOfOrbs.ToString();
+            characterDB.SetCharacter(true, selectedOption);
             CostBoard.SetActive(false);
             selectButton.SetActive(true);
             lockedButton.SetActive(false);

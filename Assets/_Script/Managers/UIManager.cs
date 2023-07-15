@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     public GameObject levelComplete;
+    public GameObject GameComplete;
     public GameObject GameOver;
     public static UIManager Instance;
     //private void Awake() => Instance = this;
@@ -69,33 +70,31 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Level_1")
-        {
-            //ObjectiveCountText.text = ObjectiveCount.ToString() + "/7";
-            ObjectiveCountText.text = PlayerManager.numberOfOrbs.ToString();
-        }
-        else
-        {
-            ObjectiveCountText.text = PlayerManager.numberOfOrbs.ToString();
-            //ObjectiveCountText.text = ObjectiveCount.ToString() + "/4";
-        }
-         
-        if (SceneManager.GetActiveScene().name == "Level_1" && ObjectiveCount == 5)
+        ObjectiveCountText.text = PlayerManager.numberOfOrbs.ToString();
+
+        if (SceneManager.GetActiveScene().buildIndex == 1 && ObjectiveCount == 5)
         {
             //Debug.Log(orbCollectedInLevel + "Level Completed with this much of orbs");
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
-            Time.timeScale = 0;
-            //orbCollectedInLevel = 0;
+            //Time.timeScale = 0;
+            UnlockNewLevel();
         }
-        if (SceneManager.GetActiveScene().name == "Level_2" && ObjectiveCount == 4)
+        if (SceneManager.GetActiveScene().buildIndex == 2 && ObjectiveCount == 4)
         {
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
-            Time.timeScale = 0;
-            //orbCollectedInLevel = 0;
+            //Time.timeScale = 0;
+            UnlockNewLevel();
         }
-        if(PlayerMovement.Instance.life == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 3 && ObjectiveCount == 1)
+        {
+            
+            GameComplete.SetActive(true);
+            //Time.timeScale = 0;
+            //UnlockNewLevel();
+        }
+        if (PlayerMovement.Instance.life == 0)
         {
             GameOver.SetActive(true);
         }
@@ -132,6 +131,18 @@ public class UIManager : MonoBehaviour
            Controls.SetActive(true);
         }
 
+    }
+
+    public void UnlockNewLevel()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentLevel >= PlayerPrefs.GetInt("UnlockedLevel"))
+        {
+            PlayerPrefs.SetInt("UnlockedLevel", currentLevel + 1);
+
+        }
+        Debug.Log("Level "+ PlayerPrefs.GetInt("UnlockedLevel")+" Unlocked");
     }
 
 
