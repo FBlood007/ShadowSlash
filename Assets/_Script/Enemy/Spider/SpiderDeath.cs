@@ -16,6 +16,7 @@ public class SpiderDeath : MonoBehaviour
     public void Start()
     {
         UpdateHealthBar();
+        Debug.Log("Spider health " + health);
     }
 
     public void UpdateHealthBar()

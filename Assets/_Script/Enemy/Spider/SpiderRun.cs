@@ -7,7 +7,7 @@ public class SpiderRun : StateMachineBehaviour
 {
     Transform Player;
     Rigidbody2D rb;
-    public float speed = 3f;
+    public float speed =2f;
     Spider spider;
     public float attackRange = 3f;
 
