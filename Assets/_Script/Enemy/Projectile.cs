@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
     {
         if (hit) return;
         if (gameObject.tag == "BossAttack"){
-            speed = 3f;   
+            speed = 2.5f;   
          }
         transform.Translate(AttackDirection* speed * Time.deltaTime);
         lifetime += Time.fixedDeltaTime;
