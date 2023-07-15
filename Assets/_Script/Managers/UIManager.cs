@@ -96,6 +96,7 @@ public class UIManager : MonoBehaviour
         }
         if (PlayerMovement.Instance.life == 0)
         {
+            Debug.Log(PlayerMovement.Instance.life + " no if lives");
             GameOver.SetActive(true);
         }
     }

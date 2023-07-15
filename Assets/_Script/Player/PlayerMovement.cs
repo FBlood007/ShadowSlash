@@ -179,7 +179,7 @@ public class PlayerMovement : MonoBehaviour
                         Invoke("AttackComplete", delay);
                     }
                 }
-                if (life < 0)
+                if (life == 0)
                 {
 
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_DEATH);

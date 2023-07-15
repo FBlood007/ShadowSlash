@@ -20,7 +20,7 @@ public class SpiderAttack : MonoBehaviour
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (colInfo != null)
         {
-            Debug.Log("Not null");
+           
             colInfo.GetComponent<PlayerActions>().TakeHit();
         }
 

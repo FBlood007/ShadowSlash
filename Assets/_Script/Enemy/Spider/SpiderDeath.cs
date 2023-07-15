@@ -40,7 +40,8 @@ public class SpiderDeath : MonoBehaviour
 
     void Die(GameObject spider)
     {
-        Debug.Log("Die function");
+        PlayerManager.numberOfOrbs+=10;
+        PlayerPrefs.SetInt("NumberOfOrbs", PlayerManager.numberOfOrbs);
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         UIManager.Instance.AddObjectiveCount();
         Destroy(spider);
