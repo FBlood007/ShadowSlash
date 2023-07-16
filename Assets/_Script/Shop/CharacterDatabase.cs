@@ -21,4 +21,16 @@ public class CharacterDatabase : ScriptableObject
     {
         return character[index];    
     }
+    public void SetCharacter(bool value, int index)
+    {
+        character[index].isUnlocked = value;
+    }
+
+    public void SetSkinLockForFirstLoad()
+    {
+        for(int i = 1; i < character.Length; i++)
+        {
+            character[i].isUnlocked = false;
+        }
+    }
 }

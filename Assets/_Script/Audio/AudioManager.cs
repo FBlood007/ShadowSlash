@@ -41,6 +41,11 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        OnApplicationQuit();
+    }
+
     //fuction is used to play the sound by taking string type parameter
     public void PlaySound(string name)
     {
@@ -66,7 +71,10 @@ public class AudioManager : MonoBehaviour
         PlaySound("Button");
     }
 
-  
-
+    //function save the playerprefs if game is closed
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.Save();
+    }
 
 }
