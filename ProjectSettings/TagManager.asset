@@ -12,6 +12,7 @@ TagManager:
   - Monster
   - RangeAttack
   - Spider
+  - Obstacle
   layers:
   - Default
   - TransparentFX
