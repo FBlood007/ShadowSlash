@@ -108,8 +108,8 @@ public class PlayerMovement : MonoBehaviour
 
      void FixedUpdate()
     {
-
-        if(UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld) { 
+        
+        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld) { 
 
              //moves player to the right when button pressed
             if (rightPressed)
