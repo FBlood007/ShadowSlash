@@ -65,7 +65,13 @@ public class Projectile : MonoBehaviour
             edgeCollider.enabled = false;
             player.TakeHit();
             gameObject.SetActive(false);
-        }    
+        }
+        if (collision.tag == "Obstacle" && gameObject.tag != "BossAttack")
+        {
+            hit = true;
+            edgeCollider.enabled = false;
+            gameObject.SetActive(false);
+        }
     }
 
     //function is used to set the direction of the range attack

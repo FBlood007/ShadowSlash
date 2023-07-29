@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
     private int SkinCost;
+    public Color selectedAttackColor;
     public TextMeshProUGUI orbCost;
     public TextMeshProUGUI TotalOrbCount;
     public TextMeshProUGUI PopupText;
@@ -27,15 +28,15 @@ public class PlayerManager : MonoBehaviour
     {
         numberOfOrbs = PlayerPrefs.GetInt("NumberOfOrbs",0);
         TotalOrbCount.text = numberOfOrbs.ToString();
-        /* if (Instance != null && Instance != this)
-         {
-             Destroy(this);
-         }
-         else
-         {
-             Instance = this;
-             DontDestroyOnLoad(gameObject);
-         }*/
+       /* if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }*/
 
     }
 
@@ -92,6 +93,7 @@ public class PlayerManager : MonoBehaviour
         characterSprite.material = character.swordMaterial;
         orbCost.text = character.price.ToString();
         SkinCost = character.price;
+        selectedAttackColor = character.attackColor;
         if (character.isUnlocked)
         {
             CostBoard.SetActive(false);

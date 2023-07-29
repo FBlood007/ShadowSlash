@@ -1399,8 +1399,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280884252
-  m_fontColor: {r: 0.10980393, g: 0.10980393, b: 0.16078432, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1534,8 +1534,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280884252
-  m_fontColor: {r: 0.10980393, g: 0.10980393, b: 0.16078432, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3392,10 +3392,10 @@ RectTransform:
   m_Father: {fileID: 2083621769}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.20746876, y: 0.13916668}
+  m_AnchorMin: {x: 0.20746876, y: 0.09877778}
   m_AnchorMax: {x: 0.7908751, y: 0.87200004}
-  m_AnchoredPosition: {x: 9.240601, y: -17.04004}
-  m_SizeDelta: {x: 18.481, y: 28.651}
+  m_AnchoredPosition: {x: 0.86180115, y: -2.5155945}
+  m_SizeDelta: {x: 1.723, y: -0.39799976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1666441282
 GameObject:
@@ -5526,7 +5526,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: c1014353100b67745ba3bbc19c75429c, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

@@ -101,11 +101,17 @@ public class Enemy : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 3)
             {
                 Vector3 pos = collision.transform.position;
+                ParticleSystem.MainModule ma = deathParticles.main;
+                ma.startColor = PlayerMovement.Instance.selectedAttackColor;
+                
                 deathParticles.transform.position = new Vector3(pos.x + 2.905f,pos.y,pos.z);
             }
             else
             {
-            deathParticles.transform.position = currentPosition.transform.position;
+                Vector3 pos = collision.transform.position;
+                ParticleSystem.MainModule ma = deathParticles.main;
+                ma.startColor = PlayerMovement.Instance.selectedAttackColor;
+                deathParticles.transform.position = currentPosition.transform.position;
 
             }
            

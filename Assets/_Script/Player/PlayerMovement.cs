@@ -31,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public int level = 1;//level no
     public int noOfLife = 3;//total no of life 
     Animator animator;
-    
+    public Joystick joystick;
+
     private float horizontal = 0f;
 
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
@@ -63,12 +64,13 @@ public class PlayerMovement : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
-    private Color selectedAttackColor;
+    public Color selectedAttackColor;
 
     
 
     void Start()
     {
+        UIManager.Instance.Joystick.SetActive(true);
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;
@@ -103,27 +105,34 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
     
     }
 
      void FixedUpdate()
     {
+      
+        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld) {
 
-        if(UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld) { 
+            Vector2 Input = new Vector2(joystick.Horizontal, 0);
+            //rb.MovePosition((Vector2)transform.position+Input*10*Time.deltaTime);
 
-             //moves player to the right when button pressed
-            if (rightPressed)
+            //moves player to the right when button pressed
+            if (rightPressed || Input.x > 0)
             {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                
+                //transform.Translate(Vector2.right * speed * Time.deltaTime);
+                transform.Translate(new Vector2(1, 0) * speed * Time.deltaTime);
                 transform.localScale = new Vector2(2.035237f, 1.875094f);
                 rangeAttack.localScale = new Vector2(1, 1);
                 AttackAngle = 0;
 
             }
             //moves player to the left when button pressed
-            if (leftPressed)
-            {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+            if (leftPressed || Input.x < 0)
+            {   
+                //transform.Translate(Vector2.left * speed * Time.deltaTime);
+                transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
                 transform.localScale = new Vector2(-2.035237f, 1.875094f);
                 rangeAttack.localScale = new Vector2(-1, 1);
                 AttackAngle = 180;
@@ -136,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
             if (IsGrounded())
             {
                 //on press of right/left button animation will change to running
-                if (rightPressed || leftPressed)
+                if (rightPressed || leftPressed || Input.x > 0 || Input.x < 0)
                 {
                     //Before
                     // FindObjectOfType<AnimationHandling>().ChangeAnimationState(PLAYER_RUNNING);
@@ -188,7 +197,7 @@ public class PlayerMovement : MonoBehaviour
                     Time.timeScale = 0f;
                 }
                 //sets the animation to idle if player in not moving and not attacking 
-                else if (!attacking && !rightPressed && !leftPressed)
+                else if (!attacking && !rightPressed && !leftPressed && Input.x == 0)
                 {
                     AnimationHandling.Instance.ChangeAnimationState(PLAYER_IDLE);
                 }
@@ -410,6 +419,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void WebGlControl()
     {
+
+        /*if(Application.platform == RuntimePlatform.Android)
+        {
+
+            Vector2 Input = new Vector2(joystick.Horizontal, 0);
+            rb.MovePosition((Vector2)transform.position + Input * 10 * Time.deltaTime);
+
+        }
+        else
+        {
+            
+        }*/
+
+
+
         transform.Translate(Vector2.right * horizontal * speed * Time.deltaTime);
         //moves player to the right when button pressed
         if (rightPressed || horizontal != 0)
