@@ -116,6 +116,10 @@ public class PlayerMovement : MonoBehaviour
 
             Vector2 Input = new Vector2(joystick.Horizontal, 0);
             //rb.MovePosition((Vector2)transform.position+Input*10*Time.deltaTime);
+            if(Time.timeScale == 0)
+            {
+                Input.x = 0;
+            }
 
             //moves player to the right when button pressed
             if (rightPressed || Input.x > 0)
