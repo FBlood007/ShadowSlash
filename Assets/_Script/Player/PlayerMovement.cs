@@ -64,12 +64,13 @@ public class PlayerMovement : MonoBehaviour
     public CharacterDatabase characterDB;
     public SpriteRenderer characterSprite;
     private int selectedOption = 0;
-    private Color selectedAttackColor;
+    public Color selectedAttackColor;
 
     
 
     void Start()
     {
+        UIManager.Instance.Joystick.SetActive(true);
         if (!PlayerPrefs.HasKey("SelectedOption"))
         {
             selectedOption = 0;
@@ -104,6 +105,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+
     
     }
 
@@ -111,13 +113,16 @@ public class PlayerMovement : MonoBehaviour
     {
       
         if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld) {
+
             Vector2 Input = new Vector2(joystick.Horizontal, 0);
-            rb.MovePosition((Vector2)transform.position+Input*10*Time.deltaTime);
+            //rb.MovePosition((Vector2)transform.position+Input*10*Time.deltaTime);
 
             //moves player to the right when button pressed
             if (rightPressed || Input.x > 0)
             {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                
+                //transform.Translate(Vector2.right * speed * Time.deltaTime);
+                transform.Translate(new Vector2(1, 0) * speed * Time.deltaTime);
                 transform.localScale = new Vector2(2.035237f, 1.875094f);
                 rangeAttack.localScale = new Vector2(1, 1);
                 AttackAngle = 0;
@@ -125,8 +130,9 @@ public class PlayerMovement : MonoBehaviour
             }
             //moves player to the left when button pressed
             if (leftPressed || Input.x < 0)
-            {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+            {   
+                //transform.Translate(Vector2.left * speed * Time.deltaTime);
+                transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
                 transform.localScale = new Vector2(-2.035237f, 1.875094f);
                 rangeAttack.localScale = new Vector2(-1, 1);
                 AttackAngle = 180;
@@ -413,6 +419,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void WebGlControl()
     {
+
+        /*if(Application.platform == RuntimePlatform.Android)
+        {
+
+            Vector2 Input = new Vector2(joystick.Horizontal, 0);
+            rb.MovePosition((Vector2)transform.position + Input * 10 * Time.deltaTime);
+
+        }
+        else
+        {
+            
+        }*/
+
+
+
         transform.Translate(Vector2.right * horizontal * speed * Time.deltaTime);
         //moves player to the right when button pressed
         if (rightPressed || horizontal != 0)

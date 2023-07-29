@@ -17,11 +17,13 @@ public class GameScreenPopUp : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0f;
+        UIManager.Instance.Joystick.SetActive(false);
     }
     //function to resume the time frame when game is resumed
     public void Resume()
     {
         Time.timeScale = 1f;
+        UIManager.Instance.Joystick.SetActive(true);
     }
 
     //reload the scene when restarted
@@ -29,6 +31,7 @@ public class GameScreenPopUp : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
+        UIManager.Instance.Joystick.SetActive(true);
     }
 
     public void Music()

@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject levelComplete;
     public GameObject GameComplete;
+    public GameObject Joystick;
     public GameObject GameOver;
     public static UIManager Instance;
     //private void Awake() => Instance = this;
@@ -77,6 +78,7 @@ public class UIManager : MonoBehaviour
             //Debug.Log(orbCollectedInLevel + "Level Completed with this much of orbs");
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
+            Joystick.SetActive(false);
             //Time.timeScale = 0;
             UnlockNewLevel();
         }
@@ -84,6 +86,7 @@ public class UIManager : MonoBehaviour
         {
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
+            Joystick.SetActive(false);
             //Time.timeScale = 0;
             UnlockNewLevel();
         }
@@ -91,6 +94,7 @@ public class UIManager : MonoBehaviour
         {
             
             GameComplete.SetActive(true);
+            Joystick.SetActive(false);
             //Time.timeScale = 0;
             //UnlockNewLevel();
         }
@@ -98,6 +102,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log(PlayerMovement.Instance.life + " no if lives");
             GameOver.SetActive(true);
+            Joystick.SetActive(false);
         }
     }
    
