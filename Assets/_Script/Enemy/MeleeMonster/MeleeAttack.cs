@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpiderAttack : MonoBehaviour
+public class MeleeAttack : MonoBehaviour
 {
     public int attackDamage = 20;
     public int enragedAttackDamage = 40;
@@ -20,17 +20,17 @@ public class SpiderAttack : MonoBehaviour
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
         if (colInfo != null)
         {
-           
+
             colInfo.GetComponent<PlayerActions>().TakeHit();
         }
 
-      /*  Collider2D[] player = Physics2D.OverlapCircleAll(pos, attackRange, attackMask);
+        /*  Collider2D[] player = Physics2D.OverlapCircleAll(pos, attackRange, attackMask);
 
-        foreach (Collider2D enemy in player)
-        {
-            Enemy.TakeDamage(attackDamage, enemy.gameObject);
-            UIManager.Instance.AddObjectiveCount();
-        }*/
+          foreach (Collider2D enemy in player)
+          {
+              Enemy.TakeDamage(attackDamage, enemy.gameObject);
+              UIManager.Instance.AddObjectiveCount();
+          }*/
     }
 
     void OnDrawGizmosSelected()

@@ -38,7 +38,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float attackDelay; //variable to dealy the animation after attack is done
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;//transform to check ground
-    [SerializeField] private LayerMask groundLayer;//ground layer 
+
+    //LayerMask used in raycast to make raycast more Performant
+    //The raycast will ignore all objects outside of the layermask we select.
+    [SerializeField] private LayerMask layerMask;
 
 
 
@@ -66,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
     private int selectedOption = 0;
     public Color selectedAttackColor;
 
-    
+     
 
     void Start()
     {
@@ -88,17 +91,16 @@ public class PlayerMovement : MonoBehaviour
         UIManager.Instance.AddLife(life);//Calls method from UImanager to add life to player at the start of game
         isImmortal = false;
 
-        if (SceneManager.GetActiveScene().name == "Level_1")
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PlaySound("Level1");
         }
-        if (SceneManager.GetActiveScene().name == "Level_2")
+        if (SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
         {
             AudioManager.Instance.PauseSound("MainMenu");
             AudioManager.Instance.PauseSound("Level1");
             AudioManager.Instance.PlaySound("Level2");
-
         }
         
     }
@@ -106,7 +108,6 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-    
     }
 
      void FixedUpdate()
@@ -404,7 +405,7 @@ public class PlayerMovement : MonoBehaviour
     //check if the player is on ground or not
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, layerMask);
     }
 
 
@@ -420,6 +421,8 @@ public class PlayerMovement : MonoBehaviour
     {
         selectedOption = PlayerPrefs.GetInt("SelectedOption");
     }
+
+  
 
     private void WebGlControl()
     {

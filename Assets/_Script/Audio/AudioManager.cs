@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
         }
         //Checks the scene and plays audio according it
-        if (SceneManager.GetActiveScene().name == "MenuScreens")
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             PauseSound("Level1");
             PauseSound("Level2");

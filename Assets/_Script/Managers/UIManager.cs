@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     }
 
     public int ObjectiveCount = 0;//variable to keep the count of the objective
-    public TextMeshProUGUI ObjectiveCountText;//text of orb
+    public TextMeshProUGUI OrbCountText;//text of orb
     public TextMeshProUGUI levelCompleteOrbCount;//Count to show orb when level completed
     public TextMeshProUGUI Objective;
     public int orbCollectedInLevel = 0;
@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
 
     public void Update()
     {
-        ObjectiveCountText.text = PlayerManager.numberOfOrbs.ToString();
+        OrbCountText.text = PlayerManager.numberOfOrbs.ToString();
 
         if (SceneManager.GetActiveScene().buildIndex == 1 && ObjectiveCount == 5)
         {
@@ -79,7 +79,7 @@ public class UIManager : MonoBehaviour
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
             Joystick.SetActive(false);
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             UnlockNewLevel();
         }
         if (SceneManager.GetActiveScene().buildIndex == 2 && ObjectiveCount == 4)
@@ -87,7 +87,7 @@ public class UIManager : MonoBehaviour
             levelCompleteOrbCount.text = orbCollectedInLevel.ToString();
             levelComplete.SetActive(true);
             Joystick.SetActive(false);
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             UnlockNewLevel();
         }
         if (SceneManager.GetActiveScene().buildIndex == 3 && ObjectiveCount == 1)
@@ -95,7 +95,7 @@ public class UIManager : MonoBehaviour
             
             GameComplete.SetActive(true);
             Joystick.SetActive(false);
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
             //UnlockNewLevel();
         }
         if (PlayerMovement.Instance.life == 0)

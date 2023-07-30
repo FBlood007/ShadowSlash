@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cc6e38f01f894249a06c0144aa1c0c4
+guid: 6f462029580f73a44ba3f4dcbc05b3cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grey button sprite sheet_0
+      name: buttons layers temp sample 6_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 406
-        width: 177
-        height: 173
+        x: 0
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75198bdb03b4bb645b032f2a6fd602e7
-      internalID: -378184236
+      spriteID: d1634efafa71b4b4ab0ec91f5e0b7244
+      internalID: 830355313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_1
+      name: buttons layers temp sample 6_1
       rect:
         serializedVersion: 2
-        x: 221
-        y: 406
-        width: 182
-        height: 175
+        x: 201
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70a721d46807df9498c33f6b087c0cd3
-      internalID: 1987897200
+      spriteID: b29081b552ee5ef4dade4f82dafffd15
+      internalID: -2117553458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_2
+      name: buttons layers temp sample 6_2
       rect:
         serializedVersion: 2
-        x: 424
-        y: 406
-        width: 180
-        height: 173
+        x: 402
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cd5f1ff055f6f34f881fd1488bb3af7
-      internalID: -1969712772
+      spriteID: 47c9b1882817b3a4786e0d67b3430460
+      internalID: 870777902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_3
+      name: buttons layers temp sample 6_3
       rect:
         serializedVersion: 2
-        x: 629
-        y: 406
-        width: 184
-        height: 178
+        x: 603
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4626fcae53adcd94189dd22db923d2d7
-      internalID: 1160257319
+      spriteID: a34dea97572cf9c4684c689debdc8971
+      internalID: 1255865095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_4
+      name: buttons layers temp sample 6_4
       rect:
         serializedVersion: 2
-        x: 831
-        y: 408
-        width: 180
-        height: 176
+        x: 804
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: caba85e06be3d25419911bf5e8cd6a0e
-      internalID: 1006774521
+      spriteID: fb3695f5938f49e48a075a0de776c8dc
+      internalID: -1899355044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_5
+      name: buttons layers temp sample 6_5
       rect:
         serializedVersion: 2
-        x: 1036
-        y: 408
-        width: 179
-        height: 176
+        x: 1005
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +248,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffa1ac88b7cc90e4d9fa76661d094484
-      internalID: 617552160
+      spriteID: edb06002f6cd3234d9a6f11612238755
+      internalID: 299393609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_6
+      name: buttons layers temp sample 6_6
       rect:
         serializedVersion: 2
-        x: 1241
-        y: 409
-        width: 180
-        height: 176
+        x: 1206
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +269,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a39f9c2b90581a046b3214b80fdb203b
-      internalID: 1124774533
+      spriteID: c0c2b0bef49e3d845bca37ac72ab7101
+      internalID: -244619843
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_7
+      name: buttons layers temp sample 6_7
       rect:
         serializedVersion: 2
-        x: 19
-        y: 209
-        width: 179
-        height: 175
+        x: 1407
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +290,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b8910cb2061680749981941950cac464
-      internalID: 2107915511
+      spriteID: 915328db4a6a17748bc591cc47a721f2
+      internalID: 1837430565
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_8
+      name: buttons layers temp sample 6_8
       rect:
         serializedVersion: 2
-        x: 221
-        y: 209
-        width: 182
-        height: 179
+        x: 0
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +311,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07004714ce207b547ace8ab57eaf2764
-      internalID: -374214424
+      spriteID: 5c6bda03775113d46b09989757e60213
+      internalID: -2087680163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_9
+      name: buttons layers temp sample 6_9
       rect:
         serializedVersion: 2
-        x: 424
-        y: 209
-        width: 183
-        height: 179
+        x: 201
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,20 +332,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73b479d245b51384e96b164f321d754b
-      internalID: -965297526
+      spriteID: a4a846a16866c6e4eb93f66b4bdb90ef
+      internalID: -1863375114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_10
+      name: buttons layers temp sample 6_10
       rect:
         serializedVersion: 2
-        x: 629
-        y: 215
-        width: 180
-        height: 177
+        x: 402
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,20 +353,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8869dd18d293e634589fee826d4ac5d5
-      internalID: -1731576350
+      spriteID: 8dea88f45e8378d4dacc92dd33e0331e
+      internalID: -167786377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_11
+      name: buttons layers temp sample 6_11
       rect:
         serializedVersion: 2
-        x: 832
-        y: 213
-        width: 179
-        height: 179
+        x: 603
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -374,20 +374,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7686723b7806fa941909aa5a13eee5bb
-      internalID: -196733624
+      spriteID: ce9e58dc62c8fde46836f00af674b4b0
+      internalID: -324283413
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_12
+      name: buttons layers temp sample 6_12
       rect:
         serializedVersion: 2
-        x: 1032
-        y: 213
-        width: 183
-        height: 179
+        x: 804
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -395,20 +395,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 379bcb7e2dca46448b064dd231901211
-      internalID: 301417014
+      spriteID: fb4304cb69a59a947b2c7dc7f0b9262a
+      internalID: -1512881327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_13
+      name: buttons layers temp sample 6_13
       rect:
         serializedVersion: 2
-        x: 1236
-        y: 213
-        width: 182
-        height: 178
+        x: 1005
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,20 +416,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a97d35e47c01c26489570b5ef95ccc28
-      internalID: -1012701078
+      spriteID: 818cab0cce9671b44b7383d9791f55e3
+      internalID: 1406315815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_14
+      name: buttons layers temp sample 6_14
       rect:
         serializedVersion: 2
-        x: 15
-        y: 15
-        width: 183
-        height: 179
+        x: 1206
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -437,20 +437,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbb3ba64ff644b5468305fcc8b66324c
-      internalID: 1755610742
+      spriteID: 82eaf1a2c11a81e4d94160e2ff7923ae
+      internalID: -505579846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_15
+      name: buttons layers temp sample 6_15
       rect:
         serializedVersion: 2
-        x: 218
-        y: 16
-        width: 185
-        height: 178
+        x: 1407
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -458,20 +458,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0643bf040d51c041aec18835c6b6dea
-      internalID: -2138661376
+      spriteID: e49d14fabf5393743a2e38d872746b2f
+      internalID: -1116185819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_16
+      name: buttons layers temp sample 6_16
       rect:
         serializedVersion: 2
-        x: 421
-        y: 15
-        width: 187
-        height: 180
+        x: 0
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -479,20 +479,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92896631a12b0a542b8ef0d966aa525e
-      internalID: 126011227
+      spriteID: 1f1e94e535e147f4496335118538a337
+      internalID: 50453442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_17
+      name: buttons layers temp sample 6_17
       rect:
         serializedVersion: 2
-        x: 625
-        y: 19
-        width: 186
-        height: 180
+        x: 201
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,20 +500,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5eafd3dfaa0ba7b42a1f2686dc3f10da
-      internalID: 1080985860
+      spriteID: b868b5f5a96a42448a0d94937146ff6d
+      internalID: 1862887282
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_18
+      name: buttons layers temp sample 6_18
       rect:
         serializedVersion: 2
-        x: 829
-        y: 19
-        width: 185
-        height: 180
+        x: 402
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -521,20 +521,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f752325c4cb17044ab7d93609351670
-      internalID: -454037331
+      spriteID: 44bca61adc4bfad419201dff816ae0a9
+      internalID: -2063192580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_19
+      name: buttons layers temp sample 6_19
       rect:
         serializedVersion: 2
-        x: 1031
-        y: 20
-        width: 186
-        height: 179
+        x: 603
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -542,20 +542,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ffc30253b0f06342a931e08bf59915a
-      internalID: -1148750662
+      spriteID: 61127e8e25152ed48b8d117868ace678
+      internalID: 1329277074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: grey button sprite sheet_20
+      name: buttons layers temp sample 6_20
       rect:
         serializedVersion: 2
-        x: 1235
-        y: 23
-        width: 189
-        height: 176
+        x: 804
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -563,8 +563,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04f9d209733c8484dab1a1a94db5be15
-      internalID: -1820729542
+      spriteID: 574d4438a174a3a47aeec97079dd35aa
+      internalID: 1843858751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_21
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40423cc898ca0d4da7b4555ed06945b
+      internalID: -662535315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_22
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88fb26d4a8cfea4493f4825dc032cb6
+      internalID: -984457345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_23
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b660ea5c4fbd1748966a0f1ad7558a9
+      internalID: -1815966093
       vertices: []
       indices: 
       edges: []
@@ -580,27 +643,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      grey button sprite sheet_0: -378184236
-      grey button sprite sheet_1: 1987897200
-      grey button sprite sheet_10: -1731576350
-      grey button sprite sheet_11: -196733624
-      grey button sprite sheet_12: 301417014
-      grey button sprite sheet_13: -1012701078
-      grey button sprite sheet_14: 1755610742
-      grey button sprite sheet_15: -2138661376
-      grey button sprite sheet_16: 126011227
-      grey button sprite sheet_17: 1080985860
-      grey button sprite sheet_18: -454037331
-      grey button sprite sheet_19: -1148750662
-      grey button sprite sheet_2: -1969712772
-      grey button sprite sheet_20: -1820729542
-      grey button sprite sheet_3: 1160257319
-      grey button sprite sheet_4: 1006774521
-      grey button sprite sheet_5: 617552160
-      grey button sprite sheet_6: 1124774533
-      grey button sprite sheet_7: 2107915511
-      grey button sprite sheet_8: -374214424
-      grey button sprite sheet_9: -965297526
+      buttons layers temp sample 6_0: 830355313
+      buttons layers temp sample 6_1: -2117553458
+      buttons layers temp sample 6_10: -167786377
+      buttons layers temp sample 6_11: -324283413
+      buttons layers temp sample 6_12: -1512881327
+      buttons layers temp sample 6_13: 1406315815
+      buttons layers temp sample 6_14: -505579846
+      buttons layers temp sample 6_15: -1116185819
+      buttons layers temp sample 6_16: 50453442
+      buttons layers temp sample 6_17: 1862887282
+      buttons layers temp sample 6_18: -2063192580
+      buttons layers temp sample 6_19: 1329277074
+      buttons layers temp sample 6_2: 870777902
+      buttons layers temp sample 6_20: 1843858751
+      buttons layers temp sample 6_21: -662535315
+      buttons layers temp sample 6_22: -984457345
+      buttons layers temp sample 6_23: -1815966093
+      buttons layers temp sample 6_3: 1255865095
+      buttons layers temp sample 6_4: -1899355044
+      buttons layers temp sample 6_5: 299393609
+      buttons layers temp sample 6_6: -244619843
+      buttons layers temp sample 6_7: 1837430565
+      buttons layers temp sample 6_8: -2087680163
+      buttons layers temp sample 6_9: -1863375114
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

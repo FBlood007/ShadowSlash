@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9915683c998588c4098dcc044942b53b
+guid: 6e46dcf428567324c8f38d7de9909d86
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lock unlock_0
+      name: MonsterWalk_0
       rect:
         serializedVersion: 2
-        x: 40
-        y: 206
-        width: 171
-        height: 173
+        x: 39
+        y: 65
+        width: 248
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3edce457c5fa12640b9ad37819fa64bd
-      internalID: 1113708274
+      spriteID: d39150b50c424ae4bbbd926d08236733
+      internalID: 485228070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lock unlock_15
+      name: MonsterWalk_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 13
-        width: 172
-        height: 172
+        x: 335
+        y: 70
+        width: 252
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,8 +164,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b4a82a008d4fa04cb6df885923cfc46
-      internalID: -805791007
+      spriteID: 3deae5e5ea00ebb409c5a6082bab2169
+      internalID: -1492318493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalk_2
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 65
+        width: 225
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3159ac6d9c27f8b48b1c736b139c2854
+      internalID: -1428329289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalk_3
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 62
+        width: 254
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065b019a99b6a40479765d21319644c9
+      internalID: -1014160743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MonsterWalk_4
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 65
+        width: 267
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7209f124f75bcfc4a98d664facf12bfc
+      internalID: -34817252
       vertices: []
       indices: 
       edges: []
@@ -181,29 +244,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lock unlock_0: 1113708274
-      lock unlock_1: -987253936
-      lock unlock_10: -1910111264
-      lock unlock_11: 41430867
-      lock unlock_12: -1860174921
-      lock unlock_13: 364048189
-      lock unlock_14: 884883587
-      lock unlock_15: -805791007
-      lock unlock_16: -775349519
-      lock unlock_17: -2087894344
-      lock unlock_18: 925711190
-      lock unlock_19: -1348636086
-      lock unlock_2: 583153823
-      lock unlock_20: -2064728786
-      lock unlock_21: -1340072766
-      lock unlock_22: -1937843183
-      lock unlock_3: -92266902
-      lock unlock_4: 469503222
-      lock unlock_5: 56471349
-      lock unlock_6: -1880280430
-      lock unlock_7: 1855448334
-      lock unlock_8: 240171366
-      lock unlock_9: 751103977
+      MonsterWalk_0: 485228070
+      MonsterWalk_1: -1492318493
+      MonsterWalk_2: -1428329289
+      MonsterWalk_3: -1014160743
+      MonsterWalk_4: -34817252
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -58,6 +58,7 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
         }
 
+        
         //checks if the attack object tag is BossAttack or not
         if (collision.gameObject.TryGetComponent(out PlayerActions player) && gameObject.tag == "BossAttack")
         {
