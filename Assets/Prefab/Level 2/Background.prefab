@@ -3366,6 +3366,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1736018599033329742}
   - component: {fileID: 1736018599033329729}
+  - component: {fileID: 3659347570564865184}
+  - component: {fileID: 2214975971597616572}
   m_Layer: 6
   m_Name: monastry
   m_TagString: Untagged
@@ -3440,6 +3442,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!68 &3659347570564865184
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736018599033329730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.3590074, y: -1.8439606}
+  - {x: -1.9306599, y: -0.7355787}
+  - {x: 2.0918767, y: -0.7572312}
+  - {x: 3.3993382, y: -2.0844767}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &2214975971597616572
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736018599033329730}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -2.9825835, y: 1.215945}
+  - {x: -2.750309, y: 0.9533133}
+  - {x: 2.7135067, y: 1.0012927}
+  - {x: 2.9019222, y: 1.2159449}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1736018599041241331
 GameObject:
   m_ObjectHideFlags: 0
