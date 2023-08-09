@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -25,13 +26,17 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     static int currentHealth;
     public AudioClip clip;
+    private CapsuleCollider2D col;
+    private Rigidbody2D rb;
 
 
-    
+
     private void Start()
     {
         currentHealth = maxHealth;
-        
+        col  = GetComponent<CapsuleCollider2D>();
+        rb = GetComponent<Rigidbody2D>();
+
     }
     private void Update()
     {
@@ -83,15 +88,37 @@ public class Enemy : MonoBehaviour
         StartCoroutine(AttackDelay());
     }
 
-   
-  
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerActions player))
+        {
+
+            rb.bodyType = RigidbodyType2D.Static;
+            col.isTrigger = true;
+        }
+     
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.TryGetComponent(out PlayerActions player))
+        {
+
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            col.isTrigger = false;
+        }
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //updated statement to detect the collision and give damage to player
-         if(collision.gameObject.TryGetComponent(out PlayerActions player))
-        {
-           player.TakeHit();
-        }
+        //updated statement to detect the collision and give damage to player      
+            if (collision.gameObject.TryGetComponent(out PlayerActions player))
+            {
+                player.TakeHit();
+            }
+        
+         
 
         if (gameObject.tag == "Monster" && collision.gameObject.tag == "RangeAttack")
         {

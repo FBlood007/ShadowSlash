@@ -220,7 +220,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09010132, y: 0.036268413}
+  m_Offset: {x: -0.03472866, y: 0.036268413}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -231,7 +231,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.44167486, y: 1.1603225}
+  m_Size: {x: 0.5155053, y: 1.1603225}
   m_EdgeRadius: 0
 --- !u!114 &8872732108329492707
 MonoBehaviour:
@@ -256,6 +256,7 @@ MonoBehaviour:
   immortalityTime: 3
   level: 1
   noOfLife: 3
+  joystick: {fileID: 0}
   attackDelay: 0.4
   rb: {fileID: 8872732108329492705}
   groundCheck: {fileID: 8872732107326848571}
@@ -271,6 +272,7 @@ MonoBehaviour:
   rangeAttack: {fileID: 8872732107728559626}
   characterDB: {fileID: 0}
   characterSprite: {fileID: 0}
+  selectedAttackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &8872732108329492710
 Animator:
   serializedVersion: 5

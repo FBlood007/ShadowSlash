@@ -1,0 +1,675 @@
+fileFormatVersion: 2
+guid: 6f462029580f73a44ba3f4dcbc05b3cd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1634efafa71b4b4ab0ec91f5e0b7244
+      internalID: 830355313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_1
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29081b552ee5ef4dade4f82dafffd15
+      internalID: -2117553458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_2
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47c9b1882817b3a4786e0d67b3430460
+      internalID: 870777902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_3
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34dea97572cf9c4684c689debdc8971
+      internalID: 1255865095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_4
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb3695f5938f49e48a075a0de776c8dc
+      internalID: -1899355044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_5
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edb06002f6cd3234d9a6f11612238755
+      internalID: 299393609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_6
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0c2b0bef49e3d845bca37ac72ab7101
+      internalID: -244619843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_7
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 387.3333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915328db4a6a17748bc591cc47a721f2
+      internalID: 1837430565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c6bda03775113d46b09989757e60213
+      internalID: -2087680163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_9
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4a846a16866c6e4eb93f66b4bdb90ef
+      internalID: -1863375114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_10
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dea88f45e8378d4dacc92dd33e0331e
+      internalID: -167786377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_11
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce9e58dc62c8fde46836f00af674b4b0
+      internalID: -324283413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_12
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb4304cb69a59a947b2c7dc7f0b9262a
+      internalID: -1512881327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_13
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818cab0cce9671b44b7383d9791f55e3
+      internalID: 1406315815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_14
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eaf1a2c11a81e4d94160e2ff7923ae
+      internalID: -505579846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_15
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 194.33333
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49d14fabf5393743a2e38d872746b2f
+      internalID: -1116185819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1e94e535e147f4496335118538a337
+      internalID: 50453442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_17
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b868b5f5a96a42448a0d94937146ff6d
+      internalID: 1862887282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_18
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44bca61adc4bfad419201dff816ae0a9
+      internalID: -2063192580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_19
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61127e8e25152ed48b8d117868ace678
+      internalID: 1329277074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_20
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 574d4438a174a3a47aeec97079dd35aa
+      internalID: 1843858751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_21
+      rect:
+        serializedVersion: 2
+        x: 1005
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40423cc898ca0d4da7b4555ed06945b
+      internalID: -662535315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_22
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88fb26d4a8cfea4493f4825dc032cb6
+      internalID: -984457345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: buttons layers temp sample 6_23
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1.3333282
+        width: 201.875
+        height: 193.66667
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b660ea5c4fbd1748966a0f1ad7558a9
+      internalID: -1815966093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      buttons layers temp sample 6_0: 830355313
+      buttons layers temp sample 6_1: -2117553458
+      buttons layers temp sample 6_10: -167786377
+      buttons layers temp sample 6_11: -324283413
+      buttons layers temp sample 6_12: -1512881327
+      buttons layers temp sample 6_13: 1406315815
+      buttons layers temp sample 6_14: -505579846
+      buttons layers temp sample 6_15: -1116185819
+      buttons layers temp sample 6_16: 50453442
+      buttons layers temp sample 6_17: 1862887282
+      buttons layers temp sample 6_18: -2063192580
+      buttons layers temp sample 6_19: 1329277074
+      buttons layers temp sample 6_2: 870777902
+      buttons layers temp sample 6_20: 1843858751
+      buttons layers temp sample 6_21: -662535315
+      buttons layers temp sample 6_22: -984457345
+      buttons layers temp sample 6_23: -1815966093
+      buttons layers temp sample 6_3: 1255865095
+      buttons layers temp sample 6_4: -1899355044
+      buttons layers temp sample 6_5: 299393609
+      buttons layers temp sample 6_6: -244619843
+      buttons layers temp sample 6_7: 1837430565
+      buttons layers temp sample 6_8: -2087680163
+      buttons layers temp sample 6_9: -1863375114
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
